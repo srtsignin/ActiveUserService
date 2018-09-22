@@ -1,0 +1,188 @@
+CourseNo,Department,Course,CourseName
+1,Applied Biology,AB492,
+2,Bio Engineering,BE100,
+3,Bio Engineering,BE201,
+4,Bio Engineering,BE310,
+5,Bio Engineering,BE317,
+6,Bio Engineering,BE320,
+7,Bio Engineering,BE331,
+8,Bio Engineering,BE351,
+9,Bio Engineering,BE361,
+10,Bio Engineering,BE390,
+11,Bio Engineering,BE492,
+12,Bio Engineering,BE520,
+13,Bio Engineering,BE570,
+14,Biology,BIO101,Essential Biology
+15,Biology,BIO110,
+16,Biology,BIO120,Comparative Anatomy & Physiology
+17,Biology,BIO130,
+18,Biology,BIO205,
+19,Biology,BIO210,
+20,Biology,BIO220,Microbiology
+21,Biology,BIO230,
+22,Biology,BIO264,
+23,Biology,BIO399,
+24,Biology,BIO411,
+25,Biology,BIO421,
+26,Biology,BIO496,
+27,Biology,BIO497,
+28,Civil Engineering,CE101,
+29,Civil Engineering,CE111,Geographical Information Systems
+30,Civil Engineering,CE250,Sustainable Civil Engineering
+31,Civil Engineering,CE310,
+32,Civil Engineering,CE320,
+33,Civil Engineering,CE321,
+34,Civil Engineering,CE336,
+35,Civil Engineering,CE371,
+36,Civil Engineering,CE380,
+37,Civil Engineering,CE421,
+38,Civil Engineering,CE431,
+39,Civil Engineering,CE432,
+40,Civil Engineering,CE441,
+41,Civil Engineering,CE460,
+42,Civil Engineering,CE471,
+43,Chemical Engineering,CHE110,
+44,Chemical Engineering,CHE201,
+45,Chemical Engineering,CHE202,Basic Chemical Processes Calculations
+46,Chemical Engineering,CHE301,
+47,Chemical Engineering,CHE303,
+48,Chemical Engineering,CHE304,Multi-Component Thermodynamics
+49,Chemical Engineering,CHE315,
+50,Chemical Engineering,CHE320,
+51,Chemical Engineering,CHE321,
+52,Chemical Engineering,CHE404,
+53,Chemical Engineering,CHE490,
+54,Chemistry,CHEM111,General Chemistry I
+55,Chemistry,CHEM112,Honors Chemistry
+56,Chemistry,CHEM113,General Chemistry II
+57,Chemistry,CHEM115,General Chemistry III
+58,Chemistry,CHEM225,Analytical Chemistry
+59,Chemistry,CHEM251,Organic Chemistry I
+60,Chemistry,CHEM252,Organic Chemistry II
+61,Chemistry,CHEM253,Organic Chemistry III
+62,Chemistry,CHEM291,
+63,Chemistry,CHEM330,
+64,Chemistry,CHEM331,
+65,Chemistry,CHEM430,
+66,Chemistry,CHEM433,
+67,Computer Science,CSSE120,Introduction to Software Development
+68,Computer Science,CSSE132,
+69,Computer Science,CSSE220,Object-Oriented Software Development
+70,Computer Science,CSSE230,Data Structure & Algorithm Analysis
+71,Computer Science,CSSE232,
+72,Computer Science,CSSE290,
+73,Computer Science,CSSE304,
+74,Electrical Engineering,ECE160,Engineering Practice
+75,Electrical Engineering,ECE180,Introduction to Signal Processing
+76,Electrical Engineering,ECE203,
+77,Electrical Engineering,ECE204,AC Circuits
+78,Electrical Engineering,ECE205,Circuits and Systems
+79,Electrical Engineering,ECE206,Elements of Electrical Engineering
+80,Electrical Engineering,ECE230,
+81,Electrical Engineering,ECE233,
+82,Electrical Engineering,ECE250,
+83,Electrical Engineering,ECE300,
+84,Electrical Engineering,ECE380,
+85,Electrical Engineering,ECE498,
+86,Engineering Mechanics,EM103,
+87,Engineering Mechanics,EM104,Graphical Communications
+88,Engineering Mechanics,EM120,
+89,Engineering Mechanics,EM121,Statics & Mechanics of Materials I
+90,Engineering Mechanics,EM202,
+91,Engineering Mechanics,EM203,Mechanics of Materials
+92,Engineering Mechanics,EM204,Statics & Mechanics of Materials II
+93,Engineering Mechanics,EM301,
+94,Engineering Mechanics,EM406,
+95,Engineering Sciences,ES201,Conservation & Accounting Principles
+96,Engineering Sciences,ES202,Fluid Systems
+97,Engineering Sciences,ES203,Electrical Systems
+98,Engineering Sciences,ES204,Mechanical Systems
+99,Engineering Sciences,ES205,Analysis & Design of Engineering Systems
+100,German,GE111,German I
+101,German,GE112,German II
+102,German,GE113,German III
+103,German,GE211,German IV
+104,German,GE212,German V
+105,German,GE213,German VI
+106,Geology,GEOL270,
+107,Humanities,GS130,
+108,Humanities,GS188,
+109,Humanities,GS221,
+110,Humanities,GS223,
+111,Humanities,GS291,
+112,Humanities,GS336,
+113,Humanities,GS339,
+114,Humanities,GS351,
+115,Humanities,GS369,
+116,Humanities,GS399,
+117,Humanities,GS412,
+118,Humanities,GS462,
+119,Humanities,IA101,
+120,Humanities,IA246,
+121,Humanities,IA335,
+122,Humanities,IA348,
+123,Humanities,IA351,
+124,Humanities,IA399,
+125,Japanese,JP212,
+126,Japanese,JP213,
+127,Mathematics,MA111,Calculus I
+128,Mathematics,MA112,Calculus II
+129,Mathematics,MA113,Calculus III
+130,Mathematics,MA190,
+131,Mathematics,MA200,
+132,Mathematics,MA211,Differential Equations
+133,Mathematics,MA212,Matrix Algebra & Systems of Differential Equations
+134,Mathematics,MA223,Engineering Statistics I
+135,Mathematics,MA275,Discrete & Combinatorial Algebra I
+136,Mathematics,MA330,
+137,Mathematics,MA336,
+138,Mathematics,MA366,
+139,Mathematics,MA367,
+140,Mathematics,MA371,
+141,Mathematics,MA373,
+142,Mathematics,MA375,
+143,Mathematics,MA381,
+144,Mathematics,MA433,
+145,Mathematics,MA482,
+146,Mathematics,MA490,
+147,Mathematics,MA491,
+148,Mathematics,MAPLE,Maple
+149,Mechanical Engineering,ME123,Computer Programming
+150,Mechanical Engineering,ME301,Applications of Thermodynamics
+151,Mechanical Engineering,ME302,
+152,Mechanical Engineering,ME317,Design for Manufacturing
+153,Mechanical Engineering,ME321,Measurement Systems
+154,Mechanical Engineering,ME323,
+155,Mechanical Engineering,ME328,
+156,Mechanical Engineering,ME421,
+157,Mechanical Engineering,ME471,
+158,Mechanical Engineering,ME472,
+159,Mechanical Engineering,ME480,
+160,Physics,PH111,Physics I
+161,Physics,PH112,Physics II
+162,Physics,PH113,Physics III
+163,Physics,PH231,
+164,Physics,PH235,
+165,Physics,PH255,Foundations of Modern Physics
+166,Physics,PH292,
+167,Physics,PH314,
+169,Spanish,SP111,Spanish I
+170,Spanish,SP112,Spanish II
+171,Spanish,SP211,Spanish IV
+172,Spanish,SP212,Spanish V
+173,Spanish,SP213,Spanish VI
+174,Humanities,SV150,Introduction to Microeconomics
+175,Humanities,SV151,Principles of Economics
+176,Humanities,SV152,Introduction to Macroeconomics
+177,Humanities,SV171,
+178,Humanities,SV201,
+179,Humanities,SV232,
+180,Humanities,SV291,
+181,Humanities,SV303,
+182,Humanities,SV304,
+183,Humanities,SV322,
+184,Humanities,SV371,
+185,Humanities,SV399,
+186,Humanities,RH131,Rhetoric & Composition
+187,Humanities,RH330,Technical Communication
+188,Computer Science,CSSE333,
