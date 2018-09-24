@@ -21,9 +21,17 @@ app.get('/courses', (req, res) => {
     let queryString = req.query.search
     if (queryString != null) {
         queryString = queryString.replaceAll('"', '').trim().toUpperCase()
-        res.send(coursesForMatch.filter(course => course.toUpperCase().includes(queryString)))
+        res.json({
+            'message': `Receiving courses containing the following query string: ${queryString}`,
+            'success': true,
+            'data':coursesForMatch.filter(course => course.toUpperCase().includes(queryString))
+        })
     } else {
-        res.send(coursesByDepartment)
+        res.json({
+            'message': 'No query string specified, receiving courses by department name',
+            'success': true,
+            'data':coursesByDepartment
+        })
     }
 })
 
@@ -34,10 +42,19 @@ app.get('/courses', (req, res) => {
 app.get('/classes', (req, res) => {
     if (req.get('StudentToken') == null) {
         res.status(400)
-        res.send('StudentToken not provided')
+        res.json({
+            'message': 'Error: StudentToken not provided',
+            'success': false,
+            'data': null
+        })
     } else {
-        res.send(['MA211 (Differential Equations)', 'MA212 (Matrix Algebra & Systems of Differential Equations)',
-           'MA223 (Engineering Statistics I)', 'MA275 (Discrete & Combinatorial Algebra I)'])
+        let testStudent = 'Connor Boyle'
+        res.json({
+            'message': `Returning courses for ${testStudent}`,
+            'success': true,
+            'data': ['MA211 (Differential Equations)', 'MA212 (Matrix Algebra & Systems of Differential Equations)',
+                     'MA223 (Engineering Statistics I)', 'MA275 (Discrete & Combinatorial Algebra I)']
+        })
     }
 })
 
