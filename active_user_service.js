@@ -18,8 +18,9 @@ String.prototype.replaceAll = function(search, replacement) {
  *                 and the value is a list of json objects with course_name and common_name key/value pairs
  */
 app.get('/courses', (req, res) => {
-    queryString = req.query.search.replaceAll('"', '').trim().toUpperCase()
+    let queryString = req.query.search
     if (queryString != null) {
+        queryString = queryString.replaceAll('"', '').trim().toUpperCase()
         res.send(coursesForMatch.filter(course => course.toUpperCase().includes(queryString)))
     } else {
         res.send(coursesByDepartment)
