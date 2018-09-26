@@ -1,0 +1,22 @@
+{
+  "name": "activeuserservice",
+  "version": "1.0.0",
+  "description": "Provides course lists and students currently signed into a room or being tutored during in-classroom hours.",
+  "main": "active_user_service.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srtsignin/ActiveUserService.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srtsignin/ActiveUserService/issues"
+  },
+  "homepage": "https://github.com/srtsignin/ActiveUserService#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
