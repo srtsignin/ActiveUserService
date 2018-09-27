@@ -24,7 +24,7 @@ with open(input_file_path, 'r') as f:
         if department not in drop_down_json.keys():
             drop_down_json[department] = []
         drop_down_json[department].append({"course_name":course_name, "common_name":common_name})
-        string_search_json.append(course_name + " (" + common_name + ")")
+        string_search_json.append({"course_name":course_name, "common_name":common_name})
         count = count + 1
 
 with open(output_file_path_1, 'w') as f:
