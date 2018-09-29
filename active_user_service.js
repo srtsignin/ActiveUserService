@@ -24,7 +24,7 @@ app.get('/courses', (req, res) => {
         res.json({
             'message': `Receiving courses containing the following query string: ${queryString}`,
             'success': true,
-            'data':coursesForMatch.filter(course => (course['course_name'] + course['common_name']).toUpperCase().includes(queryString))
+            'data':coursesForMatch.filter(course => (course['department'] + course['number'] + course['name']).toUpperCase().includes(queryString))
         })
     } else {
         res.json({

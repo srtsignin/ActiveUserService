@@ -1,0 +1,77 @@
+[
+    {
+        "name" : "Fred is Awesome",
+        "department" : "CSSE",
+        "number" : 113
+    },
+    {
+        "name" : "David is Best",
+        "department" : "CSSE",
+        "number" : 114
+    },
+    {
+        "name" : "Perry, Frontend Wizard",
+        "department" : "CSSE",
+        "number" : 115
+    },
+    {
+        "name" : "Fred is Awesome II",
+        "department" : "CSSE",
+        "number" : 116
+    },
+    {
+        "name" : "Bond - James Bond",
+        "department" : "CSSE",
+        "number" : 337
+    },
+    {
+        "name" : "Tears of the Sun",
+        "department" : "CSSE",
+        "number" : 111
+    },
+    {
+        "name" : "Captain America",
+        "department" : "CSSE",
+        "number" : 123
+    },
+    {
+        "name" : "Batman",
+        "department" : "CSSE",
+        "number" : 468
+    },
+    {
+        "name" : "Cars III",
+        "department" : "CSSE",
+        "number" : 501
+    },
+    {
+        "name" : "The Day After Tomorrow",
+        "department" : "CSSE",
+        "number" : 569
+    },
+    {
+        "name" : "Django Unchained",
+        "department" : "CSSE",
+        "number" : 314
+    },
+    {
+        "name" : "Kill Bill I",
+        "department" : "CSSE",
+        "number" : 147
+    },
+    {
+        "name" : "Intro to Pokemon",
+        "department" : "CSSE",
+        "number" : 111
+    },
+    {
+        "name" : "Advanced Pokemon",
+        "department" : "CSSE",
+        "number" : 112
+    },
+    {
+        "name" : "Advanced Fred is Awesome",
+        "department" : "CSSE",
+        "number" : 500
+    }
+]
