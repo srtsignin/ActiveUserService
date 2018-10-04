@@ -1,1 +1,4675 @@
-[{"course_name": "AB492", "common_name": ""}, {"course_name": "BE100", "common_name": ""}, {"course_name": "BE201", "common_name": ""}, {"course_name": "BE310", "common_name": ""}, {"course_name": "BE317", "common_name": ""}, {"course_name": "BE320", "common_name": ""}, {"course_name": "BE331", "common_name": ""}, {"course_name": "BE351", "common_name": ""}, {"course_name": "BE361", "common_name": ""}, {"course_name": "BE390", "common_name": ""}, {"course_name": "BE492", "common_name": ""}, {"course_name": "BE520", "common_name": ""}, {"course_name": "BE570", "common_name": ""}, {"course_name": "BIO101", "common_name": "Essential Biology"}, {"course_name": "BIO110", "common_name": ""}, {"course_name": "BIO120", "common_name": "Comparative Anatomy & Physiology"}, {"course_name": "BIO130", "common_name": ""}, {"course_name": "BIO205", "common_name": ""}, {"course_name": "BIO210", "common_name": ""}, {"course_name": "BIO220", "common_name": "Microbiology"}, {"course_name": "BIO230", "common_name": ""}, {"course_name": "BIO264", "common_name": ""}, {"course_name": "BIO399", "common_name": ""}, {"course_name": "BIO411", "common_name": ""}, {"course_name": "BIO421", "common_name": ""}, {"course_name": "BIO496", "common_name": ""}, {"course_name": "BIO497", "common_name": ""}, {"course_name": "CE101", "common_name": ""}, {"course_name": "CE111", "common_name": "Geographical Information Systems"}, {"course_name": "CE250", "common_name": "Sustainable Civil Engineering"}, {"course_name": "CE310", "common_name": ""}, {"course_name": "CE320", "common_name": ""}, {"course_name": "CE321", "common_name": ""}, {"course_name": "CE336", "common_name": ""}, {"course_name": "CE371", "common_name": ""}, {"course_name": "CE380", "common_name": ""}, {"course_name": "CE421", "common_name": ""}, {"course_name": "CE431", "common_name": ""}, {"course_name": "CE432", "common_name": ""}, {"course_name": "CE441", "common_name": ""}, {"course_name": "CE460", "common_name": ""}, {"course_name": "CE471", "common_name": ""}, {"course_name": "CHE110", "common_name": ""}, {"course_name": "CHE201", "common_name": ""}, {"course_name": "CHE202", "common_name": "Basic Chemical Processes Calculations"}, {"course_name": "CHE301", "common_name": ""}, {"course_name": "CHE303", "common_name": ""}, {"course_name": "CHE304", "common_name": "Multi-Component Thermodynamics"}, {"course_name": "CHE315", "common_name": ""}, {"course_name": "CHE320", "common_name": ""}, {"course_name": "CHE321", "common_name": ""}, {"course_name": "CHE404", "common_name": ""}, {"course_name": "CHE490", "common_name": ""}, {"course_name": "CHEM111", "common_name": "General Chemistry I"}, {"course_name": "CHEM112", "common_name": "Honors Chemistry"}, {"course_name": "CHEM113", "common_name": "General Chemistry II"}, {"course_name": "CHEM115", "common_name": "General Chemistry III"}, {"course_name": "CHEM225", "common_name": "Analytical Chemistry"}, {"course_name": "CHEM251", "common_name": "Organic Chemistry I"}, {"course_name": "CHEM252", "common_name": "Organic Chemistry II"}, {"course_name": "CHEM253", "common_name": "Organic Chemistry III"}, {"course_name": "CHEM291", "common_name": ""}, {"course_name": "CHEM330", "common_name": ""}, {"course_name": "CHEM331", "common_name": ""}, {"course_name": "CHEM430", "common_name": ""}, {"course_name": "CHEM433", "common_name": ""}, {"course_name": "CSSE120", "common_name": "Introduction to Software Development"}, {"course_name": "CSSE132", "common_name": ""}, {"course_name": "CSSE220", "common_name": "Object-Oriented Software Development"}, {"course_name": "CSSE230", "common_name": "Data Structure & Algorithm Analysis"}, {"course_name": "CSSE232", "common_name": ""}, {"course_name": "CSSE290", "common_name": ""}, {"course_name": "CSSE304", "common_name": ""}, {"course_name": "ECE160", "common_name": "Engineering Practice"}, {"course_name": "ECE180", "common_name": "Introduction to Signal Processing"}, {"course_name": "ECE203", "common_name": ""}, {"course_name": "ECE204", "common_name": "AC Circuits"}, {"course_name": "ECE205", "common_name": "Circuits and Systems"}, {"course_name": "ECE206", "common_name": "Elements of Electrical Engineering"}, {"course_name": "ECE230", "common_name": ""}, {"course_name": "ECE233", "common_name": ""}, {"course_name": "ECE250", "common_name": ""}, {"course_name": "ECE300", "common_name": ""}, {"course_name": "ECE380", "common_name": ""}, {"course_name": "ECE498", "common_name": ""}, {"course_name": "EM103", "common_name": ""}, {"course_name": "EM104", "common_name": "Graphical Communications"}, {"course_name": "EM120", "common_name": ""}, {"course_name": "EM121", "common_name": "Statics & Mechanics of Materials I"}, {"course_name": "EM202", "common_name": ""}, {"course_name": "EM203", "common_name": "Mechanics of Materials"}, {"course_name": "EM204", "common_name": "Statics & Mechanics of Materials II"}, {"course_name": "EM301", "common_name": ""}, {"course_name": "EM406", "common_name": ""}, {"course_name": "ES201", "common_name": "Conservation & Accounting Principles"}, {"course_name": "ES202", "common_name": "Fluid Systems"}, {"course_name": "ES203", "common_name": "Electrical Systems"}, {"course_name": "ES204", "common_name": "Mechanical Systems"}, {"course_name": "ES205", "common_name": "Analysis & Design of Engineering Systems"}, {"course_name": "GE111", "common_name": "German I"}, {"course_name": "GE112", "common_name": "German II"}, {"course_name": "GE113", "common_name": "German III"}, {"course_name": "GE211", "common_name": "German IV"}, {"course_name": "GE212", "common_name": "German V"}, {"course_name": "GE213", "common_name": "German VI"}, {"course_name": "GEOL270", "common_name": ""}, {"course_name": "GS130", "common_name": ""}, {"course_name": "GS188", "common_name": ""}, {"course_name": "GS221", "common_name": ""}, {"course_name": "GS223", "common_name": ""}, {"course_name": "GS291", "common_name": ""}, {"course_name": "GS336", "common_name": ""}, {"course_name": "GS339", "common_name": ""}, {"course_name": "GS351", "common_name": ""}, {"course_name": "GS369", "common_name": ""}, {"course_name": "GS399", "common_name": ""}, {"course_name": "GS412", "common_name": ""}, {"course_name": "GS462", "common_name": ""}, {"course_name": "IA101", "common_name": ""}, {"course_name": "IA246", "common_name": ""}, {"course_name": "IA335", "common_name": ""}, {"course_name": "IA348", "common_name": ""}, {"course_name": "IA351", "common_name": ""}, {"course_name": "IA399", "common_name": ""}, {"course_name": "JP212", "common_name": ""}, {"course_name": "JP213", "common_name": ""}, {"course_name": "MA111", "common_name": "Calculus I"}, {"course_name": "MA112", "common_name": "Calculus II"}, {"course_name": "MA113", "common_name": "Calculus III"}, {"course_name": "MA190", "common_name": ""}, {"course_name": "MA200", "common_name": ""}, {"course_name": "MA211", "common_name": "Differential Equations"}, {"course_name": "MA212", "common_name": "Matrix Algebra & Systems of Differential Equations"}, {"course_name": "MA223", "common_name": "Engineering Statistics I"}, {"course_name": "MA275", "common_name": "Discrete & Combinatorial Algebra I"}, {"course_name": "MA330", "common_name": ""}, {"course_name": "MA336", "common_name": ""}, {"course_name": "MA366", "common_name": ""}, {"course_name": "MA367", "common_name": ""}, {"course_name": "MA371", "common_name": ""}, {"course_name": "MA373", "common_name": ""}, {"course_name": "MA375", "common_name": ""}, {"course_name": "MA381", "common_name": ""}, {"course_name": "MA433", "common_name": ""}, {"course_name": "MA482", "common_name": ""}, {"course_name": "MA490", "common_name": ""}, {"course_name": "MA491", "common_name": ""}, {"course_name": "MAPLE", "common_name": "Maple"}, {"course_name": "ME123", "common_name": "Computer Programming"}, {"course_name": "ME301", "common_name": "Applications of Thermodynamics"}, {"course_name": "ME302", "common_name": ""}, {"course_name": "ME317", "common_name": "Design for Manufacturing"}, {"course_name": "ME321", "common_name": "Measurement Systems"}, {"course_name": "ME323", "common_name": ""}, {"course_name": "ME328", "common_name": ""}, {"course_name": "ME421", "common_name": ""}, {"course_name": "ME471", "common_name": ""}, {"course_name": "ME472", "common_name": ""}, {"course_name": "ME480", "common_name": ""}, {"course_name": "PH111", "common_name": "Physics I"}, {"course_name": "PH112", "common_name": "Physics II"}, {"course_name": "PH113", "common_name": "Physics III"}, {"course_name": "PH231", "common_name": ""}, {"course_name": "PH235", "common_name": ""}, {"course_name": "PH255", "common_name": "Foundations of Modern Physics"}, {"course_name": "PH292", "common_name": ""}, {"course_name": "PH314", "common_name": ""}, {"course_name": "SP111", "common_name": "Spanish I"}, {"course_name": "SP112", "common_name": "Spanish II"}, {"course_name": "SP211", "common_name": "Spanish IV"}, {"course_name": "SP212", "common_name": "Spanish V"}, {"course_name": "SP213", "common_name": "Spanish VI"}, {"course_name": "SV150", "common_name": "Introduction to Microeconomics"}, {"course_name": "SV151", "common_name": "Principles of Economics"}, {"course_name": "SV152", "common_name": "Introduction to Macroeconomics"}, {"course_name": "SV171", "common_name": ""}, {"course_name": "SV201", "common_name": ""}, {"course_name": "SV232", "common_name": ""}, {"course_name": "SV291", "common_name": ""}, {"course_name": "SV303", "common_name": ""}, {"course_name": "SV304", "common_name": ""}, {"course_name": "SV322", "common_name": ""}, {"course_name": "SV371", "common_name": ""}, {"course_name": "SV399", "common_name": ""}, {"course_name": "RH131", "common_name": "Rhetoric & Composition"}, {"course_name": "RH330", "common_name": "Technical Communication"}, {"course_name": "CSSE333", "common_name": ""}]
+[
+        {
+                "name" : "Operating Systems",
+                "department" : "CSSE",
+                "number" : 332
+        },
+        {
+                "name" : "Data Structures and Algorithm Analysis",
+                "department" : "CSSE",
+                "number" : 230
+        },
+        {
+                "name" : "Polymer Engineering",
+                "department" : "CHE",
+                "number" : 441
+        },
+        {
+                "name" : "Particle Technology",
+                "department" : "CHE",
+                "number" : 460
+        },
+        {
+                "name" : "General Chemistry I",
+                "department" : "CHEM",
+                "number" : 111
+        },
+        {
+                "name" : "Intro to Software Development",
+                "department" : "CSSE",
+                "number" : 120
+        },
+        {
+                "name" : "Special Topics in Comp Science",
+                "department" : "CSSE",
+                "number" : 290
+        },
+        {
+                "name" : "Software Design",
+                "department" : "CSSE",
+                "number" : 374
+        },
+        {
+                "name" : "Design & Anlsys of Algorithms",
+                "department" : "CSSE",
+                "number" : 473
+        },
+        {
+                "name" : "Theory of Computation",
+                "department" : "CSSE",
+                "number" : 474
+        },
+        {
+                "name" : "Statics & Mechanics of Mtls II",
+                "department" : "EM",
+                "number" : 204
+        },
+        {
+                "name" : "Intro to MEMS: Fabr and Appl",
+                "department" : "EP",
+                "number" : 410
+        },
+        {
+                "name" : "Nazi Germany: Fact and Fiction",
+                "department" : "GS",
+                "number" : 413
+        },
+        {
+                "name" : "Introduction to Philosophy",
+                "department" : "IA",
+                "number" : 101
+        },
+        {
+                "name" : "Drawing",
+                "department" : "IA",
+                "number" : 142
+        },
+        {
+                "name" : "Introduction to Poetry",
+                "department" : "IA",
+                "number" : 231
+        },
+        {
+                "name" : "Introduction to Film Studies",
+                "department" : "IA",
+                "number" : 241
+        },
+        {
+                "name" : "Design and Color",
+                "department" : "IA",
+                "number" : 244
+        },
+        {
+                "name" : "Music Theory I: Fund Tonal Mus",
+                "department" : "IA",
+                "number" : 246
+        },
+        {
+                "name" : "Calculus III",
+                "department" : "MA",
+                "number" : 113
+        },
+        {
+                "name" : "Differential Equations",
+                "department" : "MA",
+                "number" : 211
+        },
+        {
+                "name" : "Matr Alg & Sys of Diff Equatns",
+                "department" : "MA",
+                "number" : 212
+        },
+        {
+                "name" : "Engineering Statistics I",
+                "department" : "MA",
+                "number" : 223
+        },
+        {
+                "name" : "Discrete & Combinatorial Alg I",
+                "department" : "MA",
+                "number" : 275
+        },
+        {
+                "name" : "Intro Problty w/ Appl to Stats",
+                "department" : "MA",
+                "number" : 381
+        },
+        {
+                "name" : "Design & Anlsys of Algorithms",
+                "department" : "MA",
+                "number" : 473
+        },
+        {
+                "name" : "Theory of Computation",
+                "department" : "MA",
+                "number" : 474
+        },
+        {
+                "name" : "Mechatronic Systems",
+                "department" : "ME",
+                "number" : 430
+        },
+        {
+                "name" : "College Preparatory Physics",
+                "department" : "PH",
+                "number" : 90
+        },
+        {
+                "name" : "Physics III",
+                "department" : "PH",
+                "number" : 113
+        },
+        {
+                "name" : "Directed Research",
+                "department" : "PH",
+                "number" : 290
+        },
+        {
+                "name" : "Tech & Professional Communictn",
+                "department" : "RH",
+                "number" : 330
+        },
+        {
+                "name" : "Business & Engineering Ethics",
+                "department" : "SV",
+                "number" : 303
+        },
+        {
+                "name" : "American Drama",
+                "department" : "SV",
+                "number" : 340
+        },
+        {
+                "name" : "Biomed Instrumentn & Measrmnts",
+                "department" : "BE",
+                "number" : 201
+        },
+        {
+                "name" : "Anlys of Physiological Sys II",
+                "department" : "BE",
+                "number" : 320
+        },
+        {
+                "name" : "Princ of Biomed Engr Design",
+                "department" : "BE",
+                "number" : 390
+        },
+        {
+                "name" : "Consulting Engineering Seminar",
+                "department" : "BE",
+                "number" : 400
+        },
+        {
+                "name" : "Biomedical Engr Design III",
+                "department" : "BE",
+                "number" : 430
+        },
+        {
+                "name" : "Bioengineering Statistics",
+                "department" : "BE",
+                "number" : 482
+        },
+        {
+                "name" : "Intro to MEMS: Fabr and Appl",
+                "department" : "BE",
+                "number" : 516
+        },
+        {
+                "name" : "Intro Brain Machine Interfaces",
+                "department" : "BE",
+                "number" : 520
+        },
+        {
+                "name" : "Intro to Tissue Engineering",
+                "department" : "BE",
+                "number" : 570
+        },
+        {
+                "name" : "Sel Topics for Grad Students",
+                "department" : "BE",
+                "number" : 597
+        },
+        {
+                "name" : "Core Biology Advances and Appl",
+                "department" : "BIO",
+                "number" : 103
+        },
+        {
+                "name" : "Comp Anatomy & Physiology",
+                "department" : "BIO",
+                "number" : 120
+        },
+        {
+                "name" : "Comp Anatomy & Physiology Lab",
+                "department" : "BIO",
+                "number" : 120
+        },
+        {
+                "name" : "Evolution & Diversity",
+                "department" : "BIO",
+                "number" : 130
+        },
+        {
+                "name" : "Cell Biology",
+                "department" : "BIO",
+                "number" : 230
+        },
+        {
+                "name" : "Synthetic Biology Design",
+                "department" : "BIO",
+                "number" : 351
+        },
+        {
+                "name" : "Evolutionary Medicine",
+                "department" : "BIO",
+                "number" : 461
+        },
+        {
+                "name" : "Thesis Research II",
+                "department" : "BIO",
+                "number" : 497
+        },
+        {
+                "name" : "Computational Biology",
+                "department" : "BMTH",
+                "number" : 413
+        },
+        {
+                "name" : "Computer Applications in CE",
+                "department" : "CE",
+                "number" : 310
+        },
+        {
+                "name" : "Civil Engineering Materials",
+                "department" : "CE",
+                "number" : 320
+        },
+        {
+                "name" : "Intro to Transportation Engr",
+                "department" : "CE",
+                "number" : 380
+        },
+        {
+                "name" : "Career Preparation Seminar",
+                "department" : "CE",
+                "number" : 400
+        },
+        {
+                "name" : "Consulting Engineering Seminar",
+                "department" : "CE",
+                "number" : 420
+        },
+        {
+                "name" : "Structural Design In Steel I",
+                "department" : "CE",
+                "number" : 431
+        },
+        {
+                "name" : "Intro to Environmental Engr",
+                "department" : "CE",
+                "number" : 460
+        },
+        {
+                "name" : "Environmental Engr Lab",
+                "department" : "CE",
+                "number" : 461
+        },
+        {
+                "name" : "Railroad Engineering",
+                "department" : "CE",
+                "number" : 483
+        },
+        {
+                "name" : "Civil Eng Desn & Synthesis III",
+                "department" : "CE",
+                "number" : 489
+        },
+        {
+                "name" : "Directed Research",
+                "department" : "CE",
+                "number" : 490
+        },
+        {
+                "name" : "Building Design",
+                "department" : "CE",
+                "number" : 524
+        },
+        {
+                "name" : "Bridge Engineering",
+                "department" : "CE",
+                "number" : 525
+        },
+        {
+                "name" : "Connections and Detailing",
+                "department" : "CE",
+                "number" : 533
+        },
+        {
+                "name" : "Surface Water Quality Model'g",
+                "department" : "CE",
+                "number" : 568
+        },
+        {
+                "name" : "Environmental River Mechanics",
+                "department" : "CE",
+                "number" : 571
+        },
+        {
+                "name" : "Programming, Computing for CHE",
+                "department" : "CHE",
+                "number" : 110
+        },
+        {
+                "name" : "Fluid Mechanics",
+                "department" : "CHE",
+                "number" : 301
+        },
+        {
+                "name" : "CHE Thermodynamics I",
+                "department" : "CHE",
+                "number" : 303
+        },
+        {
+                "name" : "Materials Science & Engr",
+                "department" : "CHE",
+                "number" : 315
+        },
+        {
+                "name" : "Apps of Heat & Mass Transfer",
+                "department" : "CHE",
+                "number" : 321
+        },
+        {
+                "name" : "Kinetics & Reactor Design",
+                "department" : "CHE",
+                "number" : 404
+        },
+        {
+                "name" : "Intro to MEMS: Fabr and Appl",
+                "department" : "CHE",
+                "number" : 405
+        },
+        {
+                "name" : "Chemical Engr Lab I",
+                "department" : "CHE",
+                "number" : 411
+        },
+        {
+                "name" : "Design III:  Capstone Desn Prj",
+                "department" : "CHE",
+                "number" : 418
+        },
+        {
+                "name" : "Consulting Engineering Seminar",
+                "department" : "CHE",
+                "number" : 420
+        },
+        {
+                "name" : "Safety, Health, and Loss Prev",
+                "department" : "CHE",
+                "number" : 470
+        },
+        {
+                "name" : "Special Topics in CHE",
+                "department" : "CHE",
+                "number" : 490
+        },
+        {
+                "name" : "Directed Research",
+                "department" : "CHE",
+                "number" : 499
+        },
+        {
+                "name" : "Transport Phenomena",
+                "department" : "CHE",
+                "number" : 502
+        },
+        {
+                "name" : "Intro to MEMS: Fabr and Appl",
+                "department" : "CHE",
+                "number" : 505
+        },
+        {
+                "name" : "Advanced Process Control",
+                "department" : "CHE",
+                "number" : 540
+        },
+        {
+                "name" : "Bioseparations",
+                "department" : "CHE",
+                "number" : 546
+        },
+        {
+                "name" : "Graduate Seminar",
+                "department" : "CHE",
+                "number" : 598
+        },
+        {
+                "name" : "Thesis Research",
+                "department" : "CHE",
+                "number" : 599
+        },
+        {
+                "name" : "General Chemistry I Lab",
+                "department" : "CHEM",
+                "number" : 111
+        },
+        {
+                "name" : "General Chemistry II",
+                "department" : "CHEM",
+                "number" : 113
+        },
+        {
+                "name" : "General Chemistry II Lab",
+                "department" : "CHEM",
+                "number" : 113
+        },
+        {
+                "name" : "General Chemistry III",
+                "department" : "CHEM",
+                "number" : 115
+        },
+        {
+                "name" : "General Chemistry III Lab",
+                "department" : "CHEM",
+                "number" : 115
+        },
+        {
+                "name" : "Analytical Chemistry I",
+                "department" : "CHEM",
+                "number" : 225
+        },
+        {
+                "name" : "Analytical Chemistry I Lab",
+                "department" : "CHEM",
+                "number" : 225
+        },
+        {
+                "name" : "Organic Chemistry II",
+                "department" : "CHEM",
+                "number" : 252
+        },
+        {
+                "name" : "Organic Chemistry III",
+                "department" : "CHEM",
+                "number" : 253
+        },
+        {
+                "name" : "Organic Chemistry III Lab",
+                "department" : "CHEM",
+                "number" : 253
+        },
+        {
+                "name" : "Directed Studies",
+                "department" : "CHEM",
+                "number" : 276
+        },
+        {
+                "name" : "Biochemistry I",
+                "department" : "CHEM",
+                "number" : 330
+        },
+        {
+                "name" : "Intro to Phys Chem for Engr",
+                "department" : "CHEM",
+                "number" : 360
+        },
+        {
+                "name" : "Quantum Chem & Molclr Spectrsp",
+                "department" : "CHEM",
+                "number" : 363
+        },
+        {
+                "name" : "Research Proposal",
+                "department" : "CHEM",
+                "number" : 391
+        },
+        {
+                "name" : "Chemistry Seminar",
+                "department" : "CHEM",
+                "number" : 395
+        },
+        {
+                "name" : "Advanced Biochemistry",
+                "department" : "CHEM",
+                "number" : 430
+        },
+        {
+                "name" : "Biochemistry Laboratory",
+                "department" : "CHEM",
+                "number" : 433
+        },
+        {
+                "name" : "Organic Struct Determination",
+                "department" : "CHEM",
+                "number" : 451
+        },
+        {
+                "name" : "Special Topics in Chemistry",
+                "department" : "CHEM",
+                "number" : 470
+        },
+        {
+                "name" : "Chemical Research",
+                "department" : "CHEM",
+                "number" : 490
+        },
+        {
+                "name" : "Research Thesis",
+                "department" : "CHEM",
+                "number" : 491
+        },
+        {
+                "name" : "Advanced Biochemistry",
+                "department" : "CHEM",
+                "number" : 530
+        },
+        {
+                "name" : "Physical Polymer Chemistry",
+                "department" : "CHEM",
+                "number" : 562
+        },
+        {
+                "name" : "Special Topics in Chemistry",
+                "department" : "CHEM",
+                "number" : 570
+        },
+        {
+                "name" : "Intro to Computer Systems",
+                "department" : "CSSE",
+                "number" : 132
+        },
+        {
+                "name" : "Object-Oriented Software Dvlpm",
+                "department" : "CSSE",
+                "number" : 220
+        },
+        {
+                "name" : "Programming Language Concepts",
+                "department" : "CSSE",
+                "number" : 304
+        },
+        {
+                "name" : "Fractals & Chaotic Dynam Syst",
+                "department" : "CSSE",
+                "number" : 325
+        },
+        {
+                "name" : "Intro to Database Systems",
+                "department" : "CSSE",
+                "number" : 333
+        },
+        {
+                "name" : "Intro to Parallel Computing",
+                "department" : "CSSE",
+                "number" : 335
+        },
+        {
+                "name" : "Computer Game Development",
+                "department" : "CSSE",
+                "number" : 352
+        },
+        {
+                "name" : "Software Requrmnts Engineering",
+                "department" : "CSSE",
+                "number" : 371
+        },
+        {
+                "name" : "Software Constr & Evolution",
+                "department" : "CSSE",
+                "number" : 375
+        },
+        {
+                "name" : "Software Quality Assurance",
+                "department" : "CSSE",
+                "number" : 376
+        },
+        {
+                "name" : "Advanced Database Systems",
+                "department" : "CSSE",
+                "number" : 433
+        },
+        {
+                "name" : "Robotics Engineering",
+                "department" : "CSSE",
+                "number" : 435
+        },
+        {
+                "name" : "Computer Vision",
+                "department" : "CSSE",
+                "number" : 461
+        },
+        {
+                "name" : "Cryptography",
+                "department" : "CSSE",
+                "number" : 479
+        },
+        {
+                "name" : "Android Application Developmnt",
+                "department" : "CSSE",
+                "number" : 483
+        },
+        {
+                "name" : "iOS Application Development",
+                "department" : "CSSE",
+                "number" : 484
+        },
+        {
+                "name" : "Topics in Computer Science",
+                "department" : "CSSE",
+                "number" : 490
+        },
+        {
+                "name" : "Directed Independent Studies",
+                "department" : "CSSE",
+                "number" : 491
+        },
+        {
+                "name" : "Senior Thesis I",
+                "department" : "CSSE",
+                "number" : 494
+        },
+        {
+                "name" : "Senior Thesis III",
+                "department" : "CSSE",
+                "number" : 496
+        },
+        {
+                "name" : "Senior Capstone Project III",
+                "department" : "CSSE",
+                "number" : 499
+        },
+        {
+                "name" : "Intro to Signal Processing",
+                "department" : "ECE",
+                "number" : 180
+        },
+        {
+                "name" : "DC Circuits",
+                "department" : "ECE",
+                "number" : 203
+        },
+        {
+                "name" : "Circuits and Systems",
+                "department" : "ECE",
+                "number" : 205
+        },
+        {
+                "name" : "Elements of Electrical Engr",
+                "department" : "ECE",
+                "number" : 206
+        },
+        {
+                "name" : "Intro to Embedded Systems",
+                "department" : "ECE",
+                "number" : 230
+        },
+        {
+                "name" : "Electronic Device Modeling",
+                "department" : "ECE",
+                "number" : 250
+        },
+        {
+                "name" : "Continuous-Time Signals & Syst",
+                "department" : "ECE",
+                "number" : 300
+        },
+        {
+                "name" : "Communication Systems",
+                "department" : "ECE",
+                "number" : 310
+        },
+        {
+                "name" : "Linear Control Systems",
+                "department" : "ECE",
+                "number" : 320
+        },
+        {
+                "name" : "Computer Architecture II",
+                "department" : "ECE",
+                "number" : 332
+        },
+        {
+                "name" : "Electromagnetic Waves",
+                "department" : "ECE",
+                "number" : 341
+        },
+        {
+                "name" : "High-Speed Digital Design",
+                "department" : "ECE",
+                "number" : 343
+        },
+        {
+                "name" : "Principles of Design",
+                "department" : "ECE",
+                "number" : 362
+        },
+        {
+                "name" : "Power and Energy Systems",
+                "department" : "ECE",
+                "number" : 370
+        },
+        {
+                "name" : "Sustainable Energy Systems",
+                "department" : "ECE",
+                "number" : 371
+        },
+        {
+                "name" : "Undergraduate Projects",
+                "department" : "ECE",
+                "number" : 398
+        },
+        {
+                "name" : "Intro to MEMS: Fabr and Appl",
+                "department" : "ECE",
+                "number" : 416
+        },
+        {
+                "name" : "Engineering Design III",
+                "department" : "ECE",
+                "number" : 462
+        },
+        {
+                "name" : "Consulting Engineering Seminar",
+                "department" : "ECE",
+                "number" : 466
+        },
+        {
+                "name" : "Power Systems II",
+                "department" : "ECE",
+                "number" : 472
+        },
+        {
+                "name" : "Electronic Music Synthesis",
+                "department" : "ECE",
+                "number" : 481
+        },
+        {
+                "name" : "Special Topics in ECE",
+                "department" : "ECE",
+                "number" : 497
+        },
+        {
+                "name" : "Undergraduate Projects",
+                "department" : "ECE",
+                "number" : 498
+        },
+        {
+                "name" : "Intro to MEMS: Fabr and Appl",
+                "department" : "ECE",
+                "number" : 516
+        },
+        {
+                "name" : "Electromagnetic Metamaterials",
+                "department" : "ECE",
+                "number" : 543
+        },
+        {
+                "name" : "R F Integrated Circuit Design",
+                "department" : "ECE",
+                "number" : 553
+        },
+        {
+                "name" : "Power Electronics & Power Supp",
+                "department" : "ECE",
+                "number" : 556
+        },
+        {
+                "name" : "Advanced Image Processing",
+                "department" : "ECE",
+                "number" : 582
+        },
+        {
+                "name" : "Special Topics in Elect Engr",
+                "department" : "ECE",
+                "number" : 597
+        },
+        {
+                "name" : "Thesis Research",
+                "department" : "ECE",
+                "number" : 598
+        },
+        {
+                "name" : "Introduction to Design",
+                "department" : "EM",
+                "number" : 103
+        },
+        {
+                "name" : "Engineering Statics",
+                "department" : "EM",
+                "number" : 120
+        },
+        {
+                "name" : "Statics & Mechanics of Matls I",
+                "department" : "EM",
+                "number" : 121
+        },
+        {
+                "name" : "Fluid Mechanics",
+                "department" : "EM",
+                "number" : 301
+        },
+        {
+                "name" : "Adv Vibration Analysis",
+                "department" : "EM",
+                "number" : 503
+        },
+        {
+                "name" : "Intro to Engineering Managemt",
+                "department" : "EMGT",
+                "number" : 330
+        },
+        {
+                "name" : "Project Management",
+                "department" : "EMGT",
+                "number" : 427
+        },
+        {
+                "name" : "Technical Entrepreneurship",
+                "department" : "EMGT",
+                "number" : 432
+        },
+        {
+                "name" : "Statistical Methods in Six Sig",
+                "department" : "EMGT",
+                "number" : 446
+        },
+        {
+                "name" : "Special Topics in Engr Mngmt",
+                "department" : "EMGT",
+                "number" : 497
+        },
+        {
+                "name" : "Graduate Seminar I",
+                "department" : "EMGT",
+                "number" : 513
+        },
+        {
+                "name" : "Financial Mgmt in a Tech Envir",
+                "department" : "EMGT",
+                "number" : 521
+        },
+        {
+                "name" : "Marketing in New Prod Develpmt",
+                "department" : "EMGT",
+                "number" : 523
+        },
+        {
+                "name" : "Technical Entrepreneurship",
+                "department" : "EMGT",
+                "number" : 532
+        },
+        {
+                "name" : "Globalztn, Strategy & Orgl Chg",
+                "department" : "EMGT",
+                "number" : 535
+        },
+        {
+                "name" : "Intellectl Prop for Engr & Sci",
+                "department" : "EMGT",
+                "number" : 551
+        },
+        {
+                "name" : "Systems Architecture",
+                "department" : "EMGT",
+                "number" : 564
+        },
+        {
+                "name" : "Multi-Objective Optimization",
+                "department" : "EMGT",
+                "number" : 581
+        },
+        {
+                "name" : "Integrated Project",
+                "department" : "EMGT",
+                "number" : 590
+        },
+        {
+                "name" : "Special Topics in Engr Mgmt",
+                "department" : "EMGT",
+                "number" : 597
+        },
+        {
+                "name" : "Special Topics in Engr Mgmt",
+                "department" : "EMGT",
+                "number" : 598
+        },
+        {
+                "name" : "Engineering Design Studio III",
+                "department" : "ENGD",
+                "number" : 120
+        },
+        {
+                "name" : "Systems Accountg & Modeling II",
+                "department" : "ENGD",
+                "number" : 210
+        },
+        {
+                "name" : "Engineering at Nanoscale",
+                "department" : "EP",
+                "number" : 180
+        },
+        {
+                "name" : "Directed Research",
+                "department" : "EP",
+                "number" : 290
+        },
+        {
+                "name" : "Material Failure",
+                "department" : "EP",
+                "number" : 330
+        },
+        {
+                "name" : "Nanotechnology/Entreprn/Ethics",
+                "department" : "EP",
+                "number" : 380
+        },
+        {
+                "name" : "Engr Physics Projects I",
+                "department" : "EP",
+                "number" : 415
+        },
+        {
+                "name" : "Nanomedicine",
+                "department" : "EP",
+                "number" : 450
+        },
+        {
+                "name" : "Directed Research",
+                "department" : "EP",
+                "number" : 490
+        },
+        {
+                "name" : "Intro to MEMS: Fabr and Appl",
+                "department" : "EP",
+                "number" : 510
+        },
+        {
+                "name" : "Fluid Systems",
+                "department" : "ES",
+                "number" : 202
+        },
+        {
+                "name" : "Electrical Systems",
+                "department" : "ES",
+                "number" : 203
+        },
+        {
+                "name" : "Mechanical Systems",
+                "department" : "ES",
+                "number" : 204
+        },
+        {
+                "name" : "Analysis & Design of Engr Syst",
+                "department" : "ES",
+                "number" : 205
+        },
+        {
+                "name" : "Reading and Writing 2",
+                "department" : "ESL",
+                "number" : 102
+        },
+        {
+                "name" : "German Language & Culture III",
+                "department" : "GE",
+                "number" : 113
+        },
+        {
+                "name" : "German Language & Culture VI",
+                "department" : "GE",
+                "number" : 213
+        },
+        {
+                "name" : "Comparative Politcs",
+                "department" : "GS",
+                "number" : 161
+        },
+        {
+                "name" : "Introduction to Anthropology",
+                "department" : "GS",
+                "number" : 185
+        },
+        {
+                "name" : "Modern China",
+                "department" : "GS",
+                "number" : 327
+        },
+        {
+                "name" : "Irish Drama",
+                "department" : "GS",
+                "number" : 331
+        },
+        {
+                "name" : "Travel in World Literature",
+                "department" : "GS",
+                "number" : 334
+        },
+        {
+                "name" : "Global Novel in 20th Century",
+                "department" : "GS",
+                "number" : 335
+        },
+        {
+                "name" : "The European Union",
+                "department" : "GS",
+                "number" : 366
+        },
+        {
+                "name" : "Japanese Culture",
+                "department" : "GS",
+                "number" : 379
+        },
+        {
+                "name" : "Special Topics",
+                "department" : "GS",
+                "number" : 399
+        },
+        {
+                "name" : "Art Hist:Renaissance to Modern",
+                "department" : "GS",
+                "number" : 442
+        },
+        {
+                "name" : "Geography of Africa",
+                "department" : "GS",
+                "number" : 492
+        },
+        {
+                "name" : "Directed Study",
+                "department" : "GS",
+                "number" : 499
+        },
+        {
+                "name" : "Criticl Thinking,Intr to Logic",
+                "department" : "IA",
+                "number" : 102
+        },
+        {
+                "name" : "Introduction to Islam",
+                "department" : "IA",
+                "number" : 128
+        },
+        {
+                "name" : "World Literatures",
+                "department" : "IA",
+                "number" : 233
+        },
+        {
+                "name" : "Documentary Film",
+                "department" : "IA",
+                "number" : 330
+        },
+        {
+                "name" : "Creative Writing",
+                "department" : "IA",
+                "number" : 334
+        },
+        {
+                "name" : "History of Economic Thought",
+                "department" : "IA",
+                "number" : 353
+        },
+        {
+                "name" : "Cognitive Psychology",
+                "department" : "IA",
+                "number" : 371
+        },
+        {
+                "name" : "Food, Culture, and the Self",
+                "department" : "IA",
+                "number" : 388
+        },
+        {
+                "name" : "Special Topics",
+                "department" : "IA",
+                "number" : 399
+        },
+        {
+                "name" : "Film Adaptatns: Text to Screen",
+                "department" : "IA",
+                "number" : 433
+        },
+        {
+                "name" : "Directed Study",
+                "department" : "IA",
+                "number" : 499
+        },
+        {
+                "name" : "Japanese Lang & Culture III",
+                "department" : "JP",
+                "number" : 113
+        },
+        {
+                "name" : "Japanese Language & Culture VI",
+                "department" : "JP",
+                "number" : 213
+        },
+        {
+                "name" : "Applied Multivariate Calculus",
+                "department" : "MA",
+                "number" : 103
+        },
+        {
+                "name" : "Calculus II",
+                "department" : "MA",
+                "number" : 112
+        },
+        {
+                "name" : "Contemporary Mathematical Prob",
+                "department" : "MA",
+                "number" : 190
+        },
+        {
+                "name" : "Fractals & Chao Dyn Systems",
+                "department" : "MA",
+                "number" : 325
+        },
+        {
+                "name" : "Low Dimensional Topology",
+                "department" : "MA",
+                "number" : 327
+        },
+        {
+                "name" : "Vector Calculus",
+                "department" : "MA",
+                "number" : 330
+        },
+        {
+                "name" : "Intro to Parallel Computing",
+                "department" : "MA",
+                "number" : 335
+        },
+        {
+                "name" : "Boundary Value Problems",
+                "department" : "MA",
+                "number" : 336
+        },
+        {
+                "name" : "Computational Modeling",
+                "department" : "MA",
+                "number" : 342
+        },
+        {
+                "name" : "Functions of a Real Variable",
+                "department" : "MA",
+                "number" : 366
+        },
+        {
+                "name" : "Functions of a Complex Variabl",
+                "department" : "MA",
+                "number" : 367
+        },
+        {
+                "name" : "Linear Algebra I",
+                "department" : "MA",
+                "number" : 371
+        },
+        {
+                "name" : "Discrete & Comb Algebra II",
+                "department" : "MA",
+                "number" : 375
+        },
+        {
+                "name" : "Abstract Algebra",
+                "department" : "MA",
+                "number" : 376
+        },
+        {
+                "name" : "Number Theory",
+                "department" : "MA",
+                "number" : 378
+        },
+        {
+                "name" : "Topics in Geometry",
+                "department" : "MA",
+                "number" : 423
+        },
+        {
+                "name" : "Stochastic Models in Oper Res",
+                "department" : "MA",
+                "number" : 445
+        },
+        {
+                "name" : "Topics in Discrete Math",
+                "department" : "MA",
+                "number" : 475
+        },
+        {
+                "name" : "Graph Theory",
+                "department" : "MA",
+                "number" : 477
+        },
+        {
+                "name" : "Cryptography",
+                "department" : "MA",
+                "number" : 479
+        },
+        {
+                "name" : "Bioengineering Statistics",
+                "department" : "MA",
+                "number" : 482
+        },
+        {
+                "name" : "Topics in Mathematics",
+                "department" : "MA",
+                "number" : 490
+        },
+        {
+                "name" : "Senior Project I",
+                "department" : "MA",
+                "number" : 492
+        },
+        {
+                "name" : "Senior Project III",
+                "department" : "MA",
+                "number" : 494
+        },
+        {
+                "name" : "Research Proj in Mathematics",
+                "department" : "MA",
+                "number" : 495
+        },
+        {
+                "name" : "Senior Thesis I",
+                "department" : "MA",
+                "number" : 496
+        },
+        {
+                "name" : "Senior Thesis III",
+                "department" : "MA",
+                "number" : 498
+        },
+        {
+                "name" : "Sustainability in Practice",
+                "department" : "MDS",
+                "number" : 302
+        },
+        {
+                "name" : "Computer Programming",
+                "department" : "ME",
+                "number" : 123
+        },
+        {
+                "name" : "Heat Transfer",
+                "department" : "ME",
+                "number" : 302
+        },
+        {
+                "name" : "Intro to Aerospace Engr",
+                "department" : "ME",
+                "number" : 305
+        },
+        {
+                "name" : "Measurement Systems",
+                "department" : "ME",
+                "number" : 321
+        },
+        {
+                "name" : "Numerical Methods in Engr",
+                "department" : "ME",
+                "number" : 323
+        },
+        {
+                "name" : "Propulsion Systems",
+                "department" : "ME",
+                "number" : 411
+        },
+        {
+                "name" : "Intro to MEMS: Fabr and Appl",
+                "department" : "ME",
+                "number" : 416
+        },
+        {
+                "name" : "Consulting Engineering Seminar",
+                "department" : "ME",
+                "number" : 420
+        },
+        {
+                "name" : "Intro to Computation Fluid Dyn",
+                "department" : "ME",
+                "number" : 427
+        },
+        {
+                "name" : "Robotics Engineering",
+                "department" : "ME",
+                "number" : 435
+        },
+        {
+                "name" : "Capstone Design I",
+                "department" : "ME",
+                "number" : 470
+        },
+        {
+                "name" : "Capstone Design II",
+                "department" : "ME",
+                "number" : 471
+        },
+        {
+                "name" : "Capstone Design III",
+                "department" : "ME",
+                "number" : 472
+        },
+        {
+                "name" : "Machine Component Design",
+                "department" : "ME",
+                "number" : 480
+        },
+        {
+                "name" : "Selected Topics in Design",
+                "department" : "ME",
+                "number" : 493
+        },
+        {
+                "name" : "Special Topics",
+                "department" : "ME",
+                "number" : 497
+        },
+        {
+                "name" : "Intro to MEMS: Fabr and Appl",
+                "department" : "ME",
+                "number" : 516
+        },
+        {
+                "name" : "Computer-Aided Design & Mfg",
+                "department" : "ME",
+                "number" : 520
+        },
+        {
+                "name" : "Adv Finite Element Analysis",
+                "department" : "ME",
+                "number" : 522
+        },
+        {
+                "name" : "Computational Fluid Dynamics",
+                "department" : "ME",
+                "number" : 527
+        },
+        {
+                "name" : "Comput Intell in Control Engr",
+                "department" : "ME",
+                "number" : 536
+        },
+        {
+                "name" : "Thesis Research",
+                "department" : "ME",
+                "number" : 590
+        },
+        {
+                "name" : "Basic Tactical Leadership",
+                "department" : "MS",
+                "number" : 103
+        },
+        {
+                "name" : "Foundtns of Tactical Ldrshp II",
+                "department" : "MS",
+                "number" : 203
+        },
+        {
+                "name" : "Leadership Under Fire II",
+                "department" : "MS",
+                "number" : 303
+        },
+        {
+                "name" : "Leadership in Complex World II",
+                "department" : "MS",
+                "number" : 403
+        },
+        {
+                "name" : "Lasers and Fiber Optics",
+                "department" : "OE",
+                "number" : 172
+        },
+        {
+                "name" : "Directed Research",
+                "department" : "OE",
+                "number" : 290
+        },
+        {
+                "name" : "Photonic Devices and Systems",
+                "department" : "OE",
+                "number" : 295
+        },
+        {
+                "name" : "Photonic Devices and Syst Lab",
+                "department" : "OE",
+                "number" : 295
+        },
+        {
+                "name" : "Fiber Optics and Applications",
+                "department" : "OE",
+                "number" : 393
+        },
+        {
+                "name" : "Optical Engineering Design I",
+                "department" : "OE",
+                "number" : 415
+        },
+        {
+                "name" : "Non-Imaging Optics",
+                "department" : "OE",
+                "number" : 434
+        },
+        {
+                "name" : "Laser Systems & Applications",
+                "department" : "OE",
+                "number" : 450
+        },
+        {
+                "name" : "Directed Research",
+                "department" : "OE",
+                "number" : 490
+        },
+        {
+                "name" : "Advanced Image Processing",
+                "department" : "OE",
+                "number" : 537
+        },
+        {
+                "name" : "Special Topics",
+                "department" : "OE",
+                "number" : 570
+        },
+        {
+                "name" : "Electro Optics & Applications",
+                "department" : "OE",
+                "number" : 585
+        },
+        {
+                "name" : "Thesis Research",
+                "department" : "OE",
+                "number" : 599
+        },
+        {
+                "name" : "Physics II",
+                "department" : "PH",
+                "number" : 112
+        },
+        {
+                "name" : "Physics II Lab",
+                "department" : "PH",
+                "number" : 112
+        },
+        {
+                "name" : "Physics III Lab",
+                "department" : "PH",
+                "number" : 113
+        },
+        {
+                "name" : "Planets and Galaxies",
+                "department" : "PH",
+                "number" : 250
+        },
+        {
+                "name" : "Fund of Nucl Phys & Radiation",
+                "department" : "PH",
+                "number" : 265
+        },
+        {
+                "name" : "Theoretical Mechanics I",
+                "department" : "PH",
+                "number" : 314
+        },
+        {
+                "name" : "Celestial Mechanics",
+                "department" : "PH",
+                "number" : 322
+        },
+        {
+                "name" : "Adv Physics Laboratory I",
+                "department" : "PH",
+                "number" : 325
+        },
+        {
+                "name" : "Thermodynamics & Stat Mech",
+                "department" : "PH",
+                "number" : 327
+        },
+        {
+                "name" : "Intro to Atomic Physics",
+                "department" : "PH",
+                "number" : 402
+        },
+        {
+                "name" : "Special Topics in Physics",
+                "department" : "PH",
+                "number" : 470
+        },
+        {
+                "name" : "Directed Research",
+                "department" : "PH",
+                "number" : 490
+        },
+        {
+                "name" : "Senior Thesis",
+                "department" : "PH",
+                "number" : 498
+        },
+        {
+                "name" : "Rhetoric and Composition",
+                "department" : "RH",
+                "number" : 131
+        },
+        {
+                "name" : "Spanish Language & Culture III",
+                "department" : "SP",
+                "number" : 113
+        },
+        {
+                "name" : "Spanish Language & Culture VI",
+                "department" : "SP",
+                "number" : 213
+        },
+        {
+                "name" : "Introduction to Microeconomics",
+                "department" : "SV",
+                "number" : 150
+        },
+        {
+                "name" : "Introduction to Macroeconomics",
+                "department" : "SV",
+                "number" : 152
+        },
+        {
+                "name" : "Introduction to Psychology",
+                "department" : "SV",
+                "number" : 171
+        },
+        {
+                "name" : "Westrn Music:Baroque,Clas,Romn",
+                "department" : "SV",
+                "number" : 244
+        },
+        {
+                "name" : "Bioethics",
+                "department" : "SV",
+                "number" : 304
+        },
+        {
+                "name" : "20th Century American Novel",
+                "department" : "SV",
+                "number" : 337
+        },
+        {
+                "name" : "Literature and the Environment",
+                "department" : "SV",
+                "number" : 339
+        },
+        {
+                "name" : "Corporate Finance",
+                "department" : "SV",
+                "number" : 356
+        },
+        {
+                "name" : "Special Topics",
+                "department" : "SV",
+                "number" : 399
+        },
+        {
+                "name" : "Contemporary Germany",
+                "department" : "SV",
+                "number" : 413
+        },
+        {
+                "name" : "Econometrics",
+                "department" : "SV",
+                "number" : 450
+        },
+        {
+                "department" : "ABRD",
+                "number" : 0
+        },
+        {
+                "department" : "AS",
+                "number" : 403
+        },
+        {
+                "department" : "EMGT",
+                "number" : 552
+        },
+        {
+                "department" : "AS",
+                "number" : 303
+        },
+        {
+                "department" : "ME",
+                "number" : 472
+        },
+        {
+                "department" : "DUAL",
+                "number" : 0
+        },
+        {
+                "department" : "AS",
+                "number" : 203
+        },
+        {
+                "department" : "CHEM",
+                "number" : 497
+        },
+        {
+                "department" : "AS",
+                "number" : 103
+        },
+        {
+                "department" : "PH",
+                "number" : 470
+        },
+        {
+                "name" : "Directed Study in Biomed Engr",
+                "department" : "BE",
+                "number" : 492
+        },
+        {
+                "name" : "Curricular Practical Training",
+                "department" : "BECPT-",
+                "number" : 0
+        },
+        {
+                "name" : "Special Topics in BIO",
+                "department" : "BIO",
+                "number" : 491
+        },
+        {
+                "name" : "Structural Engineerg Practicum",
+                "department" : "CE",
+                "number" : 520
+        },
+        {
+                "name" : "Curricular Practical Training",
+                "department" : "CECPT-",
+                "number" : 0
+        },
+        {
+                "name" : "Conservation Princ & Balances",
+                "department" : "CHE",
+                "number" : 201
+        },
+        {
+                "name" : "Basic Chemical Process Calc",
+                "department" : "CHE",
+                "number" : 202
+        },
+        {
+                "name" : "Special Projects in CHE",
+                "department" : "CHE",
+                "number" : 597
+        },
+        {
+                "name" : "Curricular Practical Training",
+                "department" : "CHECPT-",
+                "number" : 0
+        },
+        {
+                "name" : "Thesis Research",
+                "department" : "CHEM",
+                "number" : 599
+        },
+        {
+                "name" : "Softw Maintenance & Evolution",
+                "department" : "CSSE",
+                "number" : 575
+        },
+        {
+                "name" : "Software Architecture",
+                "department" : "CSSE",
+                "number" : 577
+        },
+        {
+                "name" : "Curricular Practical Training",
+                "department" : "CSSECPT-",
+                "number" : 0
+        },
+        {
+                "name" : "AC Circuits",
+                "department" : "ECE",
+                "number" : 204
+        },
+        {
+                "name" : "Curricular Practical Training",
+                "department" : "ECECPT-",
+                "number" : 0
+        },
+        {
+                "name" : "Graphical Communications",
+                "department" : "EM",
+                "number" : 104
+        },
+        {
+                "name" : "Lean Six Sigma",
+                "department" : "EMGT",
+                "number" : 570
+        },
+        {
+                "name" : "Special Topics in Engr Physics",
+                "department" : "EP",
+                "number" : 470
+        },
+        {
+                "name" : "Conservation & Acct Princ",
+                "department" : "ES",
+                "number" : 201
+        },
+        {
+                "name" : "Curricular Practical Training",
+                "department" : "GRAD",
+                "number" : 590
+        },
+        {
+                "name" : "International Relations",
+                "department" : "GS",
+                "number" : 163
+        },
+        {
+                "name" : "Topics in German Culture I",
+                "department" : "IA",
+                "number" : 311
+        },
+        {
+                "name" : "Senior Project II",
+                "department" : "MA",
+                "number" : 493
+        },
+        {
+                "name" : "Applications of Thermodynamics",
+                "department" : "ME",
+                "number" : 301
+        },
+        {
+                "name" : "Special Topics in Mech Engr",
+                "department" : "ME",
+                "number" : 397
+        },
+        {
+                "department" : "OPCAT",
+                "number" : 0
+        },
+        {
+                "department" : "EMGT",
+                "number" : 590
+        },
+        {
+                "name" : "Foundation of US Air Force I",
+                "department" : "AS",
+                "number" : 101
+        },
+        {
+                "name" : "Evoltn of Air & Space Power I",
+                "department" : "AS",
+                "number" : 201
+        },
+        {
+                "name" : "Nat'l Sec Affairs & Prep I",
+                "department" : "AS",
+                "number" : 401
+        },
+        {
+                "name" : "Biomedical Signal Processing",
+                "department" : "BE",
+                "number" : 340
+        },
+        {
+                "name" : "Biomedical Engr Design I",
+                "department" : "BE",
+                "number" : 410
+        },
+        {
+                "name" : "Special Topics in Biomed Engr",
+                "department" : "BE",
+                "number" : 491
+        },
+        {
+                "name" : "Resrch Methods in Biomechanics",
+                "department" : "BE",
+                "number" : 550
+        },
+        {
+                "name" : "Electrophysiology",
+                "department" : "BE",
+                "number" : 555
+        },
+        {
+                "name" : "Tissue Biomaterial Interaction",
+                "department" : "BE",
+                "number" : 560
+        },
+        {
+                "name" : "Essential Biology",
+                "department" : "BIO",
+                "number" : 101
+        },
+        {
+                "name" : "Cell Structure and Function",
+                "department" : "BIO",
+                "number" : 110
+        },
+        {
+                "name" : "Cellular Physiology",
+                "department" : "BIO",
+                "number" : 205
+        },
+        {
+                "name" : "Mendelian & Molecular Genetics",
+                "department" : "BIO",
+                "number" : 210
+        },
+        {
+                "name" : "Practice of Science",
+                "department" : "BIO",
+                "number" : 399
+        },
+        {
+                "name" : "Applied Microbiology",
+                "department" : "BIO",
+                "number" : 421
+        },
+        {
+                "name" : "Research Seminar in Biomath",
+                "department" : "BMTH",
+                "number" : 295
+        },
+        {
+                "name" : "Mathematical Biology",
+                "department" : "BMTH",
+                "number" : 310
+        },
+        {
+                "name" : "Capstone Experience I",
+                "department" : "BMTH",
+                "number" : 496
+        },
+        {
+                "name" : "Engineering Surveying",
+                "department" : "CE",
+                "number" : 101
+        },
+        {
+                "name" : "Thermodynamics",
+                "department" : "CE",
+                "number" : 205
+        },
+        {
+                "name" : "Engineering Economy",
+                "department" : "CE",
+                "number" : 303
+        },
+        {
+                "name" : "Structural Mechanics I",
+                "department" : "CE",
+                "number" : 321
+        },
+        {
+                "name" : "Soil Mechanics",
+                "department" : "CE",
+                "number" : 336
+        },
+        {
+                "name" : "Hydraulic Engineering",
+                "department" : "CE",
+                "number" : 371
+        },
+        {
+                "name" : "Foundation Engineering",
+                "department" : "CE",
+                "number" : 436
+        },
+        {
+                "name" : "Construc Methods & Equipment",
+                "department" : "CE",
+                "number" : 445
+        },
+        {
+                "name" : "Civil Engr Codes & Regulations",
+                "department" : "CE",
+                "number" : 450
+        },
+        {
+                "name" : "Unit Operations in Envir Engr",
+                "department" : "CE",
+                "number" : 463
+        },
+        {
+                "name" : "Traffic Analysis and Design",
+                "department" : "CE",
+                "number" : 481
+        },
+        {
+                "name" : "Civil Eng Desn & Synthesis I",
+                "department" : "CE",
+                "number" : 486
+        },
+        {
+                "name" : "Matrix Methods,Struct'l Analys",
+                "department" : "CE",
+                "number" : 521
+        },
+        {
+                "name" : "Structural Desn in Concrete II",
+                "department" : "CE",
+                "number" : 532
+        },
+        {
+                "name" : "Aquatic Environmental Chem",
+                "department" : "CE",
+                "number" : 564
+        },
+        {
+                "name" : "Career Preparation I",
+                "department" : "CHE",
+                "number" : 200
+        },
+        {
+                "name" : "Multi-Component Thermo",
+                "department" : "CHE",
+                "number" : 304
+        },
+        {
+                "name" : "Fundmntls of Heat & Mass Trans",
+                "department" : "CHE",
+                "number" : 320
+        },
+        {
+                "name" : "Professional Practice",
+                "department" : "CHE",
+                "number" : 409
+        },
+        {
+                "name" : "Chemical Engr Lab Project II",
+                "department" : "CHE",
+                "number" : 412
+        },
+        {
+                "name" : "Design I: Proc Econ & Equp Dsn",
+                "department" : "CHE",
+                "number" : 416
+        },
+        {
+                "name" : "Adv MEMS: Modeling & Packaging",
+                "department" : "CHE",
+                "number" : 419
+        },
+        {
+                "name" : "Unit Oper in Environmentl Engr",
+                "department" : "CHE",
+                "number" : 461
+        },
+        {
+                "name" : "Adv CHE Thermodynamics",
+                "department" : "CHE",
+                "number" : 513
+        },
+        {
+                "name" : "Adv MEMS: Modeling & Packaging",
+                "department" : "CHE",
+                "number" : 519
+        },
+        {
+                "name" : "General Chemistry Honors",
+                "department" : "CHEM",
+                "number" : 112
+        },
+        {
+                "name" : "Organic Chemistry I",
+                "department" : "CHEM",
+                "number" : 251
+        },
+        {
+                "name" : "Organic Chemistry I Lab",
+                "department" : "CHEM",
+                "number" : 251
+        },
+        {
+                "name" : "Chemical Research",
+                "department" : "CHEM",
+                "number" : 290
+        },
+        {
+                "name" : "Bioanalytical Chemistry",
+                "department" : "CHEM",
+                "number" : 326
+        },
+        {
+                "name" : "Physical Chemistry I",
+                "department" : "CHEM",
+                "number" : 361
+        },
+        {
+                "name" : "Inorganic Chemistry I",
+                "department" : "CHEM",
+                "number" : 441
+        },
+        {
+                "name" : "Chemistry Seminar",
+                "department" : "CHEM",
+                "number" : 495
+        },
+        {
+                "name" : "Research Presentation",
+                "department" : "CHEM",
+                "number" : 497
+        },
+        {
+                "name" : "Synthetic Organic Chemistry",
+                "department" : "CHEM",
+                "number" : 552
+        },
+        {
+                "name" : "Chemistry Seminar",
+                "department" : "CHEM",
+                "number" : 595
+        },
+        {
+                "name" : "College & Life Skills",
+                "department" : "CLSK",
+                "number" : 100
+        },
+        {
+                "name" : "Data Struct & Algorithm Anlys",
+                "department" : "CSSE",
+                "number" : 230
+        },
+        {
+                "name" : "Computer Architecture I",
+                "department" : "CSSE",
+                "number" : 232
+        },
+        {
+                "name" : "Computing in a Global Society",
+                "department" : "CSSE",
+                "number" : 241
+        },
+        {
+                "name" : "Intro to Web Programming",
+                "department" : "CSSE",
+                "number" : 280
+        },
+        {
+                "name" : "Computer Graphics",
+                "department" : "CSSE",
+                "number" : 351
+        },
+        {
+                "name" : "Software Project Management",
+                "department" : "CSSE",
+                "number" : 372
+        },
+        {
+                "name" : "Artificial Intelligence",
+                "department" : "CSSE",
+                "number" : 413
+        },
+        {
+                "name" : "Intro to the Hadoop Ecosystem",
+                "department" : "CSSE",
+                "number" : 434
+        },
+        {
+                "name" : "Software Architecture",
+                "department" : "CSSE",
+                "number" : 477
+        },
+        {
+                "name" : "Directed Independent Studies",
+                "department" : "CSSE",
+                "number" : 492
+        },
+        {
+                "name" : "Senior Thesis II",
+                "department" : "CSSE",
+                "number" : 495
+        },
+        {
+                "name" : "Senior Capstone Project I",
+                "department" : "CSSE",
+                "number" : 497
+        },
+        {
+                "name" : "Senior Capstone Project II",
+                "department" : "CSSE",
+                "number" : 498
+        },
+        {
+                "name" : "Engineering Practice",
+                "department" : "ECE",
+                "number" : 160
+        },
+        {
+                "name" : "Introduction to Digital System",
+                "department" : "ECE",
+                "number" : 233
+        },
+        {
+                "name" : "Electromagnetic Fields",
+                "department" : "ECE",
+                "number" : 340
+        },
+        {
+                "name" : "Analog Electronics",
+                "department" : "ECE",
+                "number" : 351
+        },
+        {
+                "name" : "Discrete-Time Signals & Syst",
+                "department" : "ECE",
+                "number" : 380
+        },
+        {
+                "name" : "Wireless Systems",
+                "department" : "ECE",
+                "number" : 414
+        },
+        {
+                "name" : "Adv MEMS: Modeling & Packaging",
+                "department" : "ECE",
+                "number" : 419
+        },
+        {
+                "name" : "Discrete-Time Control Systems",
+                "department" : "ECE",
+                "number" : 420
+        },
+        {
+                "name" : "Power Electronics",
+                "department" : "ECE",
+                "number" : 452
+        },
+        {
+                "name" : "System Level Analog Electronic",
+                "department" : "ECE",
+                "number" : 454
+        },
+        {
+                "name" : "Engineering Design I",
+                "department" : "ECE",
+                "number" : 460
+        },
+        {
+                "name" : "Power Systems I",
+                "department" : "ECE",
+                "number" : 470
+        },
+        {
+                "name" : "Adv MEMS: Modeling & Packaging",
+                "department" : "ECE",
+                "number" : 519
+        },
+        {
+                "name" : "Microwave/Millimeter-Wave Engr",
+                "department" : "ECE",
+                "number" : 541
+        },
+        {
+                "name" : "Dynamics",
+                "department" : "EM",
+                "number" : 202
+        },
+        {
+                "name" : "Vibration Analysis",
+                "department" : "EM",
+                "number" : 406
+        },
+        {
+                "name" : "Intro to Entrepreneurship",
+                "department" : "EMGT",
+                "number" : 100
+        },
+        {
+                "name" : "Design and Value Creation",
+                "department" : "EMGT",
+                "number" : 335
+        },
+        {
+                "name" : "Graduate Seminar I",
+                "department" : "EMGT",
+                "number" : 511
+        },
+        {
+                "name" : "Project Management",
+                "department" : "EMGT",
+                "number" : 527
+        },
+        {
+                "name" : "Organizational Behavior",
+                "department" : "EMGT",
+                "number" : 529
+        },
+        {
+                "name" : "Intercultural Communications",
+                "department" : "EMGT",
+                "number" : 533
+        },
+        {
+                "name" : "Quality Methods",
+                "department" : "EMGT",
+                "number" : 545
+        },
+        {
+                "name" : "Risk Analysis and Management",
+                "department" : "EMGT",
+                "number" : 562
+        },
+        {
+                "name" : "Reliability Engineering",
+                "department" : "EMGT",
+                "number" : 572
+        },
+        {
+                "name" : "Engineering Design Studio",
+                "department" : "ENGD",
+                "number" : 100
+        },
+        {
+                "name" : "Semiconduct Fabrctn & Charactn",
+                "department" : "EP",
+                "number" : 407
+        },
+        {
+                "name" : "Adv MEMS: Modeling & Packaging",
+                "department" : "EP",
+                "number" : 411
+        },
+        {
+                "name" : "Engr Physics Projects II",
+                "department" : "EP",
+                "number" : 416
+        },
+        {
+                "name" : "Semiconduct Fabrctn & Charactn",
+                "department" : "EP",
+                "number" : 507
+        },
+        {
+                "name" : "Adv MEMS: Modeling & Packaging",
+                "department" : "EP",
+                "number" : 511
+        },
+        {
+                "name" : "Reading and Writing 1",
+                "department" : "ESL",
+                "number" : 101
+        },
+        {
+                "name" : "Listening and Speaking",
+                "department" : "ESL",
+                "number" : 111
+        },
+        {
+                "name" : "German Language & Culture I",
+                "department" : "GE",
+                "number" : 111
+        },
+        {
+                "name" : "German Language & Culture IV",
+                "department" : "GE",
+                "number" : 211
+        },
+        {
+                "name" : "Technical Translation",
+                "department" : "GE",
+                "number" : 411
+        },
+        {
+                "name" : "Grad Enr (w/ no other courses)",
+                "department" : "GRAD",
+                "number" : 505
+        },
+        {
+                "name" : "Grad Enrollment:MS Proj,Thesis",
+                "department" : "GRAD",
+                "number" : 506
+        },
+        {
+                "name" : "Grad Enrollment: Mast/Non-Thes",
+                "department" : "GRAD",
+                "number" : 507
+        },
+        {
+                "name" : "Grad Enrollment: Co-Op, OPT",
+                "department" : "GRAD",
+                "number" : 508
+        },
+        {
+                "name" : "Introduction to East Asia",
+                "department" : "GS",
+                "number" : 128
+        },
+        {
+                "name" : "Introduction to Sustainability",
+                "department" : "GS",
+                "number" : 130
+        },
+        {
+                "name" : "Religion in China",
+                "department" : "GS",
+                "number" : 207
+        },
+        {
+                "name" : "World Geography",
+                "department" : "GS",
+                "number" : 291
+        },
+        {
+                "name" : "Seminar for Economics Majors",
+                "department" : "GS",
+                "number" : 456
+        },
+        {
+                "name" : "Contemp British Fiction & Film",
+                "department" : "GS",
+                "number" : 469
+        },
+        {
+                "name" : "African American Literature",
+                "department" : "IA",
+                "number" : 238
+        },
+        {
+                "name" : "Modern Southern Fiction",
+                "department" : "IA",
+                "number" : 342
+        },
+        {
+                "name" : "Writing in a Digital Age",
+                "department" : "IA",
+                "number" : 344
+        },
+        {
+                "name" : "Music Performance",
+                "department" : "IA",
+                "number" : 348
+        },
+        {
+                "name" : "Intermediate Microeconomics",
+                "department" : "IA",
+                "number" : 350
+        },
+        {
+                "name" : "Japanese Language & Culture I",
+                "department" : "JP",
+                "number" : 111
+        },
+        {
+                "name" : "Japanese Language & Culture IV",
+                "department" : "JP",
+                "number" : 211
+        },
+        {
+                "name" : "Intro Engineerg Mathematics I",
+                "department" : "MA",
+                "number" : 101
+        },
+        {
+                "name" : "Calculus I",
+                "department" : "MA",
+                "number" : 111
+        },
+        {
+                "name" : "Intro to Computational Science",
+                "department" : "MA",
+                "number" : 332
+        },
+        {
+                "name" : "Intro to Stats w/Probability",
+                "department" : "MA",
+                "number" : 382
+        },
+        {
+                "name" : "Quality Methods",
+                "department" : "MA",
+                "number" : 385
+        },
+        {
+                "name" : "Statistical Programming",
+                "department" : "MA",
+                "number" : 386
+        },
+        {
+                "name" : "Tensor Calc & Riemannian Geom",
+                "department" : "MA",
+                "number" : 421
+        },
+        {
+                "name" : "Topics in Applied Mathematics",
+                "department" : "MA",
+                "number" : 430
+        },
+        {
+                "name" : "Math Methods of Image Proc",
+                "department" : "MA",
+                "number" : 439
+        },
+        {
+                "name" : "Intro to Mathematical Modeling",
+                "department" : "MA",
+                "number" : 491
+        },
+        {
+                "name" : "Design for Manufacturing",
+                "department" : "ME",
+                "number" : 317
+        },
+        {
+                "name" : "Foundations of Fluid Mechanics",
+                "department" : "ME",
+                "number" : 401
+        },
+        {
+                "name" : "Control Systems",
+                "department" : "ME",
+                "number" : 406
+        },
+        {
+                "name" : "Adv MEMS: Modeling & Packaging",
+                "department" : "ME",
+                "number" : 419
+        },
+        {
+                "name" : "Mechanical Engr Laboratory",
+                "department" : "ME",
+                "number" : 421
+        },
+        {
+                "name" : "Turbomachinery",
+                "department" : "ME",
+                "number" : 426
+        },
+        {
+                "name" : "Visualizing Data",
+                "department" : "ME",
+                "number" : 447
+        },
+        {
+                "name" : "Aerospace Design",
+                "department" : "ME",
+                "number" : 461
+        },
+        {
+                "name" : "Directed Research",
+                "department" : "ME",
+                "number" : 490
+        },
+        {
+                "name" : "Advanced Control Systems",
+                "department" : "ME",
+                "number" : 506
+        },
+        {
+                "name" : "Gas Dynamics",
+                "department" : "ME",
+                "number" : 510
+        },
+        {
+                "name" : "Adv MEMS: Modeling & Packaging",
+                "department" : "ME",
+                "number" : 519
+        },
+        {
+                "name" : "Turbomachinery",
+                "department" : "ME",
+                "number" : 526
+        },
+        {
+                "name" : "Visualizing Data",
+                "department" : "ME",
+                "number" : 547
+        },
+        {
+                "name" : "Intro Army & Critical Thinking",
+                "department" : "MS",
+                "number" : 101
+        },
+        {
+                "name" : "Leadership & Decision Making",
+                "department" : "MS",
+                "number" : 201
+        },
+        {
+                "name" : "Train Mgmt/Warfight Functions",
+                "department" : "MS",
+                "number" : 301
+        },
+        {
+                "name" : "Mission Command & Ethics",
+                "department" : "MS",
+                "number" : 401
+        },
+        {
+                "name" : "Photography & Holography",
+                "department" : "OE",
+                "number" : 171
+        },
+        {
+                "name" : "Linear Optical Systems",
+                "department" : "OE",
+                "number" : 392
+        },
+        {
+                "name" : "Optomechanics & Opt Eng Lab",
+                "department" : "OE",
+                "number" : 395
+        },
+        {
+                "name" : "Optical Engineering Design II",
+                "department" : "OE",
+                "number" : 416
+        },
+        {
+                "name" : "Special Topics in Optical Engr",
+                "department" : "OE",
+                "number" : 470
+        },
+        {
+                "name" : "Optical System Design",
+                "department" : "OE",
+                "number" : 480
+        },
+        {
+                "name" : "Principles of Optics",
+                "department" : "OE",
+                "number" : 520
+        },
+        {
+                "name" : "Lens Design & Abberations",
+                "department" : "OE",
+                "number" : 580
+        },
+        {
+                "name" : "Integrated Optics",
+                "department" : "OE",
+                "number" : 594
+        },
+        {
+                "name" : "Physics I",
+                "department" : "PH",
+                "number" : 111
+        },
+        {
+                "name" : "Physics I Lab",
+                "department" : "PH",
+                "number" : 111
+        },
+        {
+                "name" : "Observational Astronomy",
+                "department" : "PH",
+                "number" : 231
+        },
+        {
+                "name" : "Many-Particle Physics",
+                "department" : "PH",
+                "number" : 235
+        },
+        {
+                "name" : "Physical Optics",
+                "department" : "PH",
+                "number" : 292
+        },
+        {
+                "name" : "Physical Optics Lab",
+                "department" : "PH",
+                "number" : 292
+        },
+        {
+                "name" : "Biophysics",
+                "department" : "PH",
+                "number" : 302
+        },
+        {
+                "name" : "Intro to Special Relativity",
+                "department" : "PH",
+                "number" : 310
+        },
+        {
+                "name" : "Electric & Magnetic Fields",
+                "department" : "PH",
+                "number" : 316
+        },
+        {
+                "name" : "Semicond Materials & Applictns",
+                "department" : "PH",
+                "number" : 405
+        },
+        {
+                "name" : "Senior Thesis",
+                "department" : "PH",
+                "number" : 496
+        },
+        {
+                "name" : "Senior Thesis",
+                "department" : "PH",
+                "number" : 497
+        },
+        {
+                "name" : "Semicond Materials & Devices I",
+                "department" : "PH",
+                "number" : 505
+        },
+        {
+                "name" : "Spanish Language & Culture I",
+                "department" : "SP",
+                "number" : 111
+        },
+        {
+                "name" : "Spanish Language & Culture IV",
+                "department" : "SP",
+                "number" : 211
+        },
+        {
+                "name" : "The American Dream",
+                "department" : "SV",
+                "number" : 234
+        },
+        {
+                "name" : "Modern European Drama",
+                "department" : "SV",
+                "number" : 342
+        },
+        {
+                "name" : "Managerial Economics",
+                "department" : "SV",
+                "number" : 351
+        },
+        {
+                "name" : "Labor Economics",
+                "department" : "SV",
+                "number" : 357
+        },
+        {
+                "name" : "Abnormal Psychology",
+                "department" : "SV",
+                "number" : 373
+        },
+        {
+                "name" : "Seminar for Economics Majors",
+                "department" : "SV",
+                "number" : 456
+        },
+        {
+                "department" : "CLSK",
+                "number" : 100
+        },
+        {
+                "department" : "ECE",
+                "number" : 497
+        },
+        {
+                "department" : "AS",
+                "number" : 301
+        },
+        {
+                "department" : "BIO",
+                "number" : 498
+        },
+        {
+                "department" : "EMGT",
+                "number" : 598
+        },
+        {
+                "department" : "CHE",
+                "number" : 598
+        },
+        {
+                "name" : "Foundation of US Air Force III",
+                "department" : "AS",
+                "number" : 103
+        },
+        {
+                "name" : "Nat'l Sec Affairs & Prep III",
+                "department" : "AS",
+                "number" : 403
+        },
+        {
+                "name" : "Prob Solving in Bio Sci & Engr",
+                "department" : "BE",
+                "number" : 100
+        },
+        {
+                "name" : "Soft Tissue Mechanics",
+                "department" : "BE",
+                "number" : 534
+        },
+        {
+                "name" : "Biomedical Imaging Systems",
+                "department" : "BE",
+                "number" : 541
+        },
+        {
+                "name" : "Neuroprosthetics",
+                "department" : "BE",
+                "number" : 543
+        },
+        {
+                "name" : "Cell Struct, Function Lab",
+                "department" : "BIO",
+                "number" : 110
+        },
+        {
+                "name" : "Topics in Applied Biology",
+                "department" : "BIO",
+                "number" : 191
+        },
+        {
+                "name" : "Plant Structure & Function",
+                "department" : "BIO",
+                "number" : 310
+        },
+        {
+                "name" : "Directed Study in Applied Biol",
+                "department" : "BIO",
+                "number" : 492
+        },
+        {
+                "name" : "Senior Thesis Research IV",
+                "department" : "BIO",
+                "number" : 499
+        },
+        {
+                "name" : "Bioinformatics",
+                "department" : "BMTH",
+                "number" : 312
+        },
+        {
+                "name" : "Geometric Desn Highways,Street",
+                "department" : "CE",
+                "number" : 480
+        },
+        {
+                "name" : "Phys Chem for Engr Lab",
+                "department" : "CHEM",
+                "number" : 360
+        },
+        {
+                "name" : "Operating Systems",
+                "department" : "CSSE",
+                "number" : 332
+        },
+        {
+                "name" : "Formal Methods in Spec & Desn",
+                "department" : "CSSE",
+                "number" : 373
+        },
+        {
+                "name" : "Computer Networks",
+                "department" : "CSSE",
+                "number" : 432
+        },
+        {
+                "name" : "Web-Based Information Systems",
+                "department" : "CSSE",
+                "number" : 481
+        },
+        {
+                "name" : "Capstone Software Project I",
+                "department" : "CSSE",
+                "number" : 597
+        },
+        {
+                "name" : "Capstone Software Project II",
+                "department" : "CSSE",
+                "number" : 598
+        },
+        {
+                "name" : "Engineering Design II",
+                "department" : "ECE",
+                "number" : 461
+        },
+        {
+                "name" : "Digital Test & Prod Engineer'g",
+                "department" : "ECE",
+                "number" : 531
+        },
+        {
+                "name" : "Analog Integrated Circuit Desn",
+                "department" : "ECE",
+                "number" : 552
+        },
+        {
+                "name" : "Medical Imaging Systems",
+                "department" : "ECE",
+                "number" : 584
+        },
+        {
+                "name" : "Production/Operations Mgmt",
+                "department" : "EMGT",
+                "number" : 524
+        },
+        {
+                "name" : "Business Law for Technical Mgr",
+                "department" : "EMGT",
+                "number" : 552
+        },
+        {
+                "name" : "Supply Chain Management",
+                "department" : "EMGT",
+                "number" : 586
+        },
+        {
+                "name" : "Engineering at Nanscale",
+                "department" : "EP",
+                "number" : 180
+        },
+        {
+                "name" : "German Lang, Cult & Trans III",
+                "department" : "GE",
+                "number" : 313
+        },
+        {
+                "name" : "Modern Latin America",
+                "department" : "GS",
+                "number" : 222
+        },
+        {
+                "name" : "Science Fiction",
+                "department" : "GS",
+                "number" : 237
+        },
+        {
+                "name" : "Early European Music",
+                "department" : "GS",
+                "number" : 243
+        },
+        {
+                "name" : "Politics of the Global Economy",
+                "department" : "GS",
+                "number" : 361
+        },
+        {
+                "name" : "Tokyo",
+                "department" : "GS",
+                "number" : 368
+        },
+        {
+                "name" : "Cities & Techn in Industrl Age",
+                "department" : "GS",
+                "number" : 425
+        },
+        {
+                "name" : "Geography of Europe",
+                "department" : "GS",
+                "number" : 491
+        },
+        {
+                "name" : "Directed Study for HSS SR Proj",
+                "department" : "GS",
+                "number" : 497
+        },
+        {
+                "name" : "Islam & Muslim Groups in China",
+                "department" : "IA",
+                "number" : 325
+        },
+        {
+                "name" : "American Modernism",
+                "department" : "IA",
+                "number" : 331
+        },
+        {
+                "name" : "Bible as Literature",
+                "department" : "IA",
+                "number" : 335
+        },
+        {
+                "name" : "Philosophy of Science",
+                "department" : "IA",
+                "number" : 401
+        },
+        {
+                "name" : "History of the American Novel",
+                "department" : "IA",
+                "number" : 431
+        },
+        {
+                "name" : "Statistcl Methods in Six Sigma",
+                "department" : "MA",
+                "number" : 387
+        },
+        {
+                "name" : "Calculus of Variations",
+                "department" : "MA",
+                "number" : 431
+        },
+        {
+                "name" : "Combinatorial Optimization",
+                "department" : "MA",
+                "number" : 446
+        },
+        {
+                "name" : "Algebraic Codes",
+                "department" : "MA",
+                "number" : 476
+        },
+        {
+                "name" : "Topics in Probability & Stats",
+                "department" : "MA",
+                "number" : 480
+        },
+        {
+                "name" : "Seminar in Sustainability",
+                "department" : "MDS",
+                "number" : 402
+        },
+        {
+                "name" : "Selected Topics in Design",
+                "department" : "ME",
+                "number" : 193
+        },
+        {
+                "name" : "Selected Topics in Design",
+                "department" : "ME",
+                "number" : 293
+        },
+        {
+                "name" : "Creative Design",
+                "department" : "ME",
+                "number" : 380
+        },
+        {
+                "name" : "Power Plants",
+                "department" : "ME",
+                "number" : 407
+        },
+        {
+                "name" : "Air Conditioning",
+                "department" : "ME",
+                "number" : 409
+        },
+        {
+                "name" : "Combustion",
+                "department" : "ME",
+                "number" : 450
+        },
+        {
+                "name" : "Directed Research",
+                "department" : "ME",
+                "number" : 491
+        },
+        {
+                "name" : "Combustion",
+                "department" : "ME",
+                "number" : 550
+        },
+        {
+                "name" : "Solid State Physics",
+                "department" : "PH",
+                "number" : 407
+        },
+        {
+                "name" : "X-rays & Crystalline Materials",
+                "department" : "PH",
+                "number" : 440
+        },
+        {
+                "name" : "Intro to Neural Networks",
+                "department" : "PH",
+                "number" : 538
+        },
+        {
+                "name" : "Intro to Disability Studies",
+                "department" : "SV",
+                "number" : 130
+        },
+        {
+                "name" : "Introduction to Short Fiction",
+                "department" : "SV",
+                "number" : 231
+        },
+        {
+                "name" : "Money and Banking",
+                "department" : "SV",
+                "number" : 352
+        },
+        {
+                "name" : "Industrial Organization",
+                "department" : "SV",
+                "number" : 353
+        },
+        {
+                "name" : "Health Economics",
+                "department" : "SV",
+                "number" : 355
+        },
+        {
+                "name" : "Social Psychology",
+                "department" : "SV",
+                "number" : 371
+        },
+        {
+                "name" : "Directed Study for HSS SR Proj",
+                "department" : "SV",
+                "number" : 497
+        },
+        {
+                "department" : "ME",
+                "number" : 470
+        },
+        {
+                "department" : "MS",
+                "number" : 203
+        },
+        {
+                "name" : "Co-Op Assignment",
+                "department" : "CO-OP",
+                "number" : 0
+        },
+        {
+                "name" : "Home for Envirmntly Resp Engr",
+                "department" : "HERE",
+                "number" : 0
+        },
+        {
+                "name" : "Foundation of US Air Force II",
+                "department" : "AS",
+                "number" : 102
+        },
+        {
+                "name" : "Evoltn of Air & Space Power II",
+                "department" : "AS",
+                "number" : 202
+        },
+        {
+                "name" : "Air Force Leadrshp Studies II",
+                "department" : "AS",
+                "number" : 302
+        },
+        {
+                "name" : "Nat'l Sec Affairs & Prep II",
+                "department" : "AS",
+                "number" : 402
+        },
+        {
+                "name" : "Anlys of Physiological Sys I",
+                "department" : "BE",
+                "number" : 310
+        },
+        {
+                "name" : "Design for Biomedical Manuf'g",
+                "department" : "BE",
+                "number" : 317
+        },
+        {
+                "name" : "Biomechanics",
+                "department" : "BE",
+                "number" : 331
+        },
+        {
+                "name" : "Biomedical Engineering Lab",
+                "department" : "BE",
+                "number" : 351
+        },
+        {
+                "name" : "Biomaterials",
+                "department" : "BE",
+                "number" : 361
+        },
+        {
+                "name" : "Biomedical Engr Design II",
+                "department" : "BE",
+                "number" : 420
+        },
+        {
+                "name" : "Analysis of Physiolgcl Syst I",
+                "department" : "BE",
+                "number" : 511
+        },
+        {
+                "name" : "Biomechanics II",
+                "department" : "BE",
+                "number" : 531
+        },
+        {
+                "name" : "Microbiology",
+                "department" : "BIO",
+                "number" : 220
+        },
+        {
+                "name" : "Intro to Environmental Science",
+                "department" : "BIO",
+                "number" : 264
+        },
+        {
+                "name" : "Infection & Immunity",
+                "department" : "BIO",
+                "number" : 410
+        },
+        {
+                "name" : "Genetic Engineering",
+                "department" : "BIO",
+                "number" : 411
+        },
+        {
+                "name" : "Thesis Research I",
+                "department" : "BIO",
+                "number" : 496
+        },
+        {
+                "name" : "Geographical Informatn Systems",
+                "department" : "CE",
+                "number" : 111
+        },
+        {
+                "name" : "Sustainable Civil Engineering",
+                "department" : "CE",
+                "number" : 250
+        },
+        {
+                "name" : "Structural Mechanics II",
+                "department" : "CE",
+                "number" : 421
+        },
+        {
+                "name" : "Structural Design-Concrete I",
+                "department" : "CE",
+                "number" : 432
+        },
+        {
+                "name" : "Construction Engineering",
+                "department" : "CE",
+                "number" : 441
+        },
+        {
+                "name" : "Cost Engineering",
+                "department" : "CE",
+                "number" : 442
+        },
+        {
+                "name" : "Water Resources Engineering",
+                "department" : "CE",
+                "number" : 471
+        },
+        {
+                "name" : "Tech System Design & Synthesis",
+                "department" : "CE",
+                "number" : 487
+        },
+        {
+                "name" : "Civil Eng Desn & Synthesis II",
+                "department" : "CE",
+                "number" : 488
+        },
+        {
+                "name" : "Structural Dynamics",
+                "department" : "CE",
+                "number" : 522
+        },
+        {
+                "name" : "Advanced Solid Mechanics",
+                "department" : "CE",
+                "number" : 523
+        },
+        {
+                "name" : "Retaining Structure Design",
+                "department" : "CE",
+                "number" : 537
+        },
+        {
+                "name" : "Modelg Open Channel Hydraulics",
+                "department" : "CE",
+                "number" : 570
+        },
+        {
+                "name" : "Groundwater Analysis",
+                "department" : "CE",
+                "number" : 573
+        },
+        {
+                "name" : "Chemical Engr Lab Project III",
+                "department" : "CHE",
+                "number" : 413
+        },
+        {
+                "name" : "Design II: Proc Synth & Analys",
+                "department" : "CHE",
+                "number" : 417
+        },
+        {
+                "name" : "Process Control",
+                "department" : "CHE",
+                "number" : 440
+        },
+        {
+                "name" : "Energy and the Environment",
+                "department" : "CHE",
+                "number" : 465
+        },
+        {
+                "name" : "Advanced Reactor Design",
+                "department" : "CHE",
+                "number" : 504
+        },
+        {
+                "name" : "Petrochemical Processes",
+                "department" : "CHE",
+                "number" : 512
+        },
+        {
+                "name" : "Nanomaterials Sci  Engineering",
+                "department" : "CHE",
+                "number" : 515
+        },
+        {
+                "name" : "Intro to Biochemical Engr",
+                "department" : "CHE",
+                "number" : 545
+        },
+        {
+                "name" : "Career Preparation",
+                "department" : "CHEM",
+                "number" : 200
+        },
+        {
+                "name" : "Organic Chemistry II Lab",
+                "department" : "CHEM",
+                "number" : 252
+        },
+        {
+                "name" : "Environmental Science",
+                "department" : "CHEM",
+                "number" : 264
+        },
+        {
+                "name" : "Intro to Chem Research",
+                "department" : "CHEM",
+                "number" : 291
+        },
+        {
+                "name" : "Advanced Analytical Chemistry",
+                "department" : "CHEM",
+                "number" : 327
+        },
+        {
+                "name" : "Analytical Chemistry III Lab",
+                "department" : "CHEM",
+                "number" : 327
+        },
+        {
+                "name" : "Biochemistry II",
+                "department" : "CHEM",
+                "number" : 331
+        },
+        {
+                "name" : "Physical Chemistry II",
+                "department" : "CHEM",
+                "number" : 362
+        },
+        {
+                "name" : "Inorganic Chemistry II",
+                "department" : "CHEM",
+                "number" : 442
+        },
+        {
+                "name" : "Chemistry Seminar",
+                "department" : "CHEM",
+                "number" : 496
+        },
+        {
+                "name" : "Chemistry Seminar",
+                "department" : "CHEM",
+                "number" : 596
+        },
+        {
+                "name" : "College English",
+                "department" : "CLSK",
+                "number" : 121
+        },
+        {
+                "name" : "Programming Language Paradigms",
+                "department" : "CSSE",
+                "number" : 403
+        },
+        {
+                "name" : "Computer Security",
+                "department" : "CSSE",
+                "number" : 442
+        },
+        {
+                "name" : "Real-time Systems",
+                "department" : "CSSE",
+                "number" : 444
+        },
+        {
+                "name" : "Image Recognition",
+                "department" : "CSSE",
+                "number" : 463
+        },
+        {
+                "name" : "Software Construction",
+                "department" : "CSSE",
+                "number" : 578
+        },
+        {
+                "name" : "Software Project Management",
+                "department" : "CSSE",
+                "number" : 579
+        },
+        {
+                "name" : "Communication Networks",
+                "department" : "ECE",
+                "number" : 312
+        },
+        {
+                "name" : "Mobile Robotics",
+                "department" : "ECE",
+                "number" : 425
+        },
+        {
+                "name" : "Industrial Power Systems",
+                "department" : "ECE",
+                "number" : 471
+        },
+        {
+                "name" : "Control of Power Systems",
+                "department" : "ECE",
+                "number" : 473
+        },
+        {
+                "name" : "Intro to Image Processing",
+                "department" : "ECE",
+                "number" : 480
+        },
+        {
+                "name" : "DSP System Design",
+                "department" : "ECE",
+                "number" : 483
+        },
+        {
+                "name" : "Adv Signal and Power Integrity",
+                "department" : "ECE",
+                "number" : 534
+        },
+        {
+                "name" : "Advanced Eletromagnetics",
+                "department" : "ECE",
+                "number" : 542
+        },
+        {
+                "name" : "Graphical Communication for CE",
+                "department" : "EM",
+                "number" : 102
+        },
+        {
+                "name" : "Mechanics of Materials",
+                "department" : "EM",
+                "number" : 203
+        },
+        {
+                "name" : "Graduate Seminar II",
+                "department" : "EMGT",
+                "number" : 512
+        },
+        {
+                "name" : "Accounting for Tech Managers",
+                "department" : "EMGT",
+                "number" : 520
+        },
+        {
+                "name" : "Ldrship, Change & Org Culture",
+                "department" : "EMGT",
+                "number" : 522
+        },
+        {
+                "name" : "Economic Anlsys of Eng Project",
+                "department" : "EMGT",
+                "number" : 567
+        },
+        {
+                "name" : "Quality and Engineering",
+                "department" : "EMGT",
+                "number" : 588
+        },
+        {
+                "name" : "Manufacturing Systems",
+                "department" : "EMGT",
+                "number" : 589
+        },
+        {
+                "name" : "Escalate Program Participant",
+                "department" : "EMGTESC-",
+                "number" : 0
+        },
+        {
+                "name" : "Intro to Nano-Engineering",
+                "department" : "EP",
+                "number" : 280
+        },
+        {
+                "name" : "Semicond Devices & Fabrication",
+                "department" : "EP",
+                "number" : 406
+        },
+        {
+                "name" : "Engineering Physics Proj III",
+                "department" : "EP",
+                "number" : 417
+        },
+        {
+                "name" : "Semicond Devices & Fabrication",
+                "department" : "EP",
+                "number" : 506
+        },
+        {
+                "name" : "German Language & Culture II",
+                "department" : "GE",
+                "number" : 112
+        },
+        {
+                "name" : "German Language & Culture V",
+                "department" : "GE",
+                "number" : 212
+        },
+        {
+                "name" : "German Lang, Cult, & Trans II",
+                "department" : "GE",
+                "number" : 312
+        },
+        {
+                "name" : "Topics in German Culture II",
+                "department" : "GE",
+                "number" : 412
+        },
+        {
+                "name" : "Geology for Eng, Env Scientist",
+                "department" : "GEOL",
+                "number" : 270
+        },
+        {
+                "name" : "Introduction to Sociology",
+                "department" : "GS",
+                "number" : 188
+        },
+        {
+                "name" : "Contemporary Global Film",
+                "department" : "GS",
+                "number" : 339
+        },
+        {
+                "name" : "International Finance",
+                "department" : "GS",
+                "number" : 351
+        },
+        {
+                "name" : "Topics in German Culture",
+                "department" : "GS",
+                "number" : 412
+        },
+        {
+                "name" : "African Amer Music in Amer Lit",
+                "department" : "IA",
+                "number" : 232
+        },
+        {
+                "name" : "Major American Writers",
+                "department" : "IA",
+                "number" : 234
+        },
+        {
+                "name" : "Philosophy of Mind",
+                "department" : "IA",
+                "number" : 301
+        },
+        {
+                "name" : "Don Quixote",
+                "department" : "IA",
+                "number" : 332
+        },
+        {
+                "name" : "Vis Rhetoric & Graphic Novels",
+                "department" : "IA",
+                "number" : 343
+        },
+        {
+                "name" : "Music Theory II:Basic Form,Cmp",
+                "department" : "IA",
+                "number" : 346
+        },
+        {
+                "name" : "Intermediate Macroeconomics",
+                "department" : "IA",
+                "number" : 351
+        },
+        {
+                "name" : "Reinterprtn of Literary Themes",
+                "department" : "IA",
+                "number" : 436
+        },
+        {
+                "name" : "The Entrepreneur",
+                "department" : "IA",
+                "number" : 453
+        },
+        {
+                "name" : "Japanese Language & Culture II",
+                "department" : "JP",
+                "number" : 112
+        },
+        {
+                "name" : "Japanese Language & Culture V",
+                "department" : "JP",
+                "number" : 212
+        },
+        {
+                "name" : "Career Preparation",
+                "department" : "MA",
+                "number" : 200
+        },
+        {
+                "name" : "Appl Linear Algebra for Engr",
+                "department" : "MA",
+                "number" : 373
+        },
+        {
+                "name" : "Numerical Analysis",
+                "department" : "MA",
+                "number" : 433
+        },
+        {
+                "name" : "Finite Difference Methods",
+                "department" : "MA",
+                "number" : 435
+        },
+        {
+                "name" : "Deterministic Mod in Oper Res",
+                "department" : "MA",
+                "number" : 444
+        },
+        {
+                "name" : "Topics in Topology",
+                "department" : "MA",
+                "number" : 461
+        },
+        {
+                "name" : "Appl Regres Anly & Time Series",
+                "department" : "MA",
+                "number" : 485
+        },
+        {
+                "name" : "Senior Thesis II",
+                "department" : "MA",
+                "number" : 497
+        },
+        {
+                "name" : "Graduate Topics in Mathematics",
+                "department" : "MA",
+                "number" : 590
+        },
+        {
+                "name" : "Ind Proj/Rsrch Opportunits Sem",
+                "department" : "MDS",
+                "number" : 401
+        },
+        {
+                "name" : "Materials Engineering",
+                "department" : "ME",
+                "number" : 328
+        },
+        {
+                "name" : "Selected Topics in Design",
+                "department" : "ME",
+                "number" : 393
+        },
+        {
+                "name" : "Theoretical Aerodynamics",
+                "department" : "ME",
+                "number" : 405
+        },
+        {
+                "name" : "Renewable Energy",
+                "department" : "ME",
+                "number" : 408
+        },
+        {
+                "name" : "Intro to Finite Element Fund",
+                "department" : "ME",
+                "number" : 422
+        },
+        {
+                "name" : "Adaptive Lead & Pro Competence",
+                "department" : "MS",
+                "number" : 102
+        },
+        {
+                "name" : "Army Doctrine & Team Develop't",
+                "department" : "MS",
+                "number" : 202
+        },
+        {
+                "name" : "App Leadership/Unit Operation",
+                "department" : "MS",
+                "number" : 302
+        },
+        {
+                "name" : "Mission Command & the Army",
+                "department" : "MS",
+                "number" : 402
+        },
+        {
+                "name" : "Military Sci Independent Study",
+                "department" : "MS",
+                "number" : 497
+        },
+        {
+                "name" : "Geometrical Optics",
+                "department" : "OE",
+                "number" : 280
+        },
+        {
+                "name" : "Optical Materials",
+                "department" : "OE",
+                "number" : 360
+        },
+        {
+                "name" : "Optical Engineering Design III",
+                "department" : "OE",
+                "number" : 417
+        },
+        {
+                "name" : "Intro to Image Processing",
+                "department" : "OE",
+                "number" : 437
+        },
+        {
+                "name" : "Electro Optics & Applications",
+                "department" : "OE",
+                "number" : 485
+        },
+        {
+                "name" : "Physics of Stars",
+                "department" : "PH",
+                "number" : 241
+        },
+        {
+                "name" : "Foundations of Modern Physics",
+                "department" : "PH",
+                "number" : 255
+        },
+        {
+                "name" : "Electromagnetism",
+                "department" : "PH",
+                "number" : 317
+        },
+        {
+                "name" : "Intro to Quantum Mechanics",
+                "department" : "PH",
+                "number" : 401
+        },
+        {
+                "name" : "Acoustics",
+                "department" : "PH",
+                "number" : 404
+        },
+        {
+                "name" : "General Relativity",
+                "department" : "PH",
+                "number" : 410
+        },
+        {
+                "name" : "Advanced Physics Lab II",
+                "department" : "PH",
+                "number" : 425
+        },
+        {
+                "name" : "Directed Study",
+                "department" : "PH",
+                "number" : 460
+        },
+        {
+                "name" : "Spanish Language & Culture II",
+                "department" : "SP",
+                "number" : 112
+        },
+        {
+                "name" : "Spanish Language & Culture V",
+                "department" : "SP",
+                "number" : 212
+        },
+        {
+                "name" : "Disasters and Modern Society",
+                "department" : "SV",
+                "number" : 322
+        },
+        {
+                "name" : "Presidential Election Rhetoric",
+                "department" : "SV",
+                "number" : 345
+        },
+        {
+                "name" : "Diricted Study",
+                "department" : "SV",
+                "number" : 499
+        },
+        {
+                "department" : "ESC",
+                "number" : 0
+        },
+        {
+                "department" : "CHEM",
+                "number" : 490
+        },
+        {
+                "name" : "Evoltn of Air & Space Powr III",
+                "department" : "AS",
+                "number" : 203
+        },
+        {
+                "name" : "Air Force Leadrshp Studies III",
+                "department" : "AS",
+                "number" : 303
+        },
+        {
+                "name" : "Analysis of Physiolgcl Syst II",
+                "department" : "BE",
+                "number" : 512
+        },
+        {
+                "name" : "Multiscale Biomechanics",
+                "department" : "BE",
+                "number" : 539
+        },
+        {
+                "name" : "Thesis Research",
+                "department" : "BE",
+                "number" : 590
+        },
+        {
+                "name" : "Nutrition",
+                "department" : "BIO",
+                "number" : 102
+        },
+        {
+                "name" : "Genomics & Proteomics",
+                "department" : "BIO",
+                "number" : 431
+        },
+        {
+                "name" : "Compiler Construction",
+                "department" : "CSSE",
+                "number" : 404
+        },
+        {
+                "name" : "Advanced Computer Graphics",
+                "department" : "CSSE",
+                "number" : 451
+        },
+        {
+                "name" : "Topics in Artificial Intellig",
+                "department" : "CSSE",
+                "number" : 453
+        },
+        {
+                "name" : "Computer Networks",
+                "department" : "CSSE",
+                "number" : 532
+        },
+        {
+                "name" : "Digital Systems",
+                "department" : "ECE",
+                "number" : 333
+        },
+        {
+                "name" : "Advanced Microcomputers",
+                "department" : "ECE",
+                "number" : 530
+        },
+        {
+                "name" : "VLSI Design & Testing I",
+                "department" : "ECE",
+                "number" : 551
+        },
+        {
+                "name" : "Theory of Elasticity",
+                "department" : "EM",
+                "number" : 505
+        },
+        {
+                "name" : "Innovation Mgmt & Forecasting",
+                "department" : "EMGT",
+                "number" : 526
+        },
+        {
+                "name" : "Microsensors",
+                "department" : "EP",
+                "number" : 408
+        },
+        {
+                "name" : "Microsensors",
+                "department" : "EP",
+                "number" : 508
+        },
+        {
+                "name" : "Contemporary Germany",
+                "department" : "GE",
+                "number" : 413
+        },
+        {
+                "name" : "World History since 1400",
+                "department" : "GS",
+                "number" : 223
+        },
+        {
+                "name" : "Brazil Since 1500",
+                "department" : "GS",
+                "number" : 324
+        },
+        {
+                "name" : "Pop Culture in China",
+                "department" : "GS",
+                "number" : 328
+        },
+        {
+                "name" : "Musics of the World",
+                "department" : "GS",
+                "number" : 343
+        },
+        {
+                "name" : "Introduction to Shakespeare",
+                "department" : "IA",
+                "number" : 240
+        },
+        {
+                "name" : "Political Philosophy",
+                "department" : "IA",
+                "number" : 303
+        },
+        {
+                "name" : "Ethnicity & the State in China",
+                "department" : "IA",
+                "number" : 328
+        },
+        {
+                "name" : "Represntns & Redefs of Reality",
+                "department" : "IA",
+                "number" : 333
+        },
+        {
+                "name" : "European Romanticism",
+                "department" : "IA",
+                "number" : 337
+        },
+        {
+                "name" : "Medicine in Literature",
+                "department" : "IA",
+                "number" : 338
+        },
+        {
+                "name" : "Mathematical Economics",
+                "department" : "IA",
+                "number" : 450
+        },
+        {
+                "name" : "Computational Psycholgy",
+                "department" : "IA",
+                "number" : 471
+        },
+        {
+                "name" : "Topics in Math of Engineering",
+                "department" : "MA",
+                "number" : 390
+        },
+        {
+                "name" : "Linear Algebra II",
+                "department" : "MA",
+                "number" : 471
+        },
+        {
+                "name" : "Ind Proj/RschOpportunities Sem",
+                "department" : "MDS",
+                "number" : 401
+        },
+        {
+                "name" : "Laser Systems & Apps Lab",
+                "department" : "OE",
+                "number" : 450
+        },
+        {
+                "name" : "Theoretical Mechanics II",
+                "department" : "PH",
+                "number" : 315
+        },
+        {
+                "name" : "Senior Thesis",
+                "department" : "PH",
+                "number" : 499
+        },
+        {
+                "name" : "Religion and Ecology",
+                "department" : "SV",
+                "number" : 201
+        },
+        {
+                "name" : "Visual Arts in Civilization",
+                "department" : "SV",
+                "number" : 242
+        },
+        {
+                "department" : "ME",
+                "number" : 471
+        },
+        {
+                "department" : "SV",
+                "number" : 171
+        },
+        {
+                "department" : "IA",
+                "number" : 453
+        },
+        {
+                "name" : "Software Design",
+                "department" : "CSSE",
+                "number" : 574
+        },
+        {
+                "name" : "Japanese Popular Culture",
+                "department" : "GS",
+                "number" : 380
+        },
+        {
+                "name" : "Rhetoric of Science",
+                "department" : "IA",
+                "number" : 239
+        },
+        {
+                "name" : "Kinematics of Machinery",
+                "department" : "ME",
+                "number" : 403
+        },
+        {
+                "name" : "Study Abroad",
+                "department" : "ABRD",
+                "number" : 0
+        },
+        {
+                "name" : "Biocontrol Systems",
+                "department" : "BE",
+                "number" : 350
+        },
+        {
+                "name" : "Ecology",
+                "department" : "BIO",
+                "number" : 320
+        },
+        {
+                "name" : "Thesis Research III",
+                "department" : "BIO",
+                "number" : 498
+        },
+        {
+                "name" : "Struc Des in Prestressed Concr",
+                "department" : "CE",
+                "number" : 535
+        },
+        {
+                "name" : "Applied Hydrologic Modeling",
+                "department" : "CE",
+                "number" : 567
+        },
+        {
+                "name" : "Bioanalytical Chemistry Lab",
+                "department" : "CHEM",
+                "number" : 326
+        },
+        {
+                "name" : "Theoretical Organic Chemistry",
+                "department" : "CHEM",
+                "number" : 554
+        },
+        {
+                "name" : "WebApp Frameworks w/ AppEngine",
+                "department" : "CSSE",
+                "number" : 480
+        },
+        {
+                "name" : "Issues in German Culture",
+                "department" : "GE",
+                "number" : 311
+        },
+        {
+                "name" : "Colonial Latin America",
+                "department" : "GS",
+                "number" : 221
+        },
+        {
+                "name" : "Economic Growth & Development",
+                "department" : "GS",
+                "number" : 352
+        },
+        {
+                "name" : "Japanese Society",
+                "department" : "GS",
+                "number" : 384
+        },
+        {
+                "name" : "Industrl Revoltn in Glbl Cntxt",
+                "department" : "GS",
+                "number" : 422
+        },
+        {
+                "name" : "Postcolonial Literature",
+                "department" : "GS",
+                "number" : 462
+        },
+        {
+                "name" : "Beginning Photography",
+                "department" : "IA",
+                "number" : 148
+        },
+        {
+                "name" : "Intro to Partial Diff Equation",
+                "department" : "MA",
+                "number" : 436
+        },
+        {
+                "name" : "Internal Combustion Engines",
+                "department" : "ME",
+                "number" : 410
+        },
+        {
+                "name" : "Advanced Thermodynamics",
+                "department" : "ME",
+                "number" : 501
+        },
+        {
+                "name" : "Guided Wave Optics",
+                "department" : "OE",
+                "number" : 594
+        },
+        {
+                "name" : "American Politics & Government",
+                "department" : "SV",
+                "number" : 166
+        },
+        {
+                "name" : "Popular Music - Recorded Sound",
+                "department" : "SV",
+                "number" : 246
+        },
+        {
+                "name" : "African-American Drama",
+                "department" : "SV",
+                "number" : 341
+        },
+        {
+                "name" : "Environmental Economics",
+                "department" : "SV",
+                "number" : 354
+        },
+        {
+                "name" : "Seminar for HSS SR Project",
+                "department" : "SV",
+                "number" : 496
+        },
+        {
+                "department" : "HERE",
+                "number" : 0
+        },
+        {
+                "department" : "MDS",
+                "number" : 401
+        },
+        {
+                "department" : "CSSE",
+                "number" : 371
+        },
+        {
+                "department" : "CSSE",
+                "number" : 444
+        },
+        {
+                "department" : "CSSE",
+                "number" : 400
+        },
+        {
+                "department" : "CSSE",
+                "number" : 443
+        },
+        {
+                "department" : "AS",
+                "number" : 201
+        },
+        {
+                "department" : "GRAD",
+                "number" : 590
+        },
+        {
+                "name" : "Biomedical Optics",
+                "department" : "BE",
+                "number" : 435
+        },
+        {
+                "name" : "Biomedical Optics",
+                "department" : "BE",
+                "number" : 535
+        },
+        {
+                "name" : "Principles of SyntheticBiology",
+                "department" : "BIO",
+                "number" : 350
+        },
+        {
+                "name" : "Systems Biology",
+                "department" : "BMTH",
+                "number" : 311
+        },
+        {
+                "name" : "Numerical Methods for Chem Eng",
+                "department" : "CHE",
+                "number" : 310
+        },
+        {
+                "name" : "Nanomaterials Sci Engineering",
+                "department" : "CHE",
+                "number" : 515
+        },
+        {
+                "name" : "Software Quality Assurance",
+                "department" : "CSSE",
+                "number" : 576
+        },
+        {
+                "name" : "Antenna Engineering",
+                "department" : "ECE",
+                "number" : 540
+        },
+        {
+                "name" : "Mixed-Signal Test & Prod Engr",
+                "department" : "ECE",
+                "number" : 558
+        },
+        {
+                "name" : "Statistical Methods in Six Sig",
+                "department" : "EMGT",
+                "number" : 546
+        },
+        {
+                "name" : "Systems Thinking & Evaluation",
+                "department" : "EMGT",
+                "number" : 584
+        },
+        {
+                "name" : "Systems Engineering",
+                "department" : "EMGT",
+                "number" : 587
+        },
+        {
+                "name" : "Curricular Practical Training",
+                "department" : "EMGTCPT-",
+                "number" : 0
+        },
+        {
+                "name" : "Engineering Design Studio 2",
+                "department" : "ENGD",
+                "number" : 110
+        },
+        {
+                "name" : "Systems Accounting & Modeling",
+                "department" : "ENGD",
+                "number" : 200
+        },
+        {
+                "name" : "Semicond Devices & Fabrctn Lab",
+                "department" : "EP",
+                "number" : 406
+        },
+        {
+                "name" : "Semicond Devices & Fabrctn Lab",
+                "department" : "EP",
+                "number" : 506
+        },
+        {
+                "name" : "Grad Enrollment: Co-Op",
+                "department" : "GRAD",
+                "number" : 508
+        },
+        {
+                "name" : "Dir Study for Econ SR Project",
+                "department" : "GS",
+                "number" : 457
+        },
+        {
+                "name" : "Seminar for HSS SR Project",
+                "department" : "GS",
+                "number" : 496
+        },
+        {
+                "name" : "Intro Engineerg Mathematics II",
+                "department" : "MA",
+                "number" : 102
+        },
+        {
+                "name" : "Data Mining",
+                "department" : "MA",
+                "number" : 384
+        },
+        {
+                "name" : "Adv'd Engineering Mathematics",
+                "department" : "MA",
+                "number" : 438
+        },
+        {
+                "name" : "Topics in Number Theory",
+                "department" : "MA",
+                "number" : 478
+        },
+        {
+                "name" : "Adv'd Engineering Mathematics",
+                "department" : "MA",
+                "number" : 538
+        },
+        {
+                "name" : "Adaptive Leadrshp Prof Comptnc",
+                "department" : "MS",
+                "number" : 102
+        },
+        {
+                "name" : "Biomedical Optics",
+                "department" : "OE",
+                "number" : 435
+        },
+        {
+                "name" : "Optical Metrology",
+                "department" : "OE",
+                "number" : 495
+        },
+        {
+                "name" : "Biomedical Optics",
+                "department" : "OE",
+                "number" : 535
+        },
+        {
+                "name" : "Fourier Optics & Applications",
+                "department" : "OE",
+                "number" : 592
+        },
+        {
+                "name" : "Optical Metrology",
+                "department" : "OE",
+                "number" : 595
+        },
+        {
+                "name" : "Foun Modern Physics Lab",
+                "department" : "PH",
+                "number" : 255
+        },
+        {
+                "name" : "Introduction to Sociology",
+                "department" : "SV",
+                "number" : 188
+        },
+        {
+                "name" : "Western Music in 20th Century",
+                "department" : "SV",
+                "number" : 245
+        },
+        {
+                "name" : "British Politics & Government",
+                "department" : "SV",
+                "number" : 369
+        },
+        {
+                "name" : "Dir Study for Econ SR Project",
+                "department" : "SV",
+                "number" : 457
+        },
+        {
+                "department" : "AS",
+                "number" : 302
+        },
+        {
+                "department" : "BIO",
+                "number" : 499
+        },
+        {
+                "department" : "CHE",
+                "number" : 599
+        },
+        {
+                "name" : "Evolutionary Biology",
+                "department" : "BIO",
+                "number" : 330
+        },
+        {
+                "name" : "Cancer Biology",
+                "department" : "BIO",
+                "number" : 451
+        },
+        {
+                "name" : "Directed Lab Study in Chem",
+                "department" : "CHEM",
+                "number" : 476
+        },
+        {
+                "name" : "Biochemical Pharmacology",
+                "department" : "CHEM",
+                "number" : 532
+        },
+        {
+                "name" : "Analog Test and Product Engr",
+                "department" : "ECE",
+                "number" : 557
+        },
+        {
+                "name" : "Digital Signal Processing",
+                "department" : "ECE",
+                "number" : 580
+        },
+        {
+                "name" : "Human Resources Management",
+                "department" : "EMGT",
+                "number" : 525
+        },
+        {
+                "name" : "Internat'l Trade & Globalizatn",
+                "department" : "GS",
+                "number" : 350
+        },
+        {
+                "name" : "Hispanic Culture & Civ (Spain)",
+                "department" : "GS",
+                "number" : 387
+        },
+        {
+                "name" : "Philosophy of Religion",
+                "department" : "IA",
+                "number" : 302
+        },
+        {
+                "name" : "Rebellion in American Lit",
+                "department" : "IA",
+                "number" : 339
+        },
+        {
+                "name" : "Game Theory",
+                "department" : "IA",
+                "number" : 352
+        },
+        {
+                "name" : "Seminar on America's Future",
+                "department" : "IA",
+                "number" : 463
+        },
+        {
+                "name" : "Geometric Modeling",
+                "department" : "MA",
+                "number" : 323
+        },
+        {
+                "name" : "Topics in Algebra",
+                "department" : "MA",
+                "number" : 470
+        },
+        {
+                "name" : "Mathematical Statistics",
+                "department" : "MA",
+                "number" : 481
+        },
+        {
+                "name" : "Design of Experiments",
+                "department" : "MA",
+                "number" : 487
+        },
+        {
+                "name" : "Select Topics f/ Grad Students",
+                "department" : "ME",
+                "number" : 597
+        },
+        {
+                "name" : "Introduction to Non-Fiction",
+                "department" : "SV",
+                "number" : 232
+        },
+        {
+                "name" : "Survey of American Literature",
+                "department" : "SV",
+                "number" : 233
+        },
+        {
+                "name" : "Medieval Europe",
+                "department" : "SV",
+                "number" : 291
+        },
+        {
+                "name" : "Studying Human Behavior",
+                "department" : "SV",
+                "number" : 472
+        },
+        {
+                "department" : "AS",
+                "number" : 202
+        },
+        {
+                "department" : "BIO",
+                "number" : 496
+        },
+        {
+                "name" : "Japanese Pop Culture",
+                "department" : "GS",
+                "number" : 388
+        },
+        {
+                "department" : "IA",
+                "number" : 499
+        },
+        {
+                "name" : "Circuits, Sensors, & Measurmts",
+                "department" : "BE",
+                "number" : 202
+        },
+        {
+                "name" : "Orthopaedic Biomechanics",
+                "department" : "BE",
+                "number" : 545
+        },
+        {
+                "name" : "Three-Dimensional Dynamics",
+                "department" : "EM",
+                "number" : 402
+        },
+        {
+                "name" : "Electrical Systems",
+                "department" : "ES",
+                "number" : 213
+        },
+        {
+                "name" : "Electrical Systems Lab",
+                "department" : "ES",
+                "number" : 213
+        },
+        {
+                "name" : "Vehicle Dynamics",
+                "department" : "ME",
+                "number" : 412
+        },
+        {
+                "name" : "SP TOP-ADV MATLS",
+                "department" : "ME",
+                "number" : 517
+        },
+        {
+                "name" : "Cultural Geography",
+                "department" : "SV",
+                "number" : 191
+        },
+        {
+                "name" : "Reliability Engineering",
+                "department" : "EMGT",
+                "number" : 472
+        },
+        {
+                "name" : "Multidisciplinary Capstone I",
+                "department" : "MDS",
+                "number" : 410
+        },
+        {
+                "name" : "Quality Methods",
+                "department" : "EMGT",
+                "number" : 445
+        },
+        {
+                "department" : "CHE",
+                "number" : 412
+        },
+        {
+                "department" : "ECE",
+                "number" : 460
+        },
+        {
+                "department" : "CHEM",
+                "number" : 111
+        },
+        {
+                "department" : "ECE",
+                "number" : 597
+        },
+        {
+                "department" : "EM",
+                "number" : 104
+        },
+        {
+                "department" : "ECE",
+                "number" : 204
+        },
+        {
+                "department" : "CSSE",
+                "number" : 120
+        },
+        {
+                "department" : "EM",
+                "number" : 202
+        },
+        {
+                "department" : "CSSE",
+                "number" : 220
+        },
+        {
+                "department" : "CSSE",
+                "number" : 132
+        },
+        {
+                "department" : "PH",
+                "number" : 302
+        },
+        {
+                "department" : "CE",
+                "number" : 481
+        },
+        {
+                "department" : "AS",
+                "number" : 401
+        },
+        {
+                "department" : "BE",
+                "number" : 390
+        },
+        {
+                "department" : "ES",
+                "number" : 201
+        },
+        {
+                "department" : "CHEM",
+                "number" : 290
+        },
+        {
+                "department" : "ES",
+                "number" : 213
+        },
+        {
+                "department" : "IA",
+                "number" : 348
+        },
+        {
+                "department" : "MA",
+                "number" : 112
+        },
+        {
+                "name" : "Curricular Practical Training",
+                "department" : "MACPT-",
+                "number" : 0
+        },
+        {
+                "name" : "Capstone Experience II",
+                "department" : "BMTH",
+                "number" : 497
+        },
+        {
+                "name" : "Risk Analysis and Management",
+                "department" : "EMGT",
+                "number" : 462
+        },
+        {
+                "name" : "Economic Analysis of Engr Proj",
+                "department" : "EMGT",
+                "number" : 467
+        },
+        {
+                "name" : "Semicond Materials & Apps Lab",
+                "department" : "PH",
+                "number" : 405
+        },
+        {
+                "name" : "Foundations for RHIT Success",
+                "department" : "RHIT",
+                "number" : 100
+        },
+        {
+                "department" : "RHIT",
+                "number" : 100
+        },
+        {
+                "department" : "AS",
+                "number" : 101
+        },
+        {
+                "department" : "ABRD-",
+                "number" : 0
+        },
+        {
+                "name" : "Thesis Research",
+                "department" : "CE",
+                "number" : 599
+        },
+        {
+                "department" : "CE",
+                "number" : 520
+        },
+        {
+                "name" : "Biomedical Fluid Mechanics",
+                "department" : "BE",
+                "number" : 212
+        },
+        {
+                "name" : "Adv Topics: Computer Architect",
+                "department" : "ECE",
+                "number" : 532
+        },
+        {
+                "name" : "Intro to Supply Chain Managemt",
+                "department" : "EMGT",
+                "number" : 486
+        },
+        {
+                "name" : "Fluid Systems",
+                "department" : "ES",
+                "number" : 212
+        },
+        {
+                "name" : "Mechanical Systems",
+                "department" : "ES",
+                "number" : 214
+        },
+        {
+                "name" : "Multidisciplinary Capstone II",
+                "department" : "MDS",
+                "number" : 420
+        },
+        {
+                "name" : "Mechanics of Composites",
+                "department" : "ME",
+                "number" : 424
+        },
+        {
+                "name" : "Robot Dynamics and Control",
+                "department" : "ME",
+                "number" : 445
+        },
+        {
+                "name" : "Mechanics of Deposits",
+                "department" : "ME",
+                "number" : 524
+        },
+        {
+                "name" : "Robot Dynamics and Control",
+                "department" : "ME",
+                "number" : 545
+        },
+        {
+                "name" : "Introduction to Chaos",
+                "department" : "PH",
+                "number" : 215
+        }
+]
