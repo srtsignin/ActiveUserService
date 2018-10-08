@@ -9,19 +9,13 @@ GET /courses?search=queryString
 {
     'message': 'Receiving courses containing the following query string: queryString',
     'success': true,
-    'data': ['List of courses names containing queryString']
-}
-```
-
-GET /courses
-
-**Response:**
-
-```js
-{
-    'message': 'No query string specified, receiving courses by department name',
-    'success': true,
-    'data': {'Map of department to [course name list]'}
+    'data': [
+                {
+                    'name': 'Introduction to Databases',
+                    'number': 333,
+                    'department': 'CSSE'
+                }, ...
+            ]
 }
 ```
 
@@ -38,7 +32,13 @@ GET /classes
 {
     'message': 'Returning courses for studentName',
     'success': true,
-    'data': ['Course name list for the specified student']
+    'data': [
+                {
+                    'name': 'Introduction to Databases',
+                    'number': 333,
+                    'department': 'CSSE'
+                }, ...
+            ]
 }
 
 {
