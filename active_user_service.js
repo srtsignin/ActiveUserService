@@ -15,9 +15,9 @@ const config = require('./config.json')
 app.get('/courses', (req, res) => {
     let queryString = req.query.search
     if (queryString != null) {
-        rdb.table('courses').filter(function(course) {
+        rdb.table('courses').without('id').filter(function (course) {
             return course('queryString').match(queryString)
-        }).run(app._rdbConn, function(err, result) {
+        }).run(app._rdbConn, function (err, result) {
             if (err) {
                 res.status(400)
                 res.json({
@@ -26,7 +26,7 @@ app.get('/courses', (req, res) => {
                     'data': null
                 })
             } else {
-                result.toArray(function(err, array){
+                result.toArray(function (err, array) {
                     if (err) {
                         res.status(400)
                         res.json({
@@ -44,12 +44,12 @@ app.get('/courses', (req, res) => {
                     }
                 })
             }
-        })  
+        })
     } else {
         res.json({
             'message': 'No query string specified, receiving courses by department name',
             'success': true,
-            'data':coursesForMatch
+            'data': coursesForMatch
         })
     }
 })
@@ -71,8 +71,24 @@ app.get('/classes', (req, res) => {
         res.json({
             'message': `Returning courses for ${testStudent}`,
             'success': true,
-            'data': ['MA211 (Differential Equations)', 'MA212 (Matrix Algebra & Systems of Differential Equations)',
-                     'MA223 (Engineering Statistics I)', 'MA275 (Discrete & Combinatorial Algebra I)']
+            'data': [{
+                "department": "CSSE",
+                "name": "Senior Thesis I",
+                "number": 494,
+                "queryString": "CSSE494 Senior Thesis I"
+            },
+            {
+                "department": "CSSE",
+                "name": "Theory of Computation",
+                "number": 474,
+                "queryString": "CSSE474 Theory of Computation"
+            },
+            {
+                "department": "CSSE",
+                "name": "Computer Security",
+                "number": 442,
+                "queryString": "CSSE442 Computer Security"
+            }]
         })
     }
 })
@@ -91,10 +107,10 @@ function connect(callback) {
 }
 
 function checkForTables(connection, callback) {
-    rdb.tableList().contains('courses').run(connection, function(err, result) {
+    rdb.tableList().contains('courses').run(connection, function (err, result) {
         if (err == null && !result) {
             err = new Error('"courses" table does not exist!')
-        } 
+        }
         callback(err, connection)
     })
 }
@@ -103,7 +119,7 @@ async.waterfall([
     // This would be the place to add any startup functions/checks on the db before exposing express
     connect,
     checkForTables
-], function(err, connection) {
+], function (err, connection) {
     if (err) {
         console.error(err)
         process.exit(1)

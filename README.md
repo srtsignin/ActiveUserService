@@ -13,7 +13,8 @@ GET /courses?search=queryString
                 {
                     'name': 'Introduction to Databases',
                     'number': 333,
-                    'department': 'CSSE'
+                    'department': 'CSSE',
+                    'queryString': 'CSSE333 Introduction to Databases'
                 }, ...
             ]
 }
@@ -36,7 +37,8 @@ GET /classes
                 {
                     'name': 'Introduction to Databases',
                     'number': 333,
-                    'department': 'CSSE'
+                    'department': 'CSSE',
+                    'queryString': 'CSSE333 Introduction to Databases'
                 }, ...
             ]
 }
