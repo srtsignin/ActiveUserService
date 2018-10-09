@@ -15,12 +15,37 @@ const config = require('./config.json')
 app.get('/courses', (req, res) => {
     let queryString = req.query.search
     if (queryString != null) {
-
-        res.json({
-            'message': `Receiving courses containing the following query string: ${queryString}`,
-            'success': true,
-            'data':coursesForMatch.filter(course => (course['department'] + course['number'] + course['name']).toUpperCase().includes(queryString))
-        })
+        rdb.table('courses').filter(function(course) {
+            return course('queryString').match(queryString)
+        }).run(app._rdbConn, function(err, result) {
+            if (err) {
+                res.status(400)
+                res.json({
+                    'message': err,
+                    'success': false,
+                    'data': null
+                })
+            } else {
+                result.toArray(function(err, array){
+                    if (err) {
+                        res.status(400)
+                        res.json({
+                            'message': err,
+                            'success': false,
+                            'data': null
+                        })
+                    } else {
+                        console.log(array)
+                        res.status(200)
+                        res.json({
+                            'message': `Receiving courses containing the following query string: ${queryString}`,
+                            'success': true,
+                            'data': array
+                        })
+                    }
+                })
+            }
+        })  
     } else {
         res.json({
             'message': 'No query string specified, receiving courses by department name',
