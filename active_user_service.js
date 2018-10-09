@@ -15,7 +15,7 @@ app.get('/courses', (req, res) => {
     let queryString = req.query.search
     
     async.waterfall([
-        checkQuery(queryString),
+        checkQueryString(queryString),
         getFilterCourses(app._rdbConn),
         cursorToArray
     ], function (err, result) {
@@ -80,7 +80,33 @@ app.get('/classes', (req, res) => {
  * TODO Add the stuff from the spike about active students
  */
 
-function checkQuery(queryString) {
+/**
+ * @param {string} roomId - Query parameter for the room you want the active users from
+ */
+app.get('/activeUsers', (req, res) => {
+    // check id
+    // get list
+    // return list
+})
+
+app.post('/activeUsers', (req, res) => {
+    // check params
+    // other checks/ validation???
+    // insert new user into the correct room's activeusers
+    // return message
+})
+
+app.delete('/activeUsers', (req, res) => {
+    // check params
+    // validate users is in the room
+    // remove user from room
+    // trigger longterm storage/ logging of interaction
+    // return message
+})
+
+/*** COURSES FUNCTIONS ***/
+
+function checkQueryString(queryString) {
     return function(callback) {
         if (queryString == null) {
             callback('Error: No queryString provided', null)
@@ -101,6 +127,20 @@ function getFilterCourses(connection) {
 function cursorToArray(array, callback) {
     array.toArray(callback)
 }
+
+/*** ACTIVEUSERS FUNCTIONS ***/
+
+function checkRoomId(roomId) {
+    return function(callback) {
+        if (queryString == null) {
+            callback('Error: No queryString provided', null)
+        } else {
+            callback(null, queryString)
+        }
+    }
+}
+
+/*** INITIALIZATION FUNCTIONS ***/
 
 function startExpress(connection) {
     app._rdbConn = connection
