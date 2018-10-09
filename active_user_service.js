@@ -9,49 +9,32 @@ const config = require('./config.json')
  * Two usages for this route:
  *      /courses?search="queryString" - This returns a list of matching course strings,
  *                                      I currently use toUpperCase and match any location in the string
- *      /courses - This returns a json object where the department is the key
- *                 and the value is a list of json objects with course_name and common_name key/value pairs
+ *      /courses - This will return an exception, even an empty string must be provided
  */
 app.get('/courses', (req, res) => {
     let queryString = req.query.search
-    if (queryString != null) {
-        rdb.table('courses').without('id').filter(function (course) {
-            return course('queryString').match(queryString)
-        }).run(app._rdbConn, function (err, result) {
-            if (err) {
-                res.status(400)
-                res.json({
-                    'message': err,
-                    'success': false,
-                    'data': null
-                })
-            } else {
-                result.toArray(function (err, array) {
-                    if (err) {
-                        res.status(400)
-                        res.json({
-                            'message': err,
-                            'success': false,
-                            'data': null
-                        })
-                    } else {
-                        res.status(200)
-                        res.json({
-                            'message': `Receiving courses containing the following query string: ${queryString}`,
-                            'success': true,
-                            'data': array
-                        })
-                    }
-                })
-            }
-        })
-    } else {
-        res.json({
-            'message': 'No query string specified, receiving courses by department name',
-            'success': true,
-            'data': coursesForMatch
-        })
-    }
+    
+    async.waterfall([
+        checkQuery(queryString),
+        getFilterCourses(app._rdbConn),
+        cursorToArray
+    ], function (err, result) {
+        if (err) {
+            res.status(400)
+            res.json({
+                'message': err,
+                'success': false,
+                'data': null
+            })
+        } else {
+            res.status(200)
+            res.json({
+                'message': `Receiving courses containing the following query string: ${queryString}`,
+                'success': true,
+                'data': result
+            })
+        }
+    })
 })
 
 /**
@@ -96,6 +79,28 @@ app.get('/classes', (req, res) => {
 /**
  * TODO Add the stuff from the spike about active students
  */
+
+function checkQuery(queryString) {
+    return function(callback) {
+        if (queryString == null) {
+            callback('Error: No queryString provided', null)
+        } else {
+            callback(null, queryString)
+        }
+    }
+}
+
+function getFilterCourses(connection) {
+    return function (queryString, callback) {
+        rdb.table('courses').without('id').filter(function (course) {
+            return course('queryString').match(queryString)
+        }).run(connection, callback)
+    }
+}
+
+function cursorToArray(array, callback) {
+    array.toArray(callback)
+}
 
 function startExpress(connection) {
     app._rdbConn = connection
