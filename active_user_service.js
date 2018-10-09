@@ -1,14 +1,9 @@
-const fs = require('fs')
-const coursesByDepartment = JSON.parse(fs.readFileSync('Courses_by_department.json', 'utf8'))
-const coursesForMatch = JSON.parse(fs.readFileSync('Courses.json'))
+const rdb = require('rethinkdb')
 const express = require('express')
+const async = require('async')
 const app = express()
-const port = 3000
 
-String.prototype.replaceAll = function(search, replacement) {
-    let target = this;
-    return target.replace(new RegExp(search, 'g'), replacement);
-}
+const config = require('./config.json')
 
 /**
  * Two usages for this route:
@@ -20,7 +15,7 @@ String.prototype.replaceAll = function(search, replacement) {
 app.get('/courses', (req, res) => {
     let queryString = req.query.search
     if (queryString != null) {
-        queryString = queryString.replaceAll('"', '').trim().toUpperCase()
+
         res.json({
             'message': `Receiving courses containing the following query string: ${queryString}`,
             'success': true,
@@ -30,7 +25,7 @@ app.get('/courses', (req, res) => {
         res.json({
             'message': 'No query string specified, receiving courses by department name',
             'success': true,
-            'data':coursesByDepartment
+            'data':coursesForMatch
         })
     }
 })
@@ -58,4 +53,37 @@ app.get('/classes', (req, res) => {
     }
 })
 
-app.listen(port, () => console.log(`Active User Service listening on port ${port}!`))
+/**
+ * TODO Add the stuff from the spike about active students
+ */
+
+function startExpress(connection) {
+    app._rdbConn = connection
+    app.listen(config.express.port, () => console.log(`Active User Service listening on port ${config.express.port}!`))
+}
+
+function connect(callback) {
+    rdb.connect(config.rethinkdb, callback)
+}
+
+function checkForTables(connection, callback) {
+    rdb.tableList().contains('courses').run(connection, function(err, result) {
+        if (err == null && !result) {
+            err = new Error('"courses" table does not exist!')
+        } 
+        callback(err, connection)
+    })
+}
+
+async.waterfall([
+    // This would be the place to add any startup functions/checks on the db before exposing express
+    connect,
+    checkForTables
+], function(err, connection) {
+    if (err) {
+        console.error(err)
+        process.exit(1)
+        return
+    }
+    startExpress(connection)
+});
