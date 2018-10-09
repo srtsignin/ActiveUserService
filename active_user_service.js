@@ -35,7 +35,6 @@ app.get('/courses', (req, res) => {
                             'data': null
                         })
                     } else {
-                        console.log(array)
                         res.status(200)
                         res.json({
                             'message': `Receiving courses containing the following query string: ${queryString}`,
