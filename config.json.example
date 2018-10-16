@@ -1,0 +1,19 @@
+{
+    "express" : {
+        "port": 3000
+    },
+    "rethinkdb" : {
+        "host": "localhost",
+        "port": "28015",
+        "db": "srtsignin",
+        "user": "admin",
+        "password": "",
+        "timeout": 20,
+        "ssl": null
+    },
+    "rolesService" : {
+        "host": "localhost",
+        "port": 80
+    },
+    "rosefireSecret": 12345
+}
