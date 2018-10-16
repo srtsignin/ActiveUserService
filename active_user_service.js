@@ -3,9 +3,11 @@ const express = require('express')
 const async = require('async')
 const bodyParser = require('body-parser')
 const request = require('request')
+const RosefireTokenVerifier = require('rosefire-node')
 const app = express()
 
 const config = require('./config.json')
+const rosefire = new RosefireTokenVerifier(config.rosefireSecret);
 const jsonParser = bodyParser.json()
 /**
  * Two usages for this route:
@@ -109,13 +111,17 @@ app.post('/activeUsers', jsonParser, (req, res) => {
     // other checks/ validation???
     // insert new user into the correct room's activeusers
     // return message
-    let roomId = req.get('roomId')
+    let roomId = req.query.roomId
     let cardfireToken = req.get('cardfireToken')
     let rosefireToken = req.get('rosefireToken')
     let student = req.body
-    let timestamp = Date.now()
+    let checkInTime = Date.now()
     async.waterfall([
-
+        activeusersPostChecks(roomId, rosefireToken, cardfireToken),
+        validateTokens(rosefireToken, cardfireToken),
+        getRoles,
+        checkRoles,
+        insertStudent(checkInTime, student, roomId)
     ], function(err, result) {
         if (err) {
             res.status(400)
@@ -127,7 +133,7 @@ app.post('/activeUsers', jsonParser, (req, res) => {
         } else {
             res.status(200)
             res.json({
-                'message': `Receiving courses containing the following query string: ${queryString}`,
+                'message': `Successfully added student to room: ${roomId}`,
                 'success': true,
                 'data': result
             })
@@ -183,13 +189,23 @@ function activeusersPostChecks(roomId, rosefireToken, cardfireToken) {
  * This will actually need to actually get the username from either token at some point
  */
 function validateTokens(rosefireToken, cardfireToken) {
-    return function(callback) {
+    return function(roomId, callback) {
         if (rosefireToken) {
-            callback(null, 'boylecj', 'Connor Boyle')
+            rosefire.verify(rosefireToken, unpackTokenInfo(callback, rosefireToken))
         } else if (cardfireToken) {
-            callback(null, 'boylecj', 'Connor Boyle')
+            callback(null, 'boylecj', 'Connor Boyle', '12345')
         } else {
             callback('Error: Neither a rosefireToken or a cardfireToken', false)
+        }
+    }
+}
+
+function unpackTokenInfo(callback, token) {
+    return function(err, authData) {
+        if (err) {
+            callback(err, null)
+        } else {
+            callback(null, authData.username, authData.name, token)
         }
     }
 }
@@ -197,15 +213,51 @@ function validateTokens(rosefireToken, cardfireToken) {
 /**
  * This will contact the role service 
  */
-function getRoles(username, fullName, callback) {
-    roles = ['Student', 'Tutor']
-    callback(null, username, fullName, roles)
+function getRoles(username, fullname, token, callback) {
+    const options = {
+        url: 'http://' + config.rolesService.host + ':' + config.rolesService.port + '/roles',
+        method: 'GET',
+        headers: {
+            'RosefireToken': token
+        }
+    }
+    request.get(options, function(err, response, body) {
+        if (err) {
+            console.log(err)
+        }
+        console.log(body)
+        roles = ['Student', 'Tutor']
+        callback(null, username, fullname, roles)
+    })
+}
+
+function checkRoles(username, fullname, roles, callback) {
+    if (roles.includes('Student')) {
+        callback(null, username, fullname)
+    } else {
+        callback('Error: Unauthorized user', username)
+    }
 }
 
 /**
  * Insert the student into the proper 
  */
-function insertStudent(time, studentObj, )
+function insertStudent(checkInTime, studentObj, roomId) {
+    return function(username, fullname, callback) {
+        student = {
+            'username': username,
+            'fullname': fullname,
+            'checkInTime': checkInTime,
+            'courses': studentObj.courses,
+            'problemDescription': studentObj.problemDescription
+        }
+        console.log(studentObj)
+        console.log(student)
+        rdb.table('rooms').get(roomId).update(
+            {'actives': rdb.row('actives').append(student)}
+        ).run(app._rdbConn, callback)
+    }
+}
 
 /*** INITIALIZATION FUNCTIONS ***/
 

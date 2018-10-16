@@ -15,5 +15,5 @@
         "host": "localhost",
         "port": 80
     },
-    "rosefireSecret": 12345
+    "rosefireSecret": "12345"
 }
