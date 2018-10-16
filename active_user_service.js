@@ -1,10 +1,12 @@
 const rdb = require('rethinkdb')
 const express = require('express')
 const async = require('async')
+const bodyParser = require('body-parser')
+const request = require('request')
 const app = express()
 
 const config = require('./config.json')
-
+const jsonParser = bodyParser.json()
 /**
  * Two usages for this route:
  *      /courses?search="queryString" - This returns a list of matching course strings,
@@ -82,25 +84,62 @@ app.get('/classes', (req, res) => {
 
 /**
  * @param {string} roomId - Query parameter for the room you want the active users from
+ * @param {string} cardfireToken - header
+ * @param {string} rosefireToken - header
  */
 app.get('/activeUsers', (req, res) => {
     // check id
     // get list
     // return list
+    let roomId = req.get('roomId')
+    let cardfireToken = req.get('cardfireToken')
+    let rosefireToken = req.get('rosefireToken')
 })
 
-app.post('/activeUsers', (req, res) => {
+/**
+ * @param {string} roomId - Query parameter for the room you want the active users from
+ * @param {string} cardfireToken - header
+ * @param {string} rosefireToken - header
+ * @param {json} body - should contain a student object with the following fields
+ *                      courseList - an array of course objects
+ *                      problemDescription - the string describing why the student is there                 
+ */
+app.post('/activeUsers', jsonParser, (req, res) => {
     // check params
     // other checks/ validation???
     // insert new user into the correct room's activeusers
     // return message
+    let roomId = req.get('roomId')
+    let cardfireToken = req.get('cardfireToken')
+    let rosefireToken = req.get('rosefireToken')
+    let student = req.body
+    let timestamp = Date.now()
+    async.waterfall([
+
+    ], function(err, result) {
+        if (err) {
+            res.status(400)
+            res.json({
+                'message': err,
+                'success': false,
+                'data': null
+            })
+        } else {
+            res.status(200)
+            res.json({
+                'message': `Receiving courses containing the following query string: ${queryString}`,
+                'success': true,
+                'data': result
+            })
+        }
+    })
 })
 
 app.delete('/activeUsers', (req, res) => {
     // check params
     // validate users is in the room
     // remove user from room
-    // trigger longterm storage/ logging of interaction
+    // trigger long-term storage/ logging of interaction
     // return message
 })
 
@@ -130,15 +169,43 @@ function cursorToArray(array, callback) {
 
 /*** ACTIVEUSERS FUNCTIONS ***/
 
-function checkRoomId(roomId) {
+function activeusersPostChecks(roomId, rosefireToken, cardfireToken) {
     return function(callback) {
-        if (queryString == null) {
-            callback('Error: No queryString provided', null)
+        if (roomId == null || (rosefireToken == null && cardfireToken == null)) {
+            callback('Error: No roomId provided', null)
         } else {
-            callback(null, queryString)
+            callback(null, roomId)
         }
     }
 }
+
+/**
+ * This will actually need to actually get the username from either token at some point
+ */
+function validateTokens(rosefireToken, cardfireToken) {
+    return function(callback) {
+        if (rosefireToken) {
+            callback(null, 'boylecj', 'Connor Boyle')
+        } else if (cardfireToken) {
+            callback(null, 'boylecj', 'Connor Boyle')
+        } else {
+            callback('Error: Neither a rosefireToken or a cardfireToken', false)
+        }
+    }
+}
+
+/**
+ * This will contact the role service 
+ */
+function getRoles(username, fullName, callback) {
+    roles = ['Student', 'Tutor']
+    callback(null, username, fullName, roles)
+}
+
+/**
+ * Insert the student into the proper 
+ */
+function insertStudent(time, studentObj, )
 
 /*** INITIALIZATION FUNCTIONS ***/
 
