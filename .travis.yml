@@ -4,6 +4,7 @@ nodejs:
   - "8.12.0"
 
 script: 
+  - npm install
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   - docker build -t cjblink1/srtsignin-active-user-service:$TRAVIS_BRANCH-$TRAVIS_COMMIT .
   - docker push cjblink1/srtsignin-active-user-service:$TRAVIS_BRANCH-$TRAVIS_COMMIT

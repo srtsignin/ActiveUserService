@@ -3,11 +3,9 @@ const express = require('express')
 const async = require('async')
 const bodyParser = require('body-parser')
 const request = require('request')
-const RosefireTokenVerifier = require('rosefire-node')
 const app = express()
 
 const config = require('./config.json')
-const rosefire = new RosefireTokenVerifier(config.rosefireSecret);
 const jsonParser = bodyParser.json()
 /**
  * Two usages for this route:
@@ -118,7 +116,6 @@ app.post('/activeUsers', jsonParser, (req, res) => {
     let checkInTime = Date.now()
     async.waterfall([
         activeusersPostChecks(roomId, rosefireToken, cardfireToken),
-        validateTokens(rosefireToken, cardfireToken),
         getRoles,
         checkRoles,
         insertStudent(checkInTime, student, roomId)
@@ -177,35 +174,14 @@ function cursorToArray(array, callback) {
 
 function activeusersPostChecks(roomId, rosefireToken, cardfireToken) {
     return function(callback) {
-        if (roomId == null || (rosefireToken == null && cardfireToken == null)) {
+        if (roomId == null) {
             callback('Error: No roomId provided', null)
+        } else if (rosefireToken != null) {
+            callback(null, rosefireToken)
+        } else if (cardfireToken != null) {
+            callback(null, cardfireToken)
         } else {
-            callback(null, roomId)
-        }
-    }
-}
-
-/**
- * This will actually need to actually get the username from either token at some point
- */
-function validateTokens(rosefireToken, cardfireToken) {
-    return function(roomId, callback) {
-        if (rosefireToken) {
-            rosefire.verify(rosefireToken, unpackTokenInfo(callback, rosefireToken))
-        } else if (cardfireToken) {
-            callback(null, 'boylecj', 'Connor Boyle', '12345')
-        } else {
-            callback('Error: Neither a rosefireToken or a cardfireToken', false)
-        }
-    }
-}
-
-function unpackTokenInfo(callback, token) {
-    return function(err, authData) {
-        if (err) {
-            callback(err, null)
-        } else {
-            callback(null, authData.username, authData.name, token)
+            callback('Error: No token provided', null)
         }
     }
 }
@@ -213,7 +189,7 @@ function unpackTokenInfo(callback, token) {
 /**
  * This will contact the role service 
  */
-function getRoles(username, fullname, token, callback) {
+function getRoles(token, callback) {
     const options = {
         url: 'http://' + config.rolesService.host + ':' + config.rolesService.port + '/roles',
         method: 'GET',
@@ -223,17 +199,19 @@ function getRoles(username, fullname, token, callback) {
     }
     request.get(options, function(err, response, body) {
         if (err) {
-            console.log(err)
+            callback(err, null)
         }
-        console.log(body)
-        roles = ['Student', 'Tutor']
-        callback(null, username, fullname, roles)
+        let studentInfo = JSON.parse(body)
+        let roles = studentInfo.roles
+        let username = studentInfo.user.username
+        let name = studentInfo.user.name
+        callback(null, username, name, roles)
     })
 }
 
-function checkRoles(username, fullname, roles, callback) {
+function checkRoles(username, name, roles, callback) {
     if (roles.includes('Student')) {
-        callback(null, username, fullname)
+        callback(null, username, name)
     } else {
         callback('Error: Unauthorized user', username)
     }
@@ -243,10 +221,10 @@ function checkRoles(username, fullname, roles, callback) {
  * Insert the student into the proper 
  */
 function insertStudent(checkInTime, studentObj, roomId) {
-    return function(username, fullname, callback) {
+    return function(username, name, callback) {
         student = {
             'username': username,
-            'fullname': fullname,
+            'name': name,
             'checkInTime': checkInTime,
             'courses': studentObj.courses,
             'problemDescription': studentObj.problemDescription
