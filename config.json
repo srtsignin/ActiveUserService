@@ -13,6 +13,6 @@
     },
     "rolesService" : {
         "host": "localhost",
-        "port": 80
+        "port": 2100
     }
 }

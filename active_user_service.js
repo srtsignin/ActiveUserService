@@ -98,8 +98,8 @@ app.get('/activeUsers', (req, res) => {
 
 /**
  * @param {string} roomId - Query parameter for the room you want the active users from
- * @param {string} cardfireToken - header
- * @param {string} rosefireToken - header
+ * @param {string} CardfireToken - header
+ * @param {string} RosefireToken - header
  * @param {json} body - should contain a student object with the following fields
  *                      courseList - an array of course objects
  *                      problemDescription - the string describing why the student is there                 
@@ -110,8 +110,8 @@ app.post('/activeUsers', jsonParser, (req, res) => {
     // insert new user into the correct room's activeusers
     // return message
     let roomId = req.query.roomId
-    let cardfireToken = req.get('cardfireToken')
-    let rosefireToken = req.get('rosefireToken')
+    let cardfireToken = req.get('CardfireToken')
+    let rosefireToken = req.get('RosefireToken')
     let student = req.body
     let checkInTime = Date.now()
     async.waterfall([
@@ -138,12 +138,44 @@ app.post('/activeUsers', jsonParser, (req, res) => {
     })
 })
 
+/**
+ * @param {string} username - query parameter of the students username you wish to remove
+ * @param {string} roomId - query paramter for room the student is in, hopefully UI can get this, will be more work otherwise
+ * @param {string} rosefireToken - header
+ */
 app.delete('/activeUsers', (req, res) => {
     // check params
     // validate users is in the room
     // remove user from room
     // trigger long-term storage/ logging of interaction
     // return message
+    let username = req.query.username
+    let roomId = req.query.roomId
+    let rosefireToken = req.get('RosefireToken')
+    let checkOutTime = Date.now()
+    async.waterfall([
+        activeusersDeleteChecks(username, roomId, rosefireToken),
+        getRoles,
+        checkDeleteRoles,
+        getStudentOffset(roomId),
+        removeStudent(roomId, checkOutTime)
+    ], function(err, result) {
+        if (err) {
+            res.status(400)
+            res.json({
+                'message': err,
+                'success': false,
+                'data': null
+            })
+        } else {
+            res.status(200)
+            res.json({
+                'message': `Successfully removed ${username} from $`,
+                'success': true,
+                'data': result
+            })
+        }
+    })
 })
 
 /*** COURSES FUNCTIONS ***/
@@ -200,12 +232,13 @@ function getRoles(token, callback) {
     request.get(options, function(err, response, body) {
         if (err) {
             callback(err, null)
+        } else {
+            let userInfo = JSON.parse(body)
+            let roles = userInfo.roles
+            let username = userInfo.user.username
+            let name = userInfo.user.name
+            callback(null, username, name, roles)
         }
-        let studentInfo = JSON.parse(body)
-        let roles = studentInfo.roles
-        let username = studentInfo.user.username
-        let name = studentInfo.user.name
-        callback(null, username, name, roles)
     })
 }
 
@@ -218,7 +251,8 @@ function checkRoles(username, name, roles, callback) {
 }
 
 /**
- * Insert the student into the proper 
+ * Insert the student into the proper
+ * TODO: Should probably check if the user is already signed in
  */
 function insertStudent(checkInTime, studentObj, roomId) {
     return function(username, name, callback) {
@@ -229,11 +263,56 @@ function insertStudent(checkInTime, studentObj, roomId) {
             'courses': studentObj.courses,
             'problemDescription': studentObj.problemDescription
         }
-        console.log(studentObj)
-        console.log(student)
         rdb.table('rooms').get(roomId).update(
             {'actives': rdb.row('actives').append(student)}
         ).run(app._rdbConn, callback)
+    }
+}
+
+function activeusersDeleteChecks(username, roomId, rosefireToken) {
+    return function(callback) {
+        if (username == null) {
+            callback('Error: must provide a student username', null)
+        } else if (roomId == null) {
+            callback('Error: must provide a roomId', null)
+        } else if (rosefireToken == null) {
+            callback('Error: must provide a RosefireToken', null)
+        } else {
+            callback(null, rosefireToken)
+        }
+    }
+}
+
+function checkDeleteRoles(username, name, roles, callback) {
+    if (roles.includes('Tutor')) {
+        callback(null, username, name)
+    } else {
+        callback(`Error: User ${username} is not authorized to checkoff students`, null)
+    }
+}
+
+/**
+ * TODO: MAKE A GET FUNCTION SO WE CAN DO SOMETHING WITH IT BEFORE DELETING
+ */
+function getStudentOffset(roomId) {
+    return function(username, name, callback) {
+        rdb.table('rooms').get(roomId)('actives').offsetsOf(function(student) {
+            return student('username').eq(username)
+        }).run(app._rdbConn, function(err, offsetArray) {
+            if (offsetArray == null || offsetArray.length != 1) {
+                callback(`Error: Could not find ${username} in ${roomId}`, null)
+            } else {
+                callback(null, username, name, offsetArray[0])
+            }
+        })
+    }
+}
+
+function removeStudent(roomId, checkOutTime) {
+    return function(username, name, offset, callback) {
+        rdb.table('rooms').get(roomId).update({
+            actives: rdb.row('actives').deleteAt(offset)
+        }).run(app._rdbConn, callback)
     }
 }
 

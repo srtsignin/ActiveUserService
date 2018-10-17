@@ -1,8 +1,11 @@
 FROM node:8.12.0-alpine
 
-WORKDIR /runner
+WORKDIR /
 
-COPY . .
+COPY package*.json .
+COPY active_user_service.js .
+COPY config.json .
+COPY node_modules .
 
 EXPOSE 3000
 
