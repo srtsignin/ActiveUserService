@@ -12,7 +12,7 @@
         "ssl": null
     },
     "rolesService" : {
-        "host": "localhost",
-        "port": 2100
+        "host": "/api/role/",
+        "port": 80
     }
 }
