@@ -84,16 +84,37 @@ app.get('/classes', (req, res) => {
 
 /**
  * @param {string} roomId - Query parameter for the room you want the active users from
- * @param {string} cardfireToken - header
- * @param {string} rosefireToken - header
+ * @param {string} RosefireToken - header
  */
 app.get('/activeUsers', (req, res) => {
     // check id
     // get list
     // return list
-    let roomId = req.get('roomId')
-    let cardfireToken = req.get('cardfireToken')
-    let rosefireToken = req.get('rosefireToken')
+    let roomId = req.query.roomId
+    let rosefireToken = req.get('RosefireToken')
+
+    async.waterfall([
+        activeusersGetChecks(roomId, rosefireToken),
+        getRoles,
+        checkGetRoles,
+        getActiveStudents(roomId)
+    ], function(err, result) {
+        if (err) {
+            res.status(400)
+            res.json({
+                'message': err,
+                'success': false,
+                'data': null
+            })
+        } else {
+            res.status(200)
+            res.json({
+                'message': `Successfully retrieved student list for room: ${roomId}`,
+                'success': true,
+                'data': result
+            })
+        }
+    })
 })
 
 /**
@@ -114,10 +135,11 @@ app.post('/activeUsers', jsonParser, (req, res) => {
     let rosefireToken = req.get('RosefireToken')
     let student = req.body
     let checkInTime = Date.now()
+
     async.waterfall([
         activeusersPostChecks(roomId, rosefireToken, cardfireToken),
         getRoles,
-        checkRoles,
+        checkPostRoles,
         insertStudent(checkInTime, student, roomId)
     ], function(err, result) {
         if (err) {
@@ -141,7 +163,7 @@ app.post('/activeUsers', jsonParser, (req, res) => {
 /**
  * @param {string} username - query parameter of the students username you wish to remove
  * @param {string} roomId - query paramter for room the student is in, hopefully UI can get this, will be more work otherwise
- * @param {string} rosefireToken - header
+ * @param {string} RosefireToken - header
  */
 app.delete('/activeUsers', (req, res) => {
     // check params
@@ -204,6 +226,32 @@ function cursorToArray(array, callback) {
 
 /*** ACTIVEUSERS FUNCTIONS ***/
 
+function activeusersGetChecks(roomId, rosefireToken) {
+    return function(callback) {
+        if (roomId == null) {
+            callback('Error: No roomId provided', null)
+        } else if (rosefireToken == null) {
+            callback('Error: No RosefireToken provided', null)
+        } else {
+            callback(null, rosefireToken)
+        }
+    }
+}
+
+function checkGetRoles(username, name, roles, callback) {
+    if (roles.includes('Tutor')) {
+        callback(null)
+    } else {
+        callback(`Error: User ${username} is not authorized to view active students`, null)
+    }
+}
+
+function getActiveStudents(roomId) {
+    return function(callback) {
+        rdb.table('rooms').get(roomId)('actives').run(app._rdbConn, callback)
+    }
+}
+
 function activeusersPostChecks(roomId, rosefireToken, cardfireToken) {
     return function(callback) {
         if (roomId == null) {
@@ -242,11 +290,11 @@ function getRoles(token, callback) {
     })
 }
 
-function checkRoles(username, name, roles, callback) {
+function checkPostRoles(username, name, roles, callback) {
     if (roles.includes('Student')) {
         callback(null, username, name)
     } else {
-        callback('Error: Unauthorized user', username)
+        callback(`Error: User ${username} is not authorized to check in`, null)
     }
 }
 
