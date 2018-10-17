@@ -122,7 +122,7 @@ app.get('/activeUsers', (req, res) => {
  * @param {string} CardfireToken - header
  * @param {string} RosefireToken - header
  * @param {json} body - should contain a student object with the following fields
- *                      courseList - an array of course objects
+ *                      courses - an array of course objects
  *                      problemDescription - the string describing why the student is there                 
  */
 app.post('/activeUsers', jsonParser, (req, res) => {
@@ -192,7 +192,7 @@ app.delete('/activeUsers', (req, res) => {
         } else {
             res.status(200)
             res.json({
-                'message': `Successfully removed ${username} from $`,
+                'message': `Successfully removed ${username} from ${roomId}`,
                 'success': true,
                 'data': result
             })
