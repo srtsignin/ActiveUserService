@@ -277,7 +277,7 @@ function activeusersPostChecks(roomId, rosefireToken, cardfireToken) {
  */
 function getRoles(token, callback) {
     const options = {
-        url: "srtsignin-role-service/roles",
+        url: "https://srtsign.in/api/role/roles",
         method: 'GET',
         headers: {
             'RosefireToken': token
