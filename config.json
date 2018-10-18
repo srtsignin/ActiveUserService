@@ -12,7 +12,7 @@
         "ssl": null
     },
     "rolesService" : {
-        "host": "srtsignin-active-user-service",
+        "host": "srtsign.in/api/role",
         "port": 80
     }
 }
