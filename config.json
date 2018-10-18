@@ -12,7 +12,6 @@
         "ssl": null
     },
     "rolesService" : {
-        "host": "srtsignin-role-service",
-        "port": 80
+        "url": "https://srtsign.in/api/role"
     }
 }

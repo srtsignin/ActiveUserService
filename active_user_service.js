@@ -253,7 +253,7 @@ function checkGetRoles(username, name, roles, callback) {
 
 function getActiveStudents(roomId) {
     return function(callback) {
-        console.log(`${getTimeString()}::getActiveStudents | Attempting to get students | RoomId: ${roomId}`)
+        console.log(`${getTimeString()}::getActiveStudents | Attempting | RoomId: ${roomId}`)
         rdb.table('rooms').get(roomId)('actives').run(app._rdbConn, callback)
     }
 }
@@ -261,12 +261,16 @@ function getActiveStudents(roomId) {
 function activeusersPostChecks(roomId, rosefireToken, cardfireToken) {
     return function(callback) {
         if (roomId == null) {
+            console.log(`${getTimeString()}::activeusersPostChecks | Error: No roomId provided | RosefireToken: ${rosefireToken} | CardfireToken: ${cardfireToken} | RoomId: ${roomId}`)
             callback('Error: No roomId provided', null)
         } else if (rosefireToken != null) {
+            console.log(`${getTimeString()}::activeusersPostChecks | Success: Using RosefireToken | RosefireToken: ${rosefireToken} | CardfireToken: ${cardfireToken} | RoomId: ${roomId}`)
             callback(null, rosefireToken)
         } else if (cardfireToken != null) {
+            console.log(`${getTimeString()}::activeusersPostChecks | Success: Using CardfireToken | RosefireToken: ${rosefireToken} | CardfireToken: ${cardfireToken} | RoomId: ${roomId}`)
             callback(null, cardfireToken)
         } else {
+            console.log(`${getTimeString()}::activeusersPostChecks | Error: No token provided | RosefireToken: ${rosefireToken} | CardfireToken: ${cardfireToken} | RoomId: ${roomId}`)
             callback('Error: No token provided', null)
         }
     }
@@ -277,7 +281,7 @@ function activeusersPostChecks(roomId, rosefireToken, cardfireToken) {
  */
 function getRoles(token, callback) {
     const options = {
-        url: "https://srtsign.in/api/role/roles",
+        url: config.rolesService.url + "/roles",
         method: 'GET',
         headers: {
             'RosefireToken': token
@@ -285,12 +289,12 @@ function getRoles(token, callback) {
     }
     request.get(options, function(err, response, body) {
         if (err) {
-            console.log(`${getTimeString()}::getRoles | Error: ${err} | Options: ${options} | Token: ${token}`)
+            console.log(`${getTimeString()}::getRoles | Error: ${err} | Response: ${response && response.statusCode} | Body ${body} | Token: ${token}`)
             callback(err, null)
         } else {
-            console.log(`${getTimeString()}::getActiveStudents | InProgress: Unpacking response | Options: ${options} | Response: ${response} | Body ${body}`)
+            console.log(`${getTimeString()}::getRoles | InProgress: Unpacking response | Response: ${response && response.statusCode} | Body ${body}`)
             let userInfo = JSON.parse(body)
-            console.log(`${getTimeString()}::getActiveStudents | Success | UserInfo: ${userInfo}`)
+            console.log(`${getTimeString()}::getRoles | Success | UserInfo: ${userInfo}`)
             let roles = userInfo.roles
             let username = userInfo.user.username
             let name = userInfo.user.name
@@ -301,8 +305,10 @@ function getRoles(token, callback) {
 
 function checkPostRoles(username, name, roles, callback) {
     if (roles.includes('Student')) {
+        console.log(`${getTimeString()}::checkPostRoles | Success | Username: ${username} | Name: ${name} | Roles: ${roles}`)
         callback(null, username, name)
     } else {
+        console.log(`${getTimeString()}::checkPostRoles | Error: User ${username} is not authorized to check in | Username: ${username} | Name: ${name} | Roles: ${roles}`)
         callback(`Error: User ${username} is not authorized to check in`, null)
     }
 }
@@ -320,6 +326,7 @@ function insertStudent(checkInTime, studentObj, roomId) {
             'courses': studentObj.courses,
             'problemDescription': studentObj.problemDescription
         }
+        console.log(`${getTimeString()}::insertStudent | Attempting | Student: ${JSON.stringify(student)} | RoomId: ${roomId}`)
         rdb.table('rooms').get(roomId).update(
             {'actives': rdb.row('actives').append(student)}
         ).run(app._rdbConn, callback)
@@ -329,12 +336,16 @@ function insertStudent(checkInTime, studentObj, roomId) {
 function activeusersDeleteChecks(username, roomId, rosefireToken) {
     return function(callback) {
         if (username == null) {
+            console.log(`${getTimeString()}::activeusersDeleteChecks | Error: must provide a student username | Username: ${username} | RoomId: ${roomId} | RosefireToken: ${rosefireToken}`)
             callback('Error: must provide a student username', null)
         } else if (roomId == null) {
+            console.log(`${getTimeString()}::activeusersDeleteChecks | Error: must provide a roomId | Username: ${username} | RoomId: ${roomId} | RosefireToken: ${rosefireToken}`)
             callback('Error: must provide a roomId', null)
         } else if (rosefireToken == null) {
+            console.log(`${getTimeString()}::activeusersDeleteChecks | Error: must provide a RosefireToken | Username: ${username} | RoomId: ${roomId} | RosefireToken: ${rosefireToken}`)
             callback('Error: must provide a RosefireToken', null)
         } else {
+            console.log(`${getTimeString()}::activeusersDeleteChecks | Success | Username: ${username} | RoomId: ${roomId} | RosefireToken: ${rosefireToken}`)
             callback(null, rosefireToken)
         }
     }
@@ -342,23 +353,29 @@ function activeusersDeleteChecks(username, roomId, rosefireToken) {
 
 function checkDeleteRoles(username, name, roles, callback) {
     if (roles.includes('Tutor')) {
+        console.log(`${getTimeString()}::checkDeleteRoles | Success | Username: ${username} | RoomId: ${roomId} | Roles: ${roles}`)
         callback(null, username, name)
     } else {
+        console.log(`${getTimeString()}::checkDeleteRoles | Error: User ${username} is not authorized to checkoff students | Username: ${username} | RoomId: ${roomId} | Roles: ${roles}`)
         callback(`Error: User ${username} is not authorized to checkoff students`, null)
     }
 }
 
 /**
- * TODO: MAKE A GET FUNCTION SO WE CAN DO SOMETHING WITH IT BEFORE DELETING
+ * TODO: MAKE A GET FUNCTION SO WE CAN DO SOMETHING WITH IT BEFORE DELETING, also this will cause issues if multiple people will be signing out simultaneously, woo
+ * Maybe instead of an array we can have sub-documents where the student username is the key, this would work, needs more thought.
  */
 function getStudentOffset(roomId) {
     return function(username, name, callback) {
+        console.log(`${getTimeString()}::getStudentOffset | Attempting | Username: ${username} | Name: ${name} | RoomId: ${roomId}`)
         rdb.table('rooms').get(roomId)('actives').offsetsOf(function(student) {
             return student('username').eq(username)
         }).run(app._rdbConn, function(err, offsetArray) {
             if (offsetArray == null || offsetArray.length != 1) {
+                console.log(`${getTimeString()}::getStudentOffset | Error: Could not find ${username} in ${roomId} | Username: ${username} | Name: ${name} | RoomId: ${roomId} | OffsetArray: ${offsetArray}`)
                 callback(`Error: Could not find ${username} in ${roomId}`, null)
             } else {
+                console.log(`${getTimeString()}::getStudentOffset | Success | Username: ${username} | Name: ${name} | RoomId: ${roomId} | OffsetArray: ${offsetArray}`)
                 callback(null, username, name, offsetArray[0])
             }
         })
@@ -367,6 +384,7 @@ function getStudentOffset(roomId) {
 
 function removeStudent(roomId, checkOutTime) {
     return function(username, name, offset, callback) {
+        console.log(`${getTimeString()}::removeStudent | Attempting | Username: ${username} | Name: ${name} | Offset: ${offset} | RoomId: ${roomId} | CheckOutTime: ${checkOutTime}`)
         rdb.table('rooms').get(roomId).update({
             actives: rdb.row('actives').deleteAt(offset)
         }).run(app._rdbConn, callback)
