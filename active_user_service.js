@@ -286,6 +286,7 @@ function getRoles(token, callback) {
     request.get(options, function(err, response, body) {
         if (err) {
             console.log(`${getTimeString()}::getRoles | Error: ${err} | Options: ${options} | Token: ${token}`)
+            callback(err, null)
         } else {
             let userInfo = JSON.parse(body)
             let roles = userInfo.roles
