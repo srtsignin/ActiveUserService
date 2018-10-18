@@ -395,7 +395,7 @@ function removeStudent(roomId, checkOutTime) {
 
 function getTimeString() {
     date = new Date()
-    return date.toDateString()
+    return date.toISOString()
 }
 
 /*** INITIALIZATION FUNCTIONS ***/
