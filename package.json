@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/srtsignin/ActiveUserService#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "async": "^2.6.1",
+    "express": "^4.16.3",
+    "request": "^2.88.0",
+    "rethinkdb": "^2.3.3",
+    "rosefire-node": "git+https://ada.csse.rose-hulman.edu/rosefire/node-sdk.git#2.1.0"
   }
 }
