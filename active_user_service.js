@@ -277,7 +277,9 @@ function activeusersPostChecks(roomId, rosefireToken, cardfireToken) {
  */
 function getRoles(token, callback) {
     const options = {
-        url: 'http://' + config.rolesService.host + ':' + config.rolesService.port + '/roles',
+        host: config.rolesService.host,
+        port: config.rolesService.port,
+        path: '/roles',
         method: 'GET',
         headers: {
             'RosefireToken': token
