@@ -229,10 +229,13 @@ function cursorToArray(array, callback) {
 function activeusersGetChecks(roomId, rosefireToken) {
     return function(callback) {
         if (roomId == null) {
+            console.log(`${getTimeString()}::activeusersGetChecks | Error: No roomId provided | RosefireToken: ${rosefireToken} | RoomId: ${roomId}`)
             callback('Error: No roomId provided', null)
         } else if (rosefireToken == null) {
+            console.log(`${getTimeString()}::activeusersGetChecks | Error: Error: No RosefireToken provided | RosefireToken: ${rosefireToken} | RoomId: ${roomId}`)
             callback('Error: No RosefireToken provided', null)
         } else {
+            console.log(`${getTimeString()}::activeusersGetChecks | Success | RosefireToken: ${rosefireToken} | RoomId: ${roomId}`)
             callback(null, rosefireToken)
         }
     }
@@ -240,14 +243,17 @@ function activeusersGetChecks(roomId, rosefireToken) {
 
 function checkGetRoles(username, name, roles, callback) {
     if (roles.includes('Tutor')) {
+        console.log(`${getTimeString()}::checkGetRoles | Success | Username: ${username} | Name: ${name} | Roles: ${roles}`)
         callback(null)
     } else {
+        console.log(`${getTimeString()}::checkGetRoles | Success | Username: ${username} | Name: ${name} | Roles: ${roles}`)
         callback(`Error: User ${username} is not authorized to view active students`, null)
     }
 }
 
 function getActiveStudents(roomId) {
     return function(callback) {
+        console.log(`${getTimeString()}::getActiveStudents | Attempting to get students | RoomId: ${roomId}`)
         rdb.table('rooms').get(roomId)('actives').run(app._rdbConn, callback)
     }
 }
@@ -279,12 +285,13 @@ function getRoles(token, callback) {
     }
     request.get(options, function(err, response, body) {
         if (err) {
-            callback(err, null)
+            console.log(`${getTimeString()}::getRoles | Error: ${err} | Options: ${options} | Token: ${token}`)
         } else {
             let userInfo = JSON.parse(body)
             let roles = userInfo.roles
             let username = userInfo.user.username
             let name = userInfo.user.name
+            console.log(`${getTimeString()}::getActiveStudents | Success | Options: ${options} | Token: ${token} | UserInfo: ${userInfo}`)
             callback(null, username, name, roles)
         }
     })
@@ -362,6 +369,13 @@ function removeStudent(roomId, checkOutTime) {
             actives: rdb.row('actives').deleteAt(offset)
         }).run(app._rdbConn, callback)
     }
+}
+
+/*** Utility Functions ***/
+
+function getTimeString() {
+    date = new Date()
+    return date.toDateString()
 }
 
 /*** INITIALIZATION FUNCTIONS ***/
