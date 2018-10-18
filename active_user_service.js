@@ -277,7 +277,7 @@ function activeusersPostChecks(roomId, rosefireToken, cardfireToken) {
  */
 function getRoles(token, callback) {
     const options = {
-        url: 'https://' + config.rolesService.host + ':' + config.rolesService.port + '/roles',
+        url: 'http://' + config.rolesService.host + ':' + config.rolesService.port + '/roles',
         method: 'GET',
         headers: {
             'RosefireToken': token
@@ -288,11 +288,12 @@ function getRoles(token, callback) {
             console.log(`${getTimeString()}::getRoles | Error: ${err} | Options: ${options} | Token: ${token}`)
             callback(err, null)
         } else {
+            console.log(`${getTimeString()}::getActiveStudents | InProgress: Unpacking response | Options: ${options} | Response: ${response} | Body ${body}`)
             let userInfo = JSON.parse(body)
+            console.log(`${getTimeString()}::getActiveStudents | Success | UserInfo: ${userInfo}`)
             let roles = userInfo.roles
             let username = userInfo.user.username
             let name = userInfo.user.name
-            console.log(`${getTimeString()}::getActiveStudents | Success | Options: ${options} | Token: ${token} | UserInfo: ${userInfo}`)
             callback(null, username, name, roles)
         }
     })
