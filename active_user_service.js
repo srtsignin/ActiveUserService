@@ -353,10 +353,10 @@ function activeusersDeleteChecks(username, roomId, rosefireToken) {
 
 function checkDeleteRoles(username, name, roles, callback) {
     if (roles.includes('Tutor')) {
-        console.log(`${getTimeString()}::checkDeleteRoles | Success | Username: ${username} | RoomId: ${roomId} | Roles: ${roles}`)
+        console.log(`${getTimeString()}::checkDeleteRoles | Success | Username: ${username} | Roles: ${roles}`)
         callback(null, username, name)
     } else {
-        console.log(`${getTimeString()}::checkDeleteRoles | Error: User ${username} is not authorized to checkoff students | Username: ${username} | RoomId: ${roomId} | Roles: ${roles}`)
+        console.log(`${getTimeString()}::checkDeleteRoles | Error: User ${username} is not authorized to checkoff students | Username: ${username} | Roles: ${roles}`)
         callback(`Error: User ${username} is not authorized to checkoff students`, null)
     }
 }
