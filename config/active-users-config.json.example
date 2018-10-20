@@ -1,0 +1,17 @@
+{
+    "express" : {
+        "port": <LISTENING_PORT>
+    },
+    "rethinkdb" : {
+        "host": <DB_HOST>,
+        "port": <DB_PORT>,
+        "db": <DB>,
+        "user": <DB_USER>,
+        "password": <DB_PASS>,
+        "timeout": <TIMEOUT>,
+        "ssl": null
+    },
+    "rolesService" : {
+        "url": <ROLE_SERVICE_URL>
+    }
+}

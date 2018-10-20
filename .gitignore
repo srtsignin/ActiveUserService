@@ -63,3 +63,4 @@ typings/
 # OtherStuff
 .idea
 .vscode
+active-users-config.json
