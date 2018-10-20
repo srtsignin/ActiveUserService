@@ -70,7 +70,8 @@ GET /activeUsers?roomId=percopo
                 {
                     "department": "CSSE",
                     "name": "Intro to Databases",
-                    "number": "333"
+                    "number": "333",
+                    'queryString': 'CSSE333 Introduction to Databases'
                 }
             ],
             "name": "Collin Moore",
@@ -97,7 +98,8 @@ POST /activeUsers?roomId=percopo
         {
 			"department": "CSSE",
 			"number": "333",
-			"name": "Intro to Databases"
+            "name": "Intro to Databases",
+            'queryString': 'CSSE333 Introduction to Databases'
 		}    
     ],
     "problemDescription": "I need help with transactions"
