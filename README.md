@@ -54,7 +54,7 @@ GET /activeUsers?roomId=percopo
 
 **Header**
 ```js
-'RosefireToken': 'rosefireToken'
+'AuthToken': 'authToken'
 ```
 
 **Response**
@@ -86,8 +86,7 @@ POST /activeUsers?roomId=percopo
 **Headers**
 
 ```js
-'RosefireToken': 'rosefireToken'
-'CardfireToken': 'cardfireToken'
+'AuthToken': 'authToken'
 ```
 
 **Body**
@@ -127,7 +126,7 @@ DELETE /activeUsers?roomId=percopo&username=moorect
 
 **Headers**
 ```js
-'RosefireToken': 'rosefireToken'
+'AuthToken': 'authToken'
 ```
 
 **Response**
