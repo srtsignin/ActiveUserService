@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
 
-const config = require('./config/active-user-config.json')
+const config = require('./config/active-users-config.json')
 const jsonParser = bodyParser.json()
 /**
  * Two usages for this route:
