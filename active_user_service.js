@@ -79,10 +79,6 @@ app.get('/classes', (req, res) => {
 })
 
 /**
- * TODO Add the stuff from the spike about active students
- */
-
-/**
  * @param {string} roomId - Query parameter for the room you want the active users from
  * @param {string} RosefireToken - header
  */
@@ -91,10 +87,10 @@ app.get('/activeUsers', (req, res) => {
     // get list
     // return list
     let roomId = req.query.roomId
-    let rosefireToken = req.get('RosefireToken')
+    let authToken = req.get('authToken')
 
     async.waterfall([
-        activeusersGetChecks(roomId, rosefireToken),
+        activeusersGetChecks(roomId, authToken),
         getRoles,
         checkGetRoles,
         getActiveStudents(roomId)
@@ -119,8 +115,7 @@ app.get('/activeUsers', (req, res) => {
 
 /**
  * @param {string} roomId - Query parameter for the room you want the active users from
- * @param {string} CardfireToken - header
- * @param {string} RosefireToken - header
+ * @param {string} AuthToken - header
  * @param {json} body - should contain a student object with the following fields
  *                      courses - an array of course objects
  *                      problemDescription - the string describing why the student is there                 
@@ -131,13 +126,12 @@ app.post('/activeUsers', jsonParser, (req, res) => {
     // insert new user into the correct room's activeusers
     // return message
     let roomId = req.query.roomId
-    let cardfireToken = req.get('CardfireToken')
-    let rosefireToken = req.get('RosefireToken')
+    let authToken = req.get('AuthToken')
     let student = req.body
     let checkInTime = Date.now()
 
     async.waterfall([
-        activeusersPostChecks(roomId, rosefireToken, cardfireToken),
+        activeusersPostChecks(roomId, authToken),
         getRoles,
         checkPostRoles,
         insertStudent(checkInTime, student, roomId)
@@ -163,7 +157,7 @@ app.post('/activeUsers', jsonParser, (req, res) => {
 /**
  * @param {string} username - query parameter of the students username you wish to remove
  * @param {string} roomId - query paramter for room the student is in, hopefully UI can get this, will be more work otherwise
- * @param {string} RosefireToken - header
+ * @param {string} AuthToken - header
  */
 app.delete('/activeUsers', (req, res) => {
     // check params
@@ -173,10 +167,10 @@ app.delete('/activeUsers', (req, res) => {
     // return message
     let username = req.query.username
     let roomId = req.query.roomId
-    let rosefireToken = req.get('RosefireToken')
+    let authToken = req.get('AuthToken')
     let checkOutTime = Date.now()
     async.waterfall([
-        activeusersDeleteChecks(username, roomId, rosefireToken),
+        activeusersDeleteChecks(username, roomId, authToken),
         getRoles,
         checkDeleteRoles,
         getStudentOffset(roomId),
@@ -226,17 +220,17 @@ function cursorToArray(array, callback) {
 
 /*** ACTIVEUSERS FUNCTIONS ***/
 
-function activeusersGetChecks(roomId, rosefireToken) {
+function activeusersGetChecks(roomId, authToken) {
     return function(callback) {
         if (roomId == null) {
-            console.log(`${getTimeString()}::activeusersGetChecks | Error: No roomId provided | RosefireToken: ${rosefireToken} | RoomId: ${roomId}`)
+            console.log(`${getTimeString()}::activeusersGetChecks | Error: No roomId provided | AuthToken: ${authToken} | RoomId: ${roomId}`)
             callback('Error: No roomId provided', null)
-        } else if (rosefireToken == null) {
-            console.log(`${getTimeString()}::activeusersGetChecks | Error: Error: No RosefireToken provided | RosefireToken: ${rosefireToken} | RoomId: ${roomId}`)
-            callback('Error: No RosefireToken provided', null)
+        } else if (authToken == null) {
+            console.log(`${getTimeString()}::activeusersGetChecks | Error: Error: No AuthToken provided | AuthToken: ${authToken} | RoomId: ${roomId}`)
+            callback('Error: No AuthToken provided', null)
         } else {
-            console.log(`${getTimeString()}::activeusersGetChecks | Success | RosefireToken: ${rosefireToken} | RoomId: ${roomId}`)
-            callback(null, rosefireToken)
+            console.log(`${getTimeString()}::activeusersGetChecks | Success | AuthToken: $authToken} | RoomId: ${roomId}`)
+            callback(null, authToken)
         }
     }
 }
@@ -258,19 +252,16 @@ function getActiveStudents(roomId) {
     }
 }
 
-function activeusersPostChecks(roomId, rosefireToken, cardfireToken) {
+function activeusersPostChecks(roomId, authToken) {
     return function(callback) {
         if (roomId == null) {
-            console.log(`${getTimeString()}::activeusersPostChecks | Error: No roomId provided | RosefireToken: ${rosefireToken} | CardfireToken: ${cardfireToken} | RoomId: ${roomId}`)
+            console.log(`${getTimeString()}::activeusersPostChecks | Error: No roomId provided | AuthToken: ${authToken} | RoomId: ${roomId}`)
             callback('Error: No roomId provided', null)
-        } else if (rosefireToken != null) {
-            console.log(`${getTimeString()}::activeusersPostChecks | Success: Using RosefireToken | RosefireToken: ${rosefireToken} | CardfireToken: ${cardfireToken} | RoomId: ${roomId}`)
-            callback(null, rosefireToken)
-        } else if (cardfireToken != null) {
-            console.log(`${getTimeString()}::activeusersPostChecks | Success: Using CardfireToken | RosefireToken: ${rosefireToken} | CardfireToken: ${cardfireToken} | RoomId: ${roomId}`)
-            callback(null, cardfireToken)
+        } else if (authToken != null) {
+            console.log(`${getTimeString()}::activeusersPostChecks | Success: Using AuthToken | AuthToken: ${authToken} | RoomId: ${roomId}`)
+            callback(null, authToken)
         } else {
-            console.log(`${getTimeString()}::activeusersPostChecks | Error: No token provided | RosefireToken: ${rosefireToken} | CardfireToken: ${cardfireToken} | RoomId: ${roomId}`)
+            console.log(`${getTimeString()}::activeusersPostChecks | Error: No token provided | AuthToken: ${authToken} | RoomId: ${roomId}`)
             callback('Error: No token provided', null)
         }
     }
@@ -279,17 +270,17 @@ function activeusersPostChecks(roomId, rosefireToken, cardfireToken) {
 /**
  * This will contact the role service 
  */
-function getRoles(token, callback) {
+function getRoles(authToken, callback) {
     const options = {
         url: config.rolesService.url + "/roles",
         method: 'GET',
         headers: {
-            'RosefireToken': token
+            'AuthToken': authToken
         }
     }
     request.get(options, function(err, response, body) {
         if (err) {
-            console.log(`${getTimeString()}::getRoles | Error: ${err} | Response: ${response && response.statusCode} | Body ${body} | Token: ${token}`)
+            console.log(`${getTimeString()}::getRoles | Error: ${err} | Response: ${response && response.statusCode} | Body ${body} | AuthToken: ${authToken}`)
             callback(err, null)
         } else {
             console.log(`${getTimeString()}::getRoles | InProgress: Unpacking response | Response: ${response && response.statusCode} | Body ${body}`)
@@ -333,20 +324,20 @@ function insertStudent(checkInTime, studentObj, roomId) {
     }
 }
 
-function activeusersDeleteChecks(username, roomId, rosefireToken) {
+function activeusersDeleteChecks(username, roomId, authToken) {
     return function(callback) {
         if (username == null) {
-            console.log(`${getTimeString()}::activeusersDeleteChecks | Error: must provide a student username | Username: ${username} | RoomId: ${roomId} | RosefireToken: ${rosefireToken}`)
+            console.log(`${getTimeString()}::activeusersDeleteChecks | Error: must provide a student username | Username: ${username} | RoomId: ${roomId} | AuthToken: ${authToken}`)
             callback('Error: must provide a student username', null)
         } else if (roomId == null) {
-            console.log(`${getTimeString()}::activeusersDeleteChecks | Error: must provide a roomId | Username: ${username} | RoomId: ${roomId} | RosefireToken: ${rosefireToken}`)
+            console.log(`${getTimeString()}::activeusersDeleteChecks | Error: must provide a roomId | Username: ${username} | RoomId: ${roomId} | AuthToken: ${authToken}`)
             callback('Error: must provide a roomId', null)
-        } else if (rosefireToken == null) {
-            console.log(`${getTimeString()}::activeusersDeleteChecks | Error: must provide a RosefireToken | Username: ${username} | RoomId: ${roomId} | RosefireToken: ${rosefireToken}`)
-            callback('Error: must provide a RosefireToken', null)
+        } else if (authToken == null) {
+            console.log(`${getTimeString()}::activeusersDeleteChecks | Error: must provide a AuthToken | Username: ${username} | RoomId: ${roomId} | AuthToken: ${authToken}`)
+            callback('Error: must provide a AuthToken', null)
         } else {
-            console.log(`${getTimeString()}::activeusersDeleteChecks | Success | Username: ${username} | RoomId: ${roomId} | RosefireToken: ${rosefireToken}`)
-            callback(null, rosefireToken)
+            console.log(`${getTimeString()}::activeusersDeleteChecks | Success | Username: ${username} | RoomId: ${roomId} | AuthToken: ${authToken}`)
+            callback(null, authToken)
         }
     }
 }

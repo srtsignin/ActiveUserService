@@ -54,7 +54,7 @@ GET /activeUsers?roomId=percopo
 
 **Header**
 ```js
-'RosefireToken': 'rosefireToken'
+'AuthToken': 'authToken'
 ```
 
 **Response**
@@ -70,7 +70,8 @@ GET /activeUsers?roomId=percopo
                 {
                     "department": "CSSE",
                     "name": "Intro to Databases",
-                    "number": "333"
+                    "number": "333",
+                    'queryString': 'CSSE333 Introduction to Databases'
                 }
             ],
             "name": "Collin Moore",
@@ -86,8 +87,7 @@ POST /activeUsers?roomId=percopo
 **Headers**
 
 ```js
-'RosefireToken': 'rosefireToken'
-'CardfireToken': 'cardfireToken'
+'AuthToken': 'authToken'
 ```
 
 **Body**
@@ -98,7 +98,8 @@ POST /activeUsers?roomId=percopo
         {
 			"department": "CSSE",
 			"number": "333",
-			"name": "Intro to Databases"
+            "name": "Intro to Databases",
+            'queryString': 'CSSE333 Introduction to Databases'
 		}    
     ],
     "problemDescription": "I need help with transactions"
@@ -127,7 +128,7 @@ DELETE /activeUsers?roomId=percopo&username=moorect
 
 **Headers**
 ```js
-'RosefireToken': 'rosefireToken'
+'AuthToken': 'authToken'
 ```
 
 **Response**
