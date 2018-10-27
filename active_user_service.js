@@ -173,7 +173,6 @@ app.delete('/activeUsers', (req, res) => {
         activeusersDeleteChecks(username, roomId, authToken),
         getRoles,
         checkDeleteRoles,
-        getStudentOffset(roomId),
         removeStudent(roomId, checkOutTime)
     ], function(err, result) {
         if (err) {
@@ -352,32 +351,15 @@ function checkDeleteRoles(username, name, roles, callback) {
     }
 }
 
-/**
- * TODO: MAKE A GET FUNCTION SO WE CAN DO SOMETHING WITH IT BEFORE DELETING, also this will cause issues if multiple people will be signing out simultaneously, woo
- * Maybe instead of an array we can have sub-documents where the student username is the key, this would work, needs more thought.
- */
-function getStudentOffset(roomId) {
-    return function(username, name, callback) {
-        console.log(`${getTimeString()}::getStudentOffset | Attempting | Username: ${username} | Name: ${name} | RoomId: ${roomId}`)
-        rdb.table('rooms').get(roomId)('actives').offsetsOf(function(student) {
-            return student('username').eq(username)
-        }).run(app._rdbConn, function(err, offsetArray) {
-            if (offsetArray == null || offsetArray.length != 1) {
-                console.log(`${getTimeString()}::getStudentOffset | Error: Could not find ${username} in ${roomId} | Username: ${username} | Name: ${name} | RoomId: ${roomId} | OffsetArray: ${offsetArray}`)
-                callback(`Error: Could not find ${username} in ${roomId}`, null)
-            } else {
-                console.log(`${getTimeString()}::getStudentOffset | Success | Username: ${username} | Name: ${name} | RoomId: ${roomId} | OffsetArray: ${offsetArray}`)
-                callback(null, username, name, offsetArray[0])
-            }
-        })
-    }
-}
-
 function removeStudent(roomId, checkOutTime) {
-    return function(username, name, offset, callback) {
-        console.log(`${getTimeString()}::removeStudent | Attempting | Username: ${username} | Name: ${name} | Offset: ${offset} | RoomId: ${roomId} | CheckOutTime: ${checkOutTime}`)
-        rdb.table('rooms').get(roomId).update({
-            actives: rdb.row('actives').deleteAt(offset)
+    return function(username, name, callback) {
+        console.log(`${getTimeString()}::removeStudent | Attempting | Username: ${username} | Name: ${name} | RoomId: ${roomId} | CheckOutTime: ${checkOutTime}`)
+        rdb.table('rooms').get(roomId).replace(function(s) {
+            return s.without('actives').merge({
+                actives : s('actives').filter(function(user) {
+                    return user('username').ne(username)
+                })
+            })
         }).run(app._rdbConn, callback)
     }
 }
