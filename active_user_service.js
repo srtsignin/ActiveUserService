@@ -173,6 +173,8 @@ app.delete('/activeUsers', (req, res) => {
         activeusersDeleteChecks(username, roomId, authToken),
         getRoles,
         checkDeleteRoles,
+        getStudent(roomId),
+        sendStudentToDataservice(roomId, checkOutTime),
         removeStudent(roomId, checkOutTime)
     ], function(err, result) {
         if (err) {
@@ -348,6 +350,33 @@ function checkDeleteRoles(username, name, roles, callback) {
     } else {
         console.log(`${getTimeString()}::checkDeleteRoles | Error: User ${username} is not authorized to checkoff students | Username: ${username} | Roles: ${roles}`)
         callback(`Error: User ${username} is not authorized to checkoff students`, null)
+    }
+}
+
+function getStudent(roomId) {
+    return function(username, name, callback) {
+        console.log(`${getTimeString()}::getStudent | Attempting | Username: ${username} | Name: ${name} | RoomId: ${roomId}`)
+        rdb.table('rooms').get(roomId)('actives').filter(function(s) {
+            return s('username').eq(username)
+        }).run(app._rdbConn, function(err, student) {
+            if (err) {
+                callback(err, null)
+            } else {
+                if (student.length != 1) {
+                    callback(`Error: There was no student with the username ${username}`, null)
+                } else {
+                    callback(null, username, name, student[0])
+                }
+            }
+        })
+    }
+}
+
+function sendStudentToDataservice(roomId, checkOutTime) {
+    return function(username, name, student, callback) {
+        console.log(`${getTimeString()}::sendStudentToDataservice | Sending | Student: ${JSON.stringify(student)}`)
+        // Do something here
+        callback(null, username, name)
     }
 }
 
