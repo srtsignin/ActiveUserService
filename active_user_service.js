@@ -409,10 +409,12 @@ function sendStudentToDataService(roomId, checkOutTime) {
             url: config.dataService.url + "/store",
             method: 'POST',
             json: true,
-            body: JSON.stringify(student)
+            body: student
         }
         request(options, function(err, response, body) {
-            console.log(err)
+            if (err) {
+                callback(err, body)
+            }
             callback(null, body)
         })
     }
