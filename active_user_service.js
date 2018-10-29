@@ -174,8 +174,8 @@ app.delete('/activeUsers', (req, res) => {
         getRoles,
         checkDeleteRoles,
         getStudent(roomId),
-        sendStudentToDataservice(roomId, checkOutTime),
-        removeStudent(roomId, checkOutTime)
+        removeStudent(roomId, checkOutTime),
+        sendStudentToDataservice(roomId, checkOutTime)
     ], function(err, result) {
         if (err) {
             res.status(400)
@@ -372,16 +372,9 @@ function getStudent(roomId) {
     }
 }
 
-function sendStudentToDataservice(roomId, checkOutTime) {
-    return function(username, name, student, callback) {
-        console.log(`${getTimeString()}::sendStudentToDataservice | Sending | Student: ${JSON.stringify(student)}`)
-        // Do something here
-        callback(null, username, name)
-    }
-}
 
 function removeStudent(roomId, checkOutTime) {
-    return function(username, name, callback) {
+    return function(username, name, student, callback) {
         console.log(`${getTimeString()}::removeStudent | Attempting | Username: ${username} | Name: ${name} | RoomId: ${roomId} | CheckOutTime: ${checkOutTime}`)
         rdb.table('rooms').get(roomId).replace(function(s) {
             return s.without('actives').merge({
@@ -389,10 +382,37 @@ function removeStudent(roomId, checkOutTime) {
                     return user('username').ne(username)
                 })
             })
-        }).run(app._rdbConn, callback)
+        }, {
+            return_changes: true
+        }).run(app._rdbConn, function(err, result) {
+            if (result.errors) {
+                callback(result.first_error, result)
+            } else if (result.replaced != 1) {
+                callback(`Error: something went wrong when replacing ${username}`, result)
+            } else {    
+                callback(null, username, name, student)
+            }
+        })
     }
 }
 
+function sendStudentToDataservice(roomId, checkOutTime) {
+    return function(username, name, student, callback) {
+        console.log(`${getTimeString()}::sendStudentToDataservice | Sending | Student: ${JSON.stringify(student)}`)
+        // Do something here
+        const options = {
+            url: config.rolesService.url + "/roles",
+            method: 'GET',
+            headers: {
+                'AuthToken': authToken
+            }
+        }
+        request.get(options, function(err, response, body) {
+        
+            callback(null, student)
+        })
+    }
+}
 /*** Utility Functions ***/
 
 function getTimeString() {
