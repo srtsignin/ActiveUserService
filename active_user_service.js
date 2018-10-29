@@ -175,7 +175,7 @@ app.delete('/activeUsers', (req, res) => {
         checkDeleteRoles,
         getStudent(roomId),
         removeStudent(roomId, checkOutTime),
-        sendStudentToDataservice(roomId, checkOutTime)
+        sendStudentToDataService(roomId, checkOutTime)
     ], function(err, result) {
         if (err) {
             res.status(400)
@@ -396,20 +396,24 @@ function removeStudent(roomId, checkOutTime) {
     }
 }
 
-function sendStudentToDataservice(roomId, checkOutTime) {
+function sendStudentToDataService(roomId, checkOutTime) {
     return function(username, name, student, callback) {
         console.log(`${getTimeString()}::sendStudentToDataservice | Sending | Student: ${JSON.stringify(student)}`)
         // Do something here
+        student.checkOutTime = checkOutTime
+        student.tutorUsername = username
+        student.tutorName = name
+        student.roomId = roomId
+        console.log(`DataService Payload: ${JSON.stringify(student)}`)
         const options = {
-            url: config.rolesService.url + "/roles",
-            method: 'GET',
-            headers: {
-                'AuthToken': authToken
-            }
+            url: config.dataService.url + "/store",
+            method: 'POST',
+            json: true,
+            body: JSON.stringify(student)
         }
-        request.get(options, function(err, response, body) {
-        
-            callback(null, student)
+        request(options, function(err, response, body) {
+            console.log(err)
+            callback(null, body)
         })
     }
 }

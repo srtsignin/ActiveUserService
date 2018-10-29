@@ -13,5 +13,8 @@
     },
     "rolesService" : {
         "url": <ROLE_SERVICE_URL>
+    },
+    "dataService" : {
+        "url": <DATA_SERVICE_URL>
     }
 }
