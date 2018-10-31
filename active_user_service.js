@@ -40,14 +40,14 @@ app.get('/courses', (req, res) => {
 })
 
 /**
- * This route requires the header StudentToken, returns a list of courses pertaining to the student
+ * This route requires the header AuthToken, returns a list of courses pertaining to the student
  * NOTE: This is currently only going to give back a hard coded list of courses until we have LDAP access
  */
 app.get('/classes', (req, res) => {
-    if (req.get('StudentToken') == null) {
+    if (req.get('AuthToken') == null) {
         res.status(400)
         res.json({
-            'message': 'Error: StudentToken not provided',
+            'message': 'Error: AuthToken not provided',
             'success': false,
             'data': null
         })
