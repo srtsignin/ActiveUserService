@@ -175,8 +175,8 @@ app.delete('/activeUsers', (req, res) => {
         getRoles,
         checkDeleteRoles,
         getStudent(roomId),
-        removeStudent(roomId, checkOutTime)
-        //sendStudentToDataService(roomId, checkOutTime)
+        removeStudent(roomId, checkOutTime),
+        sendStudentToDataService(roomId, checkOutTime)
     ], function(err, result) {
         if (err) {
             res.status(400)
