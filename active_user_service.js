@@ -134,6 +134,7 @@ app.post('/activeUsers', jsonParser, (req, res) => {
         activeusersPostChecks(roomId, authToken),
         getRoles,
         checkPostRoles,
+        checkStudentExistsAlready(roomId),
         insertStudent(checkInTime, student, roomId)
     ], function(err, result) {
         if (err) {
@@ -174,8 +175,8 @@ app.delete('/activeUsers', (req, res) => {
         getRoles,
         checkDeleteRoles,
         getStudent(roomId),
-        removeStudent(roomId, checkOutTime),
-        sendStudentToDataService(roomId, checkOutTime)
+        removeStudent(roomId, checkOutTime)
+        //sendStudentToDataService(roomId, checkOutTime)
     ], function(err, result) {
         if (err) {
             res.status(400)
@@ -305,6 +306,23 @@ function checkPostRoles(username, name, roles, callback) {
     }
 }
 
+
+function checkStudentExistsAlready(roomId) {
+    return function(username, name, callback) {
+        console.log(`${getTimeString()}::checkStudentExistsAlready | Attempting | RoomId: ${roomId}`)
+        rdb.table('rooms').get(roomId)('actives').filter(function(s) {
+            return s('username').eq(username)
+        }).run(app._rdbConn, function(err, result) {
+            console.log(`${getTimeString()}::checkStudentExistsAlready | Attempting | RoomId: ${roomId} | FoundUser?: ${result}`)
+            if (result && result.length == 0) {
+                callback(null, username, name)
+            } else {
+                console.log(`${getTimeString()}::checkStudentExistsAlready | Error: Student already exists or RethinkDb died | RoomId: ${roomId} | FoundUser?: ${result}`)
+                callback(`Error: Student already exists or RethinkDb died`, null)
+            }
+        })
+    }
+}
 /**
  * Insert the student into the proper
  * TODO: Should probably check if the user is already signed in
