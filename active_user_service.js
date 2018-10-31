@@ -310,8 +310,8 @@ function checkPostRoles(username, name, roles, callback) {
 function checkStudentExistsAlready(roomId) {
     return function(username, name, callback) {
         console.log(`${getTimeString()}::checkStudentExistsAlready | Attempting | RoomId: ${roomId}`)
-        rdb.table('rooms').get(roomId)('actives').filter(function(s) {
-            return s('username').eq(username)
+        rdb.table('rooms').get(roomId)('actives').filter(function(studentDoc) {
+            return studentDoc('username').eq(username)
         }).run(app._rdbConn, function(err, result) {
             console.log(`${getTimeString()}::checkStudentExistsAlready | Attempting | RoomId: ${roomId} | FoundUser?: ${result}`)
             if (result && result.length == 0) {
@@ -374,8 +374,8 @@ function checkDeleteRoles(username, name, roles, callback) {
 function getStudent(roomId) {
     return function(username, name, callback) {
         console.log(`${getTimeString()}::getStudent | Attempting | Username: ${username} | Name: ${name} | RoomId: ${roomId}`)
-        rdb.table('rooms').get(roomId)('actives').filter(function(s) {
-            return s('username').eq(username)
+        rdb.table('rooms').get(roomId)('actives').filter(function(studentDoc) {
+            return studentDoc('username').eq(username)
         }).run(app._rdbConn, function(err, student) {
             if (err) {
                 callback(err, null)
@@ -394,9 +394,9 @@ function getStudent(roomId) {
 function removeStudent(roomId, checkOutTime) {
     return function(username, name, student, callback) {
         console.log(`${getTimeString()}::removeStudent | Attempting | Username: ${username} | Name: ${name} | RoomId: ${roomId} | CheckOutTime: ${checkOutTime}`)
-        rdb.table('rooms').get(roomId).replace(function(s) {
-            return s.without('actives').merge({
-                actives : s('actives').filter(function(user) {
+        rdb.table('rooms').get(roomId).replace(function(roomDoc) {
+            return roomDoc.without('actives').merge({
+                actives : roomDoc('actives').filter(function(user) {
                     return user('username').ne(username)
                 })
             })
