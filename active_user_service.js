@@ -40,14 +40,14 @@ app.get('/courses', (req, res) => {
 })
 
 /**
- * This route requires the header StudentToken, returns a list of courses pertaining to the student
+ * This route requires the header AuthToken, returns a list of courses pertaining to the student
  * NOTE: This is currently only going to give back a hard coded list of courses until we have LDAP access
  */
 app.get('/classes', (req, res) => {
-    if (req.get('StudentToken') == null) {
+    if (req.get('AuthToken') == null) {
         res.status(400)
         res.json({
-            'message': 'Error: StudentToken not provided',
+            'message': 'Error: AuthToken not provided',
             'success': false,
             'data': null
         })
@@ -134,6 +134,7 @@ app.post('/activeUsers', jsonParser, (req, res) => {
         activeusersPostChecks(roomId, authToken),
         getRoles,
         checkPostRoles,
+        checkStudentExistsAlready(roomId),
         insertStudent(checkInTime, student, roomId)
     ], function(err, result) {
         if (err) {
@@ -173,8 +174,9 @@ app.delete('/activeUsers', (req, res) => {
         activeusersDeleteChecks(username, roomId, authToken),
         getRoles,
         checkDeleteRoles,
-        getStudentOffset(roomId),
+        getStudent(roomId),
         removeStudent(roomId, checkOutTime)
+        //sendStudentToDataService(roomId, checkOutTime)
     ], function(err, result) {
         if (err) {
             res.status(400)
@@ -304,6 +306,23 @@ function checkPostRoles(username, name, roles, callback) {
     }
 }
 
+
+function checkStudentExistsAlready(roomId) {
+    return function(username, name, callback) {
+        console.log(`${getTimeString()}::checkStudentExistsAlready | Attempting | RoomId: ${roomId}`)
+        rdb.table('rooms').get(roomId)('actives').filter(function(studentDoc) {
+            return studentDoc('username').eq(username)
+        }).run(app._rdbConn, function(err, result) {
+            console.log(`${getTimeString()}::checkStudentExistsAlready | Attempting | RoomId: ${roomId} | FoundUser?: ${result}`)
+            if (result && result.length == 0) {
+                callback(null, username, name)
+            } else {
+                console.log(`${getTimeString()}::checkStudentExistsAlready | Error: Student already exists or RethinkDb died | RoomId: ${roomId} | FoundUser?: ${result}`)
+                callback(`Error: Student already exists or RethinkDb died`, null)
+            }
+        })
+    }
+}
 /**
  * Insert the student into the proper
  * TODO: Should probably check if the user is already signed in
@@ -352,36 +371,71 @@ function checkDeleteRoles(username, name, roles, callback) {
     }
 }
 
-/**
- * TODO: MAKE A GET FUNCTION SO WE CAN DO SOMETHING WITH IT BEFORE DELETING, also this will cause issues if multiple people will be signing out simultaneously, woo
- * Maybe instead of an array we can have sub-documents where the student username is the key, this would work, needs more thought.
- */
-function getStudentOffset(roomId) {
+function getStudent(roomId) {
     return function(username, name, callback) {
-        console.log(`${getTimeString()}::getStudentOffset | Attempting | Username: ${username} | Name: ${name} | RoomId: ${roomId}`)
-        rdb.table('rooms').get(roomId)('actives').offsetsOf(function(student) {
-            return student('username').eq(username)
-        }).run(app._rdbConn, function(err, offsetArray) {
-            if (offsetArray == null || offsetArray.length != 1) {
-                console.log(`${getTimeString()}::getStudentOffset | Error: Could not find ${username} in ${roomId} | Username: ${username} | Name: ${name} | RoomId: ${roomId} | OffsetArray: ${offsetArray}`)
-                callback(`Error: Could not find ${username} in ${roomId}`, null)
+        console.log(`${getTimeString()}::getStudent | Attempting | Username: ${username} | Name: ${name} | RoomId: ${roomId}`)
+        rdb.table('rooms').get(roomId)('actives').filter(function(studentDoc) {
+            return studentDoc('username').eq(username)
+        }).run(app._rdbConn, function(err, student) {
+            if (err) {
+                callback(err, null)
             } else {
-                console.log(`${getTimeString()}::getStudentOffset | Success | Username: ${username} | Name: ${name} | RoomId: ${roomId} | OffsetArray: ${offsetArray}`)
-                callback(null, username, name, offsetArray[0])
+                if (student.length != 1) {
+                    callback(`Error: There was no student with the username ${username}`, null)
+                } else {
+                    callback(null, username, name, student[0])
+                }
             }
         })
     }
 }
 
+
 function removeStudent(roomId, checkOutTime) {
-    return function(username, name, offset, callback) {
-        console.log(`${getTimeString()}::removeStudent | Attempting | Username: ${username} | Name: ${name} | Offset: ${offset} | RoomId: ${roomId} | CheckOutTime: ${checkOutTime}`)
-        rdb.table('rooms').get(roomId).update({
-            actives: rdb.row('actives').deleteAt(offset)
-        }).run(app._rdbConn, callback)
+    return function(username, name, student, callback) {
+        console.log(`${getTimeString()}::removeStudent | Attempting | Username: ${username} | Name: ${name} | RoomId: ${roomId} | CheckOutTime: ${checkOutTime}`)
+        rdb.table('rooms').get(roomId).replace(function(roomDoc) {
+            return roomDoc.without('actives').merge({
+                actives : roomDoc('actives').filter(function(user) {
+                    return user('username').ne(username)
+                })
+            })
+        }, {
+            return_changes: true
+        }).run(app._rdbConn, function(err, result) {
+            if (result.errors) {
+                callback(result.first_error, result)
+            } else if (result.replaced != 1) {
+                callback(`Error: something went wrong when replacing ${username}`, result)
+            } else {    
+                callback(null, username, name, student)
+            }
+        })
     }
 }
 
+function sendStudentToDataService(roomId, checkOutTime) {
+    return function(username, name, student, callback) {
+        console.log(`${getTimeString()}::sendStudentToDataservice | Sending | Student: ${JSON.stringify(student)}`)
+        student.checkOutTime = checkOutTime
+        student.tutorUsername = username
+        student.tutorName = name
+        student.roomId = roomId
+        console.log(`DataService Payload: ${JSON.stringify(student)}`)
+        const options = {
+            url: config.dataService.url + "/store",
+            method: 'POST',
+            json: true,
+            body: student
+        }
+        request(options, function(err, response, body) {
+            if (err) {
+                callback(err, body)
+            }
+            callback(null, body)
+        })
+    }
+}
 /*** Utility Functions ***/
 
 function getTimeString() {
