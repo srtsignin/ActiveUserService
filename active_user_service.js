@@ -417,7 +417,6 @@ function removeStudent(roomId, checkOutTime) {
 function sendStudentToDataService(roomId, checkOutTime) {
     return function(username, name, student, callback) {
         console.log(`${getTimeString()}::sendStudentToDataservice | Sending | Student: ${JSON.stringify(student)}`)
-        // Do something here
         student.checkOutTime = checkOutTime
         student.tutorUsername = username
         student.tutorName = name
