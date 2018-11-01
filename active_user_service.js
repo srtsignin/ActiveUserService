@@ -174,8 +174,8 @@ app.delete('/activeUsers', (req, res) => {
         activeusersDeleteChecks(username, roomId, authToken),
         getRoles,
         checkDeleteRoles,
-        getStudent(roomId),
-        removeStudent(roomId, checkOutTime),
+        getStudent(roomId, username),
+        removeStudent(roomId, checkOutTime, username),
         sendStudentToDataService(roomId, checkOutTime)
     ], function(err, result) {
         if (err) {
@@ -371,17 +371,17 @@ function checkDeleteRoles(username, name, roles, callback) {
     }
 }
 
-function getStudent(roomId) {
+function getStudent(roomId, studentUsername) {
     return function(username, name, callback) {
         console.log(`${getTimeString()}::getStudent | Attempting | Username: ${username} | Name: ${name} | RoomId: ${roomId}`)
         rdb.table('rooms').get(roomId)('actives').filter(function(studentDoc) {
-            return studentDoc('username').eq(username)
+            return studentDoc('username').eq(studentUsername)
         }).run(app._rdbConn, function(err, student) {
             if (err) {
                 callback(err, null)
             } else {
                 if (student.length != 1) {
-                    callback(`Error: There was no student with the username ${username}`, null)
+                    callback(`Error: There was no student with the username ${studentUsername}`, null)
                 } else {
                     callback(null, username, name, student[0])
                 }
@@ -391,13 +391,13 @@ function getStudent(roomId) {
 }
 
 
-function removeStudent(roomId, checkOutTime) {
+function removeStudent(roomId, checkOutTime, studentUsername) {
     return function(username, name, student, callback) {
         console.log(`${getTimeString()}::removeStudent | Attempting | Username: ${username} | Name: ${name} | RoomId: ${roomId} | CheckOutTime: ${checkOutTime}`)
         rdb.table('rooms').get(roomId).replace(function(roomDoc) {
             return roomDoc.without('actives').merge({
                 actives : roomDoc('actives').filter(function(user) {
-                    return user('username').ne(username)
+                    return user('username').ne(studentUsername)
                 })
             })
         }, {
