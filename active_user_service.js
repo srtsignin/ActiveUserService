@@ -178,7 +178,7 @@ app.delete('/activeUsers', (req, res) => {
         checkDeleteRoles,
         getStudent(roomId, username),
         removeStudent(roomId, checkOutTime, username),
-        sendStudentToDataService(roomId, checkOutTime)
+        sendStudentToDataService(roomId, checkOutTime, authToken)
     ], function(err, result) {
         if (err) {
             res.status(400)
@@ -429,7 +429,7 @@ function removeStudent(roomId, checkOutTime, studentUsername) {
     }
 }
 
-function sendStudentToDataService(roomId, checkOutTime) {
+function sendStudentToDataService(roomId, checkOutTime, authToken) {
     return function(username, name, student, callback) {
         console.log(`${getTimeString()}::sendStudentToDataservice | Sending | Student: ${JSON.stringify(student)}`)
         student.checkOutTime = checkOutTime
@@ -441,7 +441,10 @@ function sendStudentToDataService(roomId, checkOutTime) {
             url: config.dataService.url + "/store",
             method: 'POST',
             json: true,
-            body: student
+            body: student,
+            headers: {
+                'AuthToken': authToken
+            }
         }
         request(options, function(err, response, body) {
             if (err) {
