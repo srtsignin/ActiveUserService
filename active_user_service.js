@@ -321,7 +321,6 @@ function checkPostRoles(username, name, roles, callback) {
     }
 }
 
-
 function checkStudentExistsAlready(roomId) {
     return function(username, name, callback) {
         console.log(`${getTimeString()}::checkStudentExistsAlready | Attempting | RoomId: ${roomId}`)
@@ -338,10 +337,7 @@ function checkStudentExistsAlready(roomId) {
         })
     }
 }
-/**
- * Insert the student into the proper
- * TODO: Should probably check if the user is already signed in
- */
+
 function insertStudent(checkInTime, studentObj, roomId) {
     return function(username, name, callback) {
         student = {
