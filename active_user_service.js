@@ -15,10 +15,12 @@ const jsonParser = bodyParser.json()
  */
 app.get('/courses', (req, res) => {
     let queryString = req.query.search
-    
+    let authToken = req.get('AuthToken')
     async.waterfall([
-        checkQueryString(queryString),
-        getFilterCourses(app._rdbConn),
+        checkCourses(queryString, authToken),
+        getRoles,
+        checkCoursesPermissions,
+        getFilterCourses(queryString),
         cursorToArray
     ], function (err, result) {
         if (err) {
@@ -176,7 +178,7 @@ app.delete('/activeUsers', (req, res) => {
         checkDeleteRoles,
         getStudent(roomId, username),
         removeStudent(roomId, checkOutTime, username),
-        sendStudentToDataService(roomId, checkOutTime)
+        sendStudentToDataService(roomId, checkOutTime, authToken)
     ], function(err, result) {
         if (err) {
             res.status(400)
@@ -198,21 +200,34 @@ app.delete('/activeUsers', (req, res) => {
 
 /*** COURSES FUNCTIONS ***/
 
-function checkQueryString(queryString) {
+function checkCourses(queryString, authToken) {
     return function(callback) {
         if (queryString == null) {
             callback('Error: No queryString provided', null)
+        } else if (authToken == null) {
+            console.log(`${getTimeString()}::checkCourses | Error: No AuthToken provided | AuthToken: ${authToken}`)
+            callback('Error: No AuthToken provided', null)
         } else {
-            callback(null, queryString)
+            callback(null, authToken)
         }
     }
 }
 
-function getFilterCourses(connection) {
-    return function (queryString, callback) {
+function checkCoursesPermissions(username, name, roles, callback) {
+    if (roles.includes('Student')) {
+        console.log(`${getTimeString()}::checkCoursesPermissions | Success | Username: ${username} | Name: ${name} | Roles: ${roles}`)
+        callback(null)
+    } else {
+        console.log(`${getTimeString()}::checkCoursesPermissions | Error: User ${username} is not authorized to view courses | Username: ${username} | Name: ${name} | Roles: ${roles}`)
+        callback(`Error: User ${username} is not authorized to view courses`, null)
+    }
+}
+
+function getFilterCourses(queryString) {
+    return function (callback) {
         rdb.table('courses').without('id').filter(function (course) {
             return course('queryString').match(queryString)
-        }).run(connection, callback)
+        }).run(app._rdbConn, callback)
     }
 }
 
@@ -228,7 +243,7 @@ function activeusersGetChecks(roomId, authToken) {
             console.log(`${getTimeString()}::activeusersGetChecks | Error: No roomId provided | AuthToken: ${authToken} | RoomId: ${roomId}`)
             callback('Error: No roomId provided', null)
         } else if (authToken == null) {
-            console.log(`${getTimeString()}::activeusersGetChecks | Error: Error: No AuthToken provided | AuthToken: ${authToken} | RoomId: ${roomId}`)
+            console.log(`${getTimeString()}::activeusersGetChecks | Error: No AuthToken provided | AuthToken: ${authToken} | RoomId: ${roomId}`)
             callback('Error: No AuthToken provided', null)
         } else {
             console.log(`${getTimeString()}::activeusersGetChecks | Success | AuthToken: $authToken} | RoomId: ${roomId}`)
@@ -306,7 +321,6 @@ function checkPostRoles(username, name, roles, callback) {
     }
 }
 
-
 function checkStudentExistsAlready(roomId) {
     return function(username, name, callback) {
         console.log(`${getTimeString()}::checkStudentExistsAlready | Attempting | RoomId: ${roomId}`)
@@ -323,10 +337,7 @@ function checkStudentExistsAlready(roomId) {
         })
     }
 }
-/**
- * Insert the student into the proper
- * TODO: Should probably check if the user is already signed in
- */
+
 function insertStudent(checkInTime, studentObj, roomId) {
     return function(username, name, callback) {
         student = {
@@ -414,7 +425,7 @@ function removeStudent(roomId, checkOutTime, studentUsername) {
     }
 }
 
-function sendStudentToDataService(roomId, checkOutTime) {
+function sendStudentToDataService(roomId, checkOutTime, authToken) {
     return function(username, name, student, callback) {
         console.log(`${getTimeString()}::sendStudentToDataservice | Sending | Student: ${JSON.stringify(student)}`)
         student.checkOutTime = checkOutTime
@@ -426,7 +437,10 @@ function sendStudentToDataService(roomId, checkOutTime) {
             url: config.dataService.url + "/store",
             method: 'POST',
             json: true,
-            body: student
+            body: student,
+            headers: {
+                'AuthToken': authToken
+            }
         }
         request(options, function(err, response, body) {
             if (err) {

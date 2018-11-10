@@ -1,7 +1,12 @@
 # ActiveUserService
 Provides course lists and students currently signed into a room or being tutored during in-classroom hours.
 
-GET /courses?search=queryString
+###GET /courses?search=queryString
+
+**Header**
+```js
+'AuthToken': 'authToken'
+```
 
 **Response:**
 
@@ -20,11 +25,13 @@ GET /courses?search=queryString
 }
 ```
 
-GET /classes
+###GET /classes
+
+>This is currently a placeholder implementation, need LDAP access to make this cool
 
 **Header**
 ```js
-'StudentToken': 'studentToken'
+'AuthToken': 'authToken'
 ```
 
 **Response:**
@@ -44,13 +51,13 @@ GET /classes
 }
 
 {
-    'message': 'Error: StudentToken not provided',
+    'message': 'Error: AuthToken not provided',
     'success': false,
     'data': null
 }
 ```
 
-GET /activeUsers?roomId=percopo
+###GET /activeUsers?roomId=percopo
 
 **Header**
 ```js
@@ -82,7 +89,7 @@ GET /activeUsers?roomId=percopo
 }
 ```
 
-POST /activeUsers?roomId=percopo
+###POST /activeUsers?roomId=percopo
 
 **Headers**
 
@@ -124,7 +131,7 @@ POST /activeUsers?roomId=percopo
 }
 ```
 
-DELETE /activeUsers?roomId=percopo&username=moorect
+###DELETE /activeUsers?roomId=percopo&username=moorect
 
 **Headers**
 ```js
