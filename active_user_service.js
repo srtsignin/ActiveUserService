@@ -89,7 +89,7 @@ app.get('/activeUsers', (req, res) => {
     // get list
     // return list
     let roomId = req.query.roomId
-    let authToken = req.get('authToken')
+    let authToken = req.get('AuthToken')
 
     async.waterfall([
         activeusersGetChecks(roomId, authToken),
