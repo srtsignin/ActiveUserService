@@ -226,7 +226,7 @@ function checkCoursesPermissions(username, name, roles, callback) {
 function getFilterCourses(queryString) {
     return function (callback) {
         rdb.table('courses').without('id').filter(function (course) {
-            return course('queryString').match(queryString)
+            return course('queryString').upcase().match(queryString.toUpperCase())
         }).run(app._rdbConn, callback)
     }
 }
